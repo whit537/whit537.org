@@ -1,0 +1,9 @@
+title = "Two ways to visualize sorting algorithms"
+published = "2009-12-07T14:14:00.006-05:00"
+updated = "2011-04-10T09:52:44.947-04:00"
+^L
+^L
+{% extends "blag.html" %}
+{% block content %}
+<p>I discovered David Martin's <a href="http://www.sorting-algorithms.com/">Sorting Algorithm Animations</a> yesterday. It's great! I've seen animations like this before, but I like how they're all in one place here and can be run synchronously. The drill down pages give helpful analysis of when each algorithm is a good choice, which the animations then drive home. For example, because it is an adaptive algorithm (i.e., "<a href="http://en.wikipedia.org/wiki/Adaptive_sort">it takes advantage of existing order in its input</a>"), insertion sort smokes the rest on nearly-ordered data; <a href="http://en.wikipedia.org/wiki/Timsort">Python's timsort</a> uses this to good advantage.</p><p>These animations <a href="http://corte.si/posts/code/visualisingsorting/">have a detractor</a>, it turns out, in Aldo Cortesi. I would point out, though, that Aldo is frustrated by their lack of information about the <i>internals</i> of each algorithm. Point granted. However, I think they are helpful for comparing <i>across</i> algorithms, as above. Aldo's visualizations are a great complement. Timsort, e.g., is a <a href="http://bugs.python.org/file4451/timsort.txt">sophisticated algorithm</a>, and Aldo's <a href="http://corte.si/posts/code/timsort/">visualization helps unravel it</a>.</p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-125775477975141518?l=blag.whit537.org' alt='' /></div>
+{% end %}

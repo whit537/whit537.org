@@ -1,0 +1,41 @@
+import datetime
+import os
+import re
+
+import tree
+
+
+title = "Chad's Blog"
+
+posts = tree.all()
+years = [('', posts)]
+
+years = tree.by_year()
+
+
+
+{% extends "blag.html" %}
+{% block head %}
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script>
+    $(document).ready(function()
+    {
+    });
+</script>
+{% end %}
+{% block nav %}
+    <a href="http://www.whit537.org">www.whit537.org</a>
+{% end %}
+{% block content %}
+    {% for year, posts in years %}
+        <a name="{{ year }}"></a>
+        <h3 class="year">
+            <a href="/#{{ year }}">#</a>{{ year }}
+        </h3>
+        <div class="posts">
+        {% for post in posts %}
+            <a href="{{ post.root }}/{{ post.name }}">{{ post.title }}</a><br />
+        {% end %}
+        </div>
+    {% end %}
+{% end %}

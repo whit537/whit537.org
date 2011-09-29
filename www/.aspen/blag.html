@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>@import url("/main.000.css");</style>
+        <title>{{ title }}</title>
+        {% block head %}{% end %}
+    </head>
+    <body>
+        <div id="blue"></div>
+        <div id="post">
+            <h2>{{ title }}</h2>
+            <div class="nav">
+                Up to {% block nav %}
+                <a href="/">Index</a>
+                {% end %}
+            </div>
+            <div class="hr">
+                &middot;&mdash;&mdash; 
+                &middot;&middot;&middot;&middot; 
+                &middot;&middot; 
+                &mdash;
+                &middot;&middot;&middot;&middot;&middot; 
+                &middot;&middot;&middot;&mdash;&mdash;
+                &mdash;&mdash;&middot;&middot;&middot;
+            </div>
+            {% block content %}{% end %}
+            <div class="hr">
+                &middot;&mdash;&mdash; 
+                &middot;&middot;&middot;&middot; 
+                &middot;&middot; 
+                &mdash;
+                &middot;&middot;&middot;&middot;&middot; 
+                &middot;&middot;&middot;&mdash;&mdash;
+                &mdash;&mdash;&middot;&middot;&middot;
+            </div>
+            Feed back to <a href="http://www.whit537.org/">Chad Whitacre</a>.
+        </div>
+    </body>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-247427-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ( 'https:' == document.location.protocol 
+                 ? 'https://ssl' 
+                 : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</html>

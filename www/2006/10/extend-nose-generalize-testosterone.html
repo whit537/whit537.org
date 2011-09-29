@@ -1,0 +1,9 @@
+title = "Extend nose? Generalize testosterone."
+published = "2006-10-26T08:27:00.000-04:00"
+updated = "2011-04-10T09:52:45.410-04:00"
+^L
+^L
+{% extends "blag.html" %}
+{% block content %}
+Now that I've refreshed my memory on testosterone, I don't think writing a nose plugin makes sense. In <a href="http://www.zetadev.com/software/testosterone/0.4.1/man/interactive.html">interactive mode</a>, testosterone re-calls itself in <a href="http://www.zetadev.com/software/testosterone/0.4.1/man/scripted.html">non-interactive mode</a> (using <a href="http://docs.python.org/lib/module-subprocess.html">the subprocess module</a>), and parses the output. In theory testosterone could be generalized to use any command-line test runner under the hood. For each test runner we would basically need:<br /><ul><li>The command line signature that will produce a summary report</li><li>  A parser for the summary report</li><li>The command line signature that will produce a detail report</li><li>A parser for the detail report</li></ul>  In addition, we would need some interface for choosing from available test runners. I imagine we would ask this once on startup, and then save the result to <span style="font-family:courier new;">~/.testosterone.rc</span> or something.<br /><br />How do we determine which test runners are available? My first instinct is a custom conf file, but since <a href="http://tech.whit537.org/2006/10/my-name-is-chad-and-i-have-nih.html">we're trying to cure NIH here</a>, let's see if we can use <a href="http://peak.telecommunity.com/DevCenter/setuptools#extensible-applications-and-frameworks">setuptools' plugin architecture</a>.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8290442631943480588?l=blag.whit537.org' alt='' /></div>
+{% end %}
