@@ -73,7 +73,7 @@ class Tree(object): #PatternMatchingEventHandler):
                             , "published": '1970-01-01T00:00.00+0'
                             , "title": 'Untitled'
                              }
-                if resource.one is not None:
+                if hasattr(resource, 'one'):
                     assert isinstance(resource.one, dict) # sanity check
                     namespace.update(resource.one)
                 post = Post(**namespace)
