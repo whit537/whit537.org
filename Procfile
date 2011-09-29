@@ -1,1 +1,1 @@
-web: aspen www -a:9000
+web: aspen --address :$PORT www/
