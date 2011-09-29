@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import sys
 import xml.parsers.expat
@@ -61,20 +62,44 @@ p.StartElementHandler = printer.start
 p.EndElementHandler = printer.end
 p.CharacterDataHandler = printer.chardata
 
-p.Parse(sys.stdin.read())
+p.Parse(open('blag.bak/blag.xml').read())
+
+blaps = [ (unichr(8217), '&rsquo;')
+        , (unichr(8211), '&mdash;') # should have been
+        , (unichr(8212), '&mdash;')
+        , (unichr(8220), '&ldquo;')
+        , (unichr(8221), '&rdquo;')
+        , (unichr(233), '&eacute;')
+        , (unichr(8230), '&hellip;')
+        , (unichr(160), '')         # &nbsp; 
+        , (unichr(8482), '&trade;') 
+        , (unichr(960), '&pi;')
+        , (unichr(230), '&#xe6;')   # æ
+        , (unichr(234), '&#xea;')   # ê
+        , (unichr(239), '&#xef;')   # ï
+        , (unichr(241), '&#xf1;')   # ñ
+        , (unichr(246), '&#xf6;')   # ö
+        , (unichr(347), '&#015b;')  # ś
+        , (unichr(252), '&#xfc;')   # ü
+         ]
+
+seen = set()
 
 for post in posts:
     year, month, filename = post.path_parts
     if "showComment" in filename:
         continue
-    os.system('mkdir -p %s/%s' % (year, month))
-    path = '/'.join(post.path_parts)
-    print path
+    os.system('mkdir -p www/%s/%s' % (year, month))
+    path = '/'.join(['www'] + post.path_parts)
     fp = open(path, 'w+')
+
+    for blip, blop in blaps:
+        post.content = post.content.replace(blip, blop)
+
     for c in post.content:
         if ord(c) > 127:
-            print c, ord(c)
-            raise SystemExit 
+            seen.add(c)
+            print c, str(ord(c)).rjust(4), path
 
     contents = u"""\
 title = "%s"
@@ -92,3 +117,7 @@ updated = "%s"
       , post.content.replace('^L', '&#94;')
        )
     fp.write(contents.encode('utf-8'))
+
+for c in seen:
+    pass
+    #print ord(c), repr(unichr(ord(c))), c
