@@ -7,10 +7,16 @@ import tree
 
 title = "Chad's Blog"
 
-posts = tree.all()
-years = [('', posts)]
+posts = tree.db.find( { "published": {"$exists": True}}
+                    , sort=[("published", -1)]
+                     )
 
-years = tree.by_year()
+years = []
+for post in posts:
+    year = post['published'].split('-')[0]
+    if not years or (year != years[-1][0]):
+        years.append([year, []])
+    years[-1][1].append(post)
 
 
 
@@ -34,7 +40,7 @@ years = tree.by_year()
         </h3>
         <div class="posts">
         {% for post in posts %}
-            <a href="{{ post.root }}/{{ post.name }}">{{ post.title }}</a><br />
+            <a href="{{ post['_id'] }}">{{ post['title'] }}</a><br />
         {% end %}
         </div>
     {% end %}

@@ -1,98 +1,64 @@
 import os
+import os.path
 
+import pymongo
+import pymongo.uri_parser
 from aspen import resources
-from watchdog.observers import Observer
-from watchdog.events import PatternMatchingEventHandler
 
-
-class NotConfigured(Exception):
-    pass
-
-# ===========================
-
-def all():
-    if _tree is None:
-        raise NotConfigured
-    posts = _tree.posts[:]
-    posts.sort(key=lambda p: p.published)
-    posts.reverse()
-    return posts
-
-def by_year(only=None):
-    posts = all()
-    years = []
-    for post in posts:
-        if only is not None:
-            if post.year != only:
-                continue
-        if not years or (post.year != years[-1][0]):
-            years.append([post.year, []])
-        years[-1][1].append(post)
-    return years
-
-
-# ===========================
-
-class Post:
-    def __init__(self, root, name, published, title, **kw):
-        self.root = root
-        self.name = name
-        self.published = published
-
-        date, time = published.split('T')  
-        year, month, day = [int(x) for x in date.split('-')]
-        self.year = year
-        self.month = month
-        self.day = day
-        self.title = title
 
 class MockRequest(object):
-    def __init__(self, website, parent, name):
+    def __init__(self, website, path):
+        website.copy_configuration_to(self)
         self.website = website
-        self.fs = os.path.realpath(os.path.join(parent, name))
+        self.fs = path
 
-class Tree(object): #PatternMatchingEventHandler):
+def Database():
+    connect = os.environ['MONGO']
+    conn = pymongo.Connection(connect)
 
-    def __init__(self, website):
-        self.website = website
-        self.posts = []
-        #PatternMatchingEventHandler.__init__(self, ignore_patterns='.*')
-        self.prime(website)
+    # grab the dbname, because we can't get it via the Connection
+    dbname = pymongo.uri_parser.parse_uri(connect)["database"]
 
-    def prime(self, website):
-        for parent, dirs, files in os.walk(website.root):
-            relparent = parent[len(website.root):]
-            if not relparent.startswith('/2'):
-                continue
-            for name in files:
-                mock = MockRequest(website, parent, name)
-                resource = resources.load(mock, None)
-              
-                namespace = { "root": relparent
-                            , "name": name
-                            , "published": '1970-01-01T00:00.00+0'
-                            , "title": 'Untitled'
-                             }
-                if hasattr(resource, 'one'):
-                    assert isinstance(resource.one, dict) # sanity check
-                    namespace.update(resource.one)
-                post = Post(**namespace)
-                self.posts.append(post)
+    return conn[dbname]
 
-    def dispatch(self, event):
-        import pdb; pdb.set_trace()
+class File(dict):
+    def __getattr__(self, name):
+        try:
+            return dict.__getitem__
+        except KeyError:
+            raise AttributeError("No attribute named %s.")
 
-_tree = None
-
-def monitor(tree):
-    observer = Observer()
-    observer.schedule(_tree, path='.', recursive=True)
-    observer.start()
-
+db = None
 def startup(website):
-    global _tree
-    _tree = Tree(website)
-    #monitor(_tree)
+    global db
+    _db = Database()
+    _db.drop_collection('tree')
+    db = _db['tree']
 
-def outgoing():
-    pass
+    for path, dirs, files in os.walk(website.root):
+
+        # Ignore hidden files.
+        # ====================
+
+        for seq in (dirs, files):
+            for i in range(len(dirs)-1, -1, -1):
+                name = dirs[i]
+                if name.startswith('.'):
+                    dirs.pop(i)
+
+        # Index files.
+        # ============
+
+        parent = path[len(website.root):].replace(os.sep, '/')
+        for name in files:
+            mock = MockRequest(website, os.path.join(path, name))
+            resource = resources.load(mock, modtime=None)
+
+            doc = {"_id": '/'.join([parent, name])}
+            if hasattr(resource, 'one'):
+                assert isinstance(resource.one, dict) # sanity check
+                for k, v in resource.one.items():
+                    if isinstance(v, (basestring,)):
+                        doc[k] = v
+
+            db.save(doc)

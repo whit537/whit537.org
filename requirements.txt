@@ -1,2 +1,2 @@
 aspen==0.11.11
-watchdog==0.5.4
+pymongo==2.0.1
