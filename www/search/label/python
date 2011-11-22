@@ -1,0 +1,3 @@
+# Planet Python is pointing to this. Send them to the homepage for now.
+^L
+request.redirect("/", permanent=True)
