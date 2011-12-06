@@ -97,7 +97,7 @@ release.</p>
     <code>request.redirect</code> method to make redirects easier. It&rsquo;s
     (thinly) <a href="http://aspen.io/request/">documented</a>. I hadn&rsquo;t
     added it to date because what I really want to do is port the <a
-        href="http://cherrypy.org/browser/trunk/cherrypy/_cperror.py#L154">more
+        href="https://bitbucket.org/cherrypy/cherrypy/src/701f413a0d64/cherrypy/_cperror.py#cl-152">more
         robust algorithm from CherryPy</a>, but this is a step in the right
     direction.</li> <li><b>HTML escaping</b> -&nbsp;Aspen's&nbsp;<a
         href="http://aspen.io/templating/">templating</a>&nbsp;documentation
@@ -123,10 +123,7 @@ release.</p>
                 <code>edit</code>.</div></span></b></li> <li><b><div
             style="display: inline !important;">Manual REST<span
                 class="Apple-style-span" style="font-weight: normal;"> - In
-                general, I consider branching based on request method to be
-                flexible and clean. It&rsquo;s no more manual than
-                specially-naming methods, and the flow of control is easier to
-                keep straight. However, the conditions themselves are a bit
+general, I consider branching based on request method to be flexible and clean. It&rsquo;s no more manual than specially-naming methods, and the flow of control is easier to keep straight. However, the conditions themselves are a bit
                 verbose, so I&rsquo;ve added <code>request.GET</code>, etc., so
                 you can use those instead of <code>request.method ==
                     "GET"</code>. This is (thinly) </span></div></b><b><div
