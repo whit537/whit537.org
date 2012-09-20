@@ -41,6 +41,9 @@ DIV#post-padding {
     font-size: smaller;
     margin: -64pt 0 24pt;
 }
+#not-certified SPAN {
+    background: #FFFE26;
+}
 
 H1 {
     font: normal 18pt/24pt "Times New Roman", serif;
