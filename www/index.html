@@ -17,9 +17,20 @@ posts = tree.db.find( { "published": {"$exists": True}}
 years = []
 for post in posts:
     year = post['published'].split('-')[0]
+    if not year:
+        year = "Ongoing"
     if not years or (year != years[-1][0]):
         years.append([year, []])
     years[-1][1].append(post)
+
+years.insert(0, years.pop())
+years[0][1].append({ "_id": "https://www.gittip.com/"
+                   , "title": "Gittip - Inspiring Generosity"
+                    })
+years[0][1].append({ "_id": "http://aspen.io/"
+                   , "title": "Aspen Web Framework"
+                   })
+years[0][1].sort(key=lambda d: d['title'])
 
 
 
