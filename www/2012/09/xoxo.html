@@ -61,7 +61,7 @@ certified = True
             for (var i=0, j=0; i <= _x; i++)
             {
                 j = Math.pow(10, i);
-                context.fillText( '1e'+i
+                context.fillText( i === 0 ? i : i < 3 ? j : '1e'+i
                                 , gutter + (xscale * Math.log(j))
                                 , h + ticks + 5
                                  );
@@ -82,7 +82,7 @@ certified = True
             for (var i=0, j=0; i < _y; i++)
             {
                 j = Math.pow(10, i);
-                context.fillText( '1e'+i
+                context.fillText( i === 0 ? i : i < 3 ? j : '1e'+i
                                 , axis_label
                                 , h - (yscale * Math.log(j)) + 5
                                  );
