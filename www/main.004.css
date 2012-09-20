@@ -84,6 +84,9 @@ P {
     padding: 0;
     text-indent: 2em;
 }
+P.flush {
+    text-indent: 0;
+}
 .posts {
     padding: 10px 0 0 128pt;
 }
@@ -112,6 +115,9 @@ P {
 }
 A IMG {
     border: none;
+}
+HR {
+    margin: 12pt 0;
 }
 .sidebar {
     float: right;
