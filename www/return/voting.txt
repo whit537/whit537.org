@@ -1,3 +1,4 @@
+# Fossilized
 import time
 
 import return_
@@ -5,15 +6,17 @@ from aspen.utils import to_age
 
 
 
-voting = int(return_.do("deadline"))
-if voting:
-    now = time.time()
-    if now < voting:
-        out = "Voting is open for another %s." % to_age(now, voting)
-    else:
-        out = "Voting has closed, but the winner has not been announced yet."
-else: 
-    out = "Voting is not open yet."
+if 0:
+    voting = int(return_.do("deadline"))
+    if voting:
+        now = time.time()
+        if now < voting:
+            out = "Voting is open for another %s." % to_age(now, voting)
+        else:
+            out = "Voting has closed, but the winner has not been announced yet."
+    else: 
+        out = "Voting is not open yet."
 
+out = "Voting is done forever."
 
 {{ out }}

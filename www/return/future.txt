@@ -1,5 +1,7 @@
-import return_
+# Fossilized
+#import return_
 
-out = return_.do("future")
+#out = return_.do("future")
+out = ""
 
 {{ out }}

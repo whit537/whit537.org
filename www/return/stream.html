@@ -14,8 +14,9 @@ SWEARING = "+=!@#$%^*()"
 
 
 
-query = request.POST.get('q', '').strip()
-if query and query not in COMMANDS:
+err = None
+query = request.body.get('q', '').strip()
+if 0 and query and query not in COMMANDS:  # fossilized
 
     # Sanitize based on Offensive/Profane Word List.
     # ==============================================
@@ -58,11 +59,11 @@ future = return_.future()
     </td>
 </tr>
 {% end %}
-{% for item in past %}
-<tr class="{% if loop.first %}present{% else %}past{% end %}">
+{% for i, item in enumerate(past) %}
+<tr class="{% if i == 0 %}present{% else %}past{% end %}">
     <td class="votes">{{ item[0] }}</td>
     <td class="query">{{ item[2] }}
-        {% if loop.first %}
+        {% if i == 0 %}
         <span class="age">live for the past {{ item[1] }}</span>
         {% else %}
         <span class="age">went live {{ item[1] }} ago</span>
