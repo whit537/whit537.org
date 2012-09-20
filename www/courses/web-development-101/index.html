@@ -1,42 +1,38 @@
-<head>
-    <title>Web Development 101 - Hacker Theory and Practice</title>
+title = "Web Development 101 - Hacker Theory and Practice"
+published = ""
+
+
+{% extends blag.html %}
+{% block content %}
     <style>
-        BODY {
-            margin: 10% 20%;
-            font-family: Arial, sans-serif;
-        }
-        H2 {
-            margin-top: 2em;
-
-        }
-        P.syllabus {
+        DIV.syllabus {
             text-align: center;
             font-size: 18pt;
+            padding: 24pt 0;
         }
-        P.syllabus SPAN {
+        DIV.syllabus SPAN {
             font-size: 10pt;
         }
     </style>
-</head>
-<body>
-    <h1>Greetings, program!</h1>
 
-    <p>Welcome to <b>Web Development 101</b>!</p>
+    <p>Welcome to <b>Web Development 101</b>! I&rsquo;m excited to be offering
+    this for the first time with <a href="http://saxifrageschool.org/">The
+        Saxifrage School</a> this Fall, 2012.  I have twelve years of
+    professional programming experience, and this is my first time out as a
+    teacher.  It&rsquo;s actually the first full course to be offered by
+    Saxifrage as well, so we are breaking new ground all around!</p>
 
-    <p>My name is <a href="https://www.gittip.com/whit537/">Chad Whitacre</a>
-    and I&rsquo;m excited to be offering this for the first time with <a
-        href="http://saxifrageschool.org/">The Saxifrage School</a> this Fall.
-    I have twelve years of professional programming experience, and this is my
-    first time out as a teacher. It&rsquo;s actually the first full course to
-    be offered by Saxifrage as well, so we are breaking new ground all
-    around!</p>
+    <div class="syllabus">
 
-    <p class="syllabus"><a href="WebDevelopment101-1.0.1.pdf">Syllabus</a>
-    <span>(PDF)</span></p>
+        <a href="WebDevelopment101-1.0.1.pdf">Syllabus</a>
+        <span>(PDF)</span>
 
-    <p class="syllabus"><a
-        href="http://saxifrageschool.org/program/">Register</a>
-    <span>($350)</span></p>
+        <br /><br />
+
+        <a href="http://saxifrageschool.org/program/">Register</a>
+        <span>($350)</span>
+
+    </div>
 
     <p>My approach is to have you read <b>primary sources</b> like the <a
         href="http://www.w3.org/TR/html401/">HTML specification</a> and the <a
@@ -82,20 +78,20 @@
     <p>
         <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>,
         <a href="http://www.sublimetext.com/">Sublime Text</a>,
-        <a href="https://github.com/">GitHub</a> (<a href="http://mac.github.com/">Mac</a> | 
+        <a href="https://github.com/">GitHub</a> (<a href="http://mac.github.com/">Mac</a> |
             <a href="http://windows.github.com/">Windows</a>),
         <a href="http://www.python.org/">Python</a>,
         <a href="http://aspen.io/">Aspen</a>
     </p>
- 
+
 
     <h2>System Requirements</h2>
 
-    <p>You&rsquo;ll need a laptop with Windows (XP or newer) or Mac OS (10.6 or
+    <p>You&rsquo;ll need a laptop with Windows (XP or newer) or Mac OS (10.7 or
     newer).</p>
-   
-    <p>Any laptop that can run Windows XP or Mac OS 10.6 will be powerful
-    enough for us.</p>
+
+    <p>Any laptop that can run Windows XP or Mac OS 10.7 will be powerful
+    enough.</p>
 
     <p>You can use Linux if you know git already.</p>
 
@@ -192,3 +188,4 @@ What's the difference between data and information?
 data + meaning = information
 
 -->
+{% end %}
