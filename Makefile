@@ -2,7 +2,7 @@
 env:
 	python2.7 ./vendor/virtualenv-1.7.1.2.py \
 				--unzip-setuptools \
-				--prompt="[blag] " \
+				--prompt="[www.whit537.org] " \
 				--never-download \
 				--extra-search-dir=./vendor/ \
 				--distribute \
