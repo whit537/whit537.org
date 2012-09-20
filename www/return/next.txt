@@ -1,0 +1,5 @@
+import return_
+
+next = return_.do("next")
+
+{{ next }}

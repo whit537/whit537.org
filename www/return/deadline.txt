@@ -1,0 +1,5 @@
+import return_
+
+out = return_.do("deadline")
+
+{{ out }}

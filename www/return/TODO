@@ -1,0 +1,67 @@
+return.c
+    ===nope===
+    validation
+        bad words
+        HTML-injection
+        do in Python for now
+    throttle 'next' to size of queue?
+        if the queue is full, return something every time
+        if the queue is almost empty, return nothing most of the time
+        <but>
+        if I show up and the queue is empty
+            I don't want to have to come back in an hour to see my thing up
+    ===done===
+web
+    ===nope===
+    ===done===
+    iframe/ajax table so we don't reload statement/slideshow every time
+    past should grow/shrink so we always have 21 showing
+    clean up input
+        queries with quotes break
+        queries with # break
+        other punctuation?
+    clean up rest of site
+        ===nope===
+        put feeds on homepage
+        undo resume, put content into other pages (homepage?)
+        related posts on post pages
+        restyle post pages w/ colors537
+        ===done===
+        add whit537.org nav bar to top
+        put Return on homepage
+    write statement
+        describe API
+        make table position: fixed?
+        set up webcam
+    cross-browser
+        make table pixel-perfect
+    "live for the past hour" rather than "live for the past 1 hour"
+    make future links clickable to vote
+    put cursor in box onload
+
+
+===BUMPED===
+Twitter notifications
+    send twitter notice when queue is empty
+    do this as a python cronjob? polls /future.txt?
+windows service in systray
+realtime
+    aspen would need to be realtime
+        and/or return.c
+    then, client-side
+python bindings for return.c
+
+
+
+===DONE===
+GUI automation
+    ===nope===
+    screenshot to go along with webcam shot
+    take picture
+    upload picture to Internet
+    get running as Windows service
+    get running in systray
+    ===done===
+    install on laptop
+    ensure that we don't have a sendkeys-injections vulnerability
+

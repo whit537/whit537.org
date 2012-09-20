@@ -1,0 +1,72 @@
+import random
+import string
+import urllib
+
+import return_
+
+
+COMMANDS = set(["list", "future", "deadline", "clear", "next"])
+BAD_WORDS = set([x.strip() for x in open(return_.BAD).readlines()])
+BAD_WORDS.remove('')
+LOWER = set(string.ascii_lowercase)
+SWEARING = "+=!@#$%^*()"
+
+
+
+
+query = request.POST.get('q', '').strip()
+if query and query not in COMMANDS:
+
+    # Sanitize based on Offensive/Profane Word List.
+    # ==============================================
+
+    clean = []
+    for word in query.split():
+        tocheck = ''.join([x for x in word.lower() if x in LOWER])
+        if tocheck not in BAD_WORDS:
+            clean.append(word)
+        else:
+            clean.append(''.join(random.sample(SWEARING, 4)))
+    query = ' '.join(clean)
+
+
+    # HTML-escape.
+    # ============
+
+    query = query.replace("&", "&amp;")
+    query = query.replace("&amp;amp;", "&amp;")
+    query = query.replace("<", "&lt;")
+    query = query.replace("<", "&gt;")
+
+    err = return_.do(query).strip()
+
+past = return_.past()
+future = return_.future()
+
+
+
+{% if err %}
+<tr class="future">
+    <td colspan="2" class="error">{{ err }}</td>
+</tr>
+{% end %}
+{% for item in future %}
+<tr class="future">
+    <td class="votes">{{ item[0] }}</td>
+    <td class="query"><span class="entry">{{ item[2] }}</span>
+        <span class="age">added {{ item[1] }} ago</span>
+    </td>
+</tr>
+{% end %}
+{% for item in past %}
+<tr class="{% if loop.first %}present{% else %}past{% end %}">
+    <td class="votes">{{ item[0] }}</td>
+    <td class="query">{{ item[2] }}
+        {% if loop.first %}
+        <span class="age">live for the past {{ item[1] }}</span>
+        {% else %}
+        <span class="age">went live {{ item[1] }} ago</span>
+        {% end %}
+    </td>
+</tr>
+{% end %}

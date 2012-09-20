@@ -1,0 +1,5 @@
+import return_
+
+out = open(return_.LOG, 'r').read()
+
+{{ out }}
