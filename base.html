@@ -11,8 +11,12 @@
         <div id="blue"></div>
         <div id="post"><div id="post-padding">
             {% if 'certified' not in globals() %}
-            <div id="not-certified"><span>I&rsquo;m reformatting these pages,
-                    and this one might not look right.</span></div>
+            <div id="not-certified">
+                <i>
+                    <span class="nowrap">I&rsquo;m reformatting these pages, and</span>
+                    <span class="nowrap">this one might not look right.</span>
+                </i>
+            </div>
             {% end %}
             <h1>{{ title.replace(' - ', ':<br />') }}</h1>
             <div class="meta">

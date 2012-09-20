@@ -37,11 +37,10 @@ DIV#post-padding {
 
 #not-certified {
     text-align: center;
-    font-style: italic;
     font-size: smaller;
     margin: -64pt 0 47pt;
 }
-#not-certified SPAN {
+#not-certified I {
     background: #FFFE26;
 }
 
