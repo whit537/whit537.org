@@ -83,11 +83,18 @@ P {
     padding: 0;
     text-indent: 2em;
 }
-TABLE {
+TABLE, .chart {
     margin: 24pt auto;
     border: 1px solid #EEE;
     border-style: solid none;
     padding: 12pt 0;
+}
+.chart H3 {
+    margin: 0 0 12pt;
+    padding: 0;
+}
+CODE {
+    font: normal 10pt/16pt monospace;
 }
 TD, TH {
     margin: 0;

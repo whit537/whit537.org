@@ -5,14 +5,6 @@ certified = True
 ^L
 {% extends "base.html" %}
 {% block head %}
-    <style>
-        CANVAS {
-            margin: 24pt 0;
-        }
-        CODE {
-            font: normal 10pt/16pt monospace;
-        }
-    </style>
 
     <script src="/jquery-1.8.1.min.js"></script>
     <script>
@@ -164,7 +156,7 @@ certified = True
     <p>One person I did recognize was <a
         href="https://twitter.com/timoreilly">Tim O&rsquo;Reilly</a>. I
     made a point to chase him down and awkwardly introduce myself and shove
-    a business card in his hand. Blech. Sorry, Tim. Two hours later I
+    a business card in his hand. Blech. (Sorry, Tim.) Two hours later I
     happened to be in the right place at the right time to introduce Tim to
     <a href="https://twitter.com/danharmon">Dan Harmon</a>. This was right
     after Dan&rsquo;s keynote, and I ended up tagging along when their
@@ -189,22 +181,25 @@ certified = True
     of Twitter followers for each attendee along the X axis, and the log of
     the number they&rsquo;re following along Y.</p>
 
-    <h2>Followers vs. Following of XOXO Attendees (N = <span
-            id="N-plot-xoxo"></span>)</h2>
+    <div class="chart">
 
-    <canvas id="plot-xoxo"></canvas>
+        <h3>Followers vs. Following of XOXO Attendees (N = <span
+                id="N-plot-xoxo"></span>)</h3>
 
-    <p>The thing I notice about this chart is that there are no clumps.
-    It&rsquo;s not like there were a bunch of big names, and then a mass of the
-    rest of us. It looks really evenly distributed to me. It&rsquo;s also
-    interesting to see the fairly well-defined upper and lower bounds on the
-    ratio of followers to following. In another <a
+        <canvas id="plot-xoxo"></canvas>
+
+    </div>
+
+    <p>This looks really evenly distributed to me. It&rsquo;s not like there
+    were a bunch of big names, and then a mass of the rest of us. It&rsquo;s
+    also interesting to see the fairly well-defined upper and lower bounds on
+    the ratio of followers to following. In another <a
         href="on-jamming-ones-personal-brand.html">context</a> I&rsquo;ve
     considered that ratio as a possible indicator of abuse, and if we can
     assume of XOXO attendees that they are not abusing Twitter (some of them,
-    in fact, building it for us), then this plot seems to indicate that there
-    might be something to that idea. I&rsquo;ve started working on comparing
-    XOXO to Twitter overall, using the ASU Twitter <a
+    in fact, are building it for us), then this plot seems to indicate that
+    there might be something to that idea. I&rsquo;ve started working on
+    comparing XOXO to Twitter overall, using the ASU Twitter <a
         href="http://socialcomputing.asu.edu/datasets/Twitter">dataset</a>, but
     that&rsquo;s proving more difficult to compute (a pseudo-random sample of
     500 users takes me about 40 minutes to compute with my current algorithm,
@@ -293,24 +288,23 @@ certified = True
 
     <p>This interest in deepening the conversation is also behind a <a
         href="https://twitter.com/whit537/status/247725423482523649">recent</a>
-    <a
-        href="https://twitter.com/whit537/status/247740257225830400">Twitter</a>
+    <a href="https://twitter.com/whit537/status/247740257225830400">Twitter</a>
     <a
         href="https://twitter.com/whit537/status/247742739809198080">exchange</a>
     about the idea of inviting something like <a
-        href="http://www.kiva.org/">Kiva</a> to be a part of the next
-    iteration of XOXO. Okay, it&rsquo;s first and foremost an art festival.
-    That&rsquo;s a gestalt I didn&rsquo;t really take on board beforehand.
-    And I do want to try <a href="http://www.braid-game.com/">Braid</a>
-    now. But threatening
+        href="http://www.kiva.org/">Kiva</a> to be a part of the next iteration
+    of XOXO. Okay, it&rsquo;s an art festival.  That&rsquo;s a gestalt I
+    didn&rsquo;t really take on board beforehand.  And I do want to try <a
+        href="http://www.braid-game.com/">Braid</a> now. But threatening
     suicide over not finishing your video <a
         href="http://fezgame.com/">game</a>? That&rsquo;s an attitude to <a
         href="http://www.youtube.com/watch?v=M3w1_E1V46M">critique</a>, not
-    celebrate. The Internet is creatively disrupting a lot more than how
-    video games and films about video games and music inspired by video
-    games are getting made.  In my view, we&rsquo;re poised to turn a big
-    chunk of the <a href="https://www.gittip.com/">economy inside out</a>.
-    Let&rsquo;s play video games, and then let&rsquo;s deepen the
-    conversation. That&rsquo;s what I hope to contribute to at events like
-    XOXO in the future.</p>
+    celebrate. The Internet is creatively disrupting a lot more than how video
+    games and films about video games and music inspired by video games are
+    getting made.  In my view, we&rsquo;re poised to turn a big chunk of the <a
+        href="https://www.gittip.com/">economy inside out</a>.
+    Let&rsquo;s play video games, and then let&rsquo;s deepen the conversation.
+    That&rsquo;s what I hope to contribute to at events like XOXO in the
+    future.</p>
+   
 {% end %}
