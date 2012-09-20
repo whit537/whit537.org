@@ -1,0 +1,103 @@
+Chad Whitacre
+
+716 Park Road, Ambridge, PA, 15003, USA
+724-251-9777
+http://www.whit537.org/
+
+
+STATUS
+
+I'm employed full-time as a lead software developer at YouGov, an international
+market research company with 450 people. I'm an American citizen.
+
+
+OBJECTIVE
+
+I'm looking to join a company with an even stronger culture of innovation.
+
+
+CAREER
+
+I pitched, designed, and built a product to unify five core business
+applications across two data centers.
+
+    YouGov, 5 months--HTML, CSS, object-oriented JavaScript, Python, Aspen, 
+    MongoDB, PostgreSQL, Vim, Ubuntu, Mac OS
+
+
+With another developer, I designed and built a product to visualize data from
+1.5 million interviews per month.
+
+    YouGov, 9 months--HTML, CSS, object-oriented JavaScript, Python, CherryPy,
+    MongoDB, bitarrays, Vim, Ubuntu, Mac OS
+
+
+I worked with two other developers to prototype a web application for a
+national healthcare company.
+Key quote: "Chad, clinical pharmacy is sexy, but not that sexy."
+
+    Freelance, 5 months--HTML, CSS, JavaScript, ASP.NET MVC, VisualStudio,
+    Windows, doctors
+
+
+With a friend, I protoyped a scheduling product, and pursued a joint venture 
+with a national education non-profit.
+
+    Knotbird, 1 year--PhotoShop, HTML, CSS, Python, Aspen, Django, SQLite, Vim,
+    FreeBSD, Amazon Web Services, lawyers
+
+
+I handled technology, soup to nuts, for the launch of a new national province
+of the global Anglican Communion.
+
+    Anglican Communion Network, 2 years--PhotoShop, Illustrator, Flash, 
+    InDesign, HTML, CSS, JavaScript, Python, SQLite, Vim, FreeBSD, Windows, 
+    video production, GUI automation, bishops
+
+
+I solved a registration and scheduling crisis for a 7500-student school
+district using constraint satisfaction.
+
+    Zetaweb, 1 month--HTML, CSS, Python, Aspen, Django, constraint satisfaction
+
+
+With a friend, I started a web design company, and grew it to 20 clients and
+two employees.
+
+    Zetaweb, 5 years--HTML, CSS, JavaScript, Python, Plone, Zope, Aspen, 
+    Django, UltraEdit, Windows, FreeBSD
+
+
+I was the manager for the launch of an organic produce growers' cooperative.
+
+    Pennsylvania Local Organics Works, 1 year
+
+
+I launched an online education program at a seminary, soup to nuts.
+
+    Trinity School for Ministry, 2 years--FireWorks, HTML, CSS, Classic ASP,
+    SQLServer, DreamWeaver, Windows, Windows Server
+
+
+OPEN SOURCE
+
+My main open source project is the Aspen web framework. 
+    http://aspen.io/
+
+I built Mongs, a data browser for MongoDB. 
+    http://www.whit537.org/mongs/
+
+I built Gheat, a heatmap tile server for Google Maps. 
+    http://code.google.com/p/gheat/
+
+Back when I ran Zetaweb, I was a committer on the Plone CMS. 
+    http://plone.org/
+
+
+EDUCATION
+
+2008, Coursework in Effective Programming in C and UNIX, Carnegie Mellon 
+    University
+2001, GRE: Verbal, 740 (99th percentile); Quantitative, 760 (88th); Analytical,
+    770 (97th)
+1999, B.A., Wheaton College (Wheaton, IL); Ancient Languages & Bible; GPA: 3.61
