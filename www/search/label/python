@@ -1,4 +1,0 @@
-# Planet Python is pointing to this. Send them to the homepage for now.
-
-request.redirect("/", permanent=True)
- text/plain
