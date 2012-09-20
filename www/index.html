@@ -34,9 +34,9 @@ for post in posts:
         </h3>
         <div class="posts">
         {% for post in posts %}
-            <a href="{{ post['_id'] }}">{{ post['title'] }}</a><br />
-            {% end %}
-            &nbsp;
+            <a href="{{ post['_id'] }}">{{ post['title'] }}</a>
+        {% end %}
+        &nbsp;
         </div>
     {% end %}
 {% end %}

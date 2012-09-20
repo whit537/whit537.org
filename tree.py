@@ -45,6 +45,8 @@ def startup(website):
 
         parent = path[len(website.www_root):].replace(os.sep, '/')
         for name in files:
+            if name == 'index.html':
+                name = ''
             url_path = '/'.join([parent, name])
             aspen.log("indexing " + url_path)
             resource = website.load_simplate(url_path)

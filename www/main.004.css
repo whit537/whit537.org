@@ -87,6 +87,11 @@ P {
 .posts {
     padding: 10px 0 0 128pt;
 }
+.posts A {
+    text-indent: -1em;
+    margin-left: 1em;
+    display: block;
+}
 #nav:hover A {
     color: black;
 }
