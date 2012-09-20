@@ -14,7 +14,7 @@
             <div id="not-certified"><span>I&rsquo;m reformatting these pages,
                     and this one might not look right.</span></div>
             {% end %}
-            <h1>{{ title }}</h1>
+            <h1>{{ title.replace(' - ', ':<br />') }}</h1>
             <div class="meta">
                 By <a href="https://www.gittip.com/whit537/">Chad Whitacre</a><br />
                 {% if published %}
