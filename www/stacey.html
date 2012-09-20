@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Stacey</title>
+</head>
+<body onload="javascript:document.getElementById('amount').focus();">
+
+<h1>Stacey</h1>
+
+Stacey got hurt. If you would like to show your support financially, you may do
+so with the following form. I will cover PayPal's fees, and will deliver the
+full amount by check to Stacey.
+
+<hr />
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
+
+  <input type="hidden" name="cmd" value="_xclick" />
+  <input type="hidden" name="upload" value="1" />
+  <input type="hidden" name="no_shipping" value="1" />
+  <input type="hidden" name="no_note" value="1" />
+  <input type="hidden" name="return" value="http://www.whit537.org/thanks.html" />
+  <input type="hidden" name="business" value="mammon@whit537.org" />
+  <input type="hidden" name="item_name" value="stacey" />
+  <input type="hidden" name="quantity" value="1" />
+
+  <b>Amount:</b>
+  <input id="amount" name="amount" value="" size="7" style="text-align: right;" />
+  <input type="submit" value="Contribute via PayPal" />
+
+</form>
+
+
+
+
+<hr />
+
+Maintained by <a href="mailto:chad@zetaweb.com">Chad Whitacre</a>. Last updated
+January 15, 2007, 8:53 AM.
+
+</body>
+</html>
+
