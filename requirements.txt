@@ -1,2 +1,2 @@
-aspen==0.12.2
-pymongo==2.0.1
+./vendor/aspen-0.18.36.tar.bz2
+./vendor/pymongo-2.2.tar.gz

@@ -1,14 +1,23 @@
    
 env:
-	python2.7 virtualenv-1.6.4.py --distribute \
-			                      --no-site-packages \
-			                      --unzip-setuptools \
-			                      --prompt="[blag] " \
-			                      env/
+	python2.7 ./vendor/virtualenv-1.7.1.2.py \
+				--unzip-setuptools \
+				--prompt="[blag] " \
+				--never-download \
+				--extra-search-dir=./vendor/ \
+				--distribute \
+				./env/
 	./env/bin/pip install -r requirements.txt
 
 clean:
 	rm -rf env
 
 run: env
-	MONGO="mongodb://localhost/blag" sudo -E ./env/bin/thrash ./env/bin/aspen -vDEBUG -a:80 www/
+	MONGO="mongodb://localhost/blag" \
+		sudo -E ./env/bin/aspen \
+		--www_root=www/ \
+		--project_root=../ \
+		--show_tracebacks=yes \
+		--changes_reload=yes \
+		--network_address=:80
+

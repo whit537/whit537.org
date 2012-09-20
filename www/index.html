@@ -5,7 +5,10 @@ import re
 import tree
 
 
-title = "Chad's Blog"
+title = "whit537.org"
+byline = None
+published = None
+certified = True
 
 posts = tree.db.find( { "published": {"$exists": True}}
                     , sort=[("published", -1)]
@@ -21,16 +24,7 @@ for post in posts:
 
 
 {% extends "blag.html" %}
-{% block head %}
-<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-<script>
-    $(document).ready(function()
-    {
-    });
-</script>
-{% end %}
 {% block nav %}
-    <a href="http://www.whit537.org">www.whit537.org</a>
 {% end %}
 {% block content %}
     {% for year, posts in years %}
@@ -41,7 +35,8 @@ for post in posts:
         <div class="posts">
         {% for post in posts %}
             <a href="{{ post['_id'] }}">{{ post['title'] }}</a><br />
-        {% end %}
+            {% end %}
+            &nbsp;
         </div>
     {% end %}
 {% end %}

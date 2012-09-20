@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>@import url("/main.004.css");</style>
+        <script src="jquery-1.8.1.min.js"></script>
+        <title>{{ title }}</title>
+        {% block head %}{% end %}
+    </head>
+    <body>
+        <div id="blue"></div>
+        <div id="post"><div id="post-padding">
+            {% if 'certified' not in globals() %}
+            <div id="not-certified">I&rsquo;m reformatting these pages, and 
+                this one might not look right.</div>
+            {% end %}
+            <h1>{{ title }}</h1>
+            <div class="meta">
+                By <a href="https://www.gittip.com/whit537/">Chad Whitacre</a><br />
+                {% if published %}
+                {{ render_published(published) }}<br />
+                {% end %}
+            </div>
+            {% block nav %}
+            <div id="nav">
+                <a href="/" class="text">Up to Index</a>
+            </div>
+            {% end %}
+            {% block content %}{% end %}
+            <div id="footer">
+                Feed back to <a href="http://twitter.com/whit537">@whit537</a>.
+            </div>
+        </div></div>
+    </body>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-247427-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ( 'https:' == document.location.protocol 
+                 ? 'https://ssl' 
+                 : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</html>

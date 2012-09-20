@@ -1,16 +1,10 @@
 import os
 import os.path
 
+import aspen
 import pymongo
 import pymongo.uri_parser
-from aspen import resources
 
-
-class MockRequest(object):
-    def __init__(self, website, path):
-        website.copy_configuration_to(self)
-        self.website = website
-        self.fs = path
 
 def Database():
     connect = os.environ['MONGO']
@@ -35,7 +29,7 @@ def startup(website):
     _db.drop_collection('tree')
     db = _db['tree']
 
-    for path, dirs, files in os.walk(website.root):
+    for path, dirs, files in os.walk(website.www_root):
 
         # Ignore hidden files.
         # ====================
@@ -49,15 +43,15 @@ def startup(website):
         # Index files.
         # ============
 
-        parent = path[len(website.root):].replace(os.sep, '/')
+        parent = path[len(website.www_root):].replace(os.sep, '/')
         for name in files:
-            mock = MockRequest(website, os.path.join(path, name))
-            resource = resources.load(mock, modtime=None)
-
-            doc = {"_id": '/'.join([parent, name])}
-            if hasattr(resource, 'one'):
-                assert isinstance(resource.one, dict) # sanity check
-                for k, v in resource.one.items():
+            url_path = '/'.join([parent, name])
+            aspen.log("indexing " + url_path)
+            resource = website.load_simplate(url_path)
+            doc = {"_id": url_path}
+            if hasattr(resource, 'pages'):
+                assert isinstance(resource.pages[0], dict) # sanity check
+                for k, v in resource.pages[0].items():
                     if isinstance(v, (basestring,)):
                         doc[k] = v
 
