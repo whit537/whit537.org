@@ -3,7 +3,7 @@ published = "2011-06-23T22:09:00.005-04:00"
 updated = "2011-06-23T22:19:11.818-04:00"
 ^L
 ^L
-{% extends "blag.html" %}
+{% extends "base.html" %}
 {% block content %}
 <p>We use <a href="http://www.mongodb.org/">MongoDB</a> pretty heavily at <a href="http://corp.yougov.com/">work</a> (along with Postgres and an in-house db), but I haven't found a good data browser like you get in <a href="http://couchdb.apache.org/screenshots.html">Futon</a> for CouchDB. There's a <a href="https://github.com/sbellity/futon4mongo">port</a> of Futon to MongoDB, but the data models don't quite line up and I wanted something read-only and simple. I went ahead and wrote such a one in Python using the <a href="http://aspen.io/">Aspen</a> web framework. I'm calling it <a href="http://www.whit537.org/mongs/">Mongs</a>, after a local dairy. Check it out if you want a nice clean Python-based data browser for MongoDB.</p><p><img src="http://www.whit537.org/mongs/mongs.png" /></p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5886747859643135996?l=blag.whit537.org' alt='' /></div>
 {% end %}

@@ -84,6 +84,24 @@ P {
     padding: 0;
     text-indent: 2em;
 }
+TABLE {
+    margin: 24pt auto;
+    border: 1px solid #EEE;
+    border-style: solid none;
+    padding: 12pt 0;
+}
+TD, TH {
+    margin: 0;
+    padding: 0 1em 0.5em 0;
+    vertical-align: top;
+}
+TH {
+    text-align: left;
+}
+.nowrap {
+    white-space: nowrap;
+}
+
 .posts {
     padding: 10px 0 0 128pt;
 }
