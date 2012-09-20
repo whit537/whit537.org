@@ -1,9 +1,13 @@
-import tree
 import datetime
+import os
 import re
 
+import tree
+from aspen.utils import Canonizer
 
-website.hooks.startup.register(tree.startup)
+
+canonize = Canonizer(os.environ['CANONICAL_LOCATION'])
+
 
 def render_published(published):
     if re.match('^.*-\d\d:\d\d$', published) is not None:
@@ -13,7 +17,12 @@ def render_published(published):
     out = out.replace(' 0', ' ')
     return out
 
+
 def add_stuff(request):
     request.context['render_published'] = render_published
 
+
+tree.startup(website)
+
+website.hooks.inbound_early.register(canonize)
 website.hooks.inbound_early.register(add_stuff)

@@ -1,2 +1,2 @@
-./vendor/aspen-0.18.36.tar.bz2
+./vendor/aspen-0.18.37.tar.bz2
 ./vendor/pymongo-2.2.tar.gz
