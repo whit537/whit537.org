@@ -18,7 +18,7 @@ years = []
 for post in posts:
     year = post['published'].split('-')[0]
     if not year:
-        year = "Projects"
+        year = "Ongoing"
     if not years or (year != years[-1][0]):
         years.append([year, []])
     years[-1][1].append(post)
