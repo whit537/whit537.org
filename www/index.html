@@ -18,7 +18,7 @@ years = []
 for post in posts:
     year = post['published'].split('-')[0]
     if not year:
-        year = "Ongoing"
+        year = "Projects"
     if not years or (year != years[-1][0]):
         years.append([year, []])
     years[-1][1].append(post)
@@ -29,6 +29,9 @@ years[0][1].append({ "_id": "https://www.gittip.com/"
                     })
 years[0][1].append({ "_id": "http://aspen.io/"
                    , "title": "Aspen Web Framework"
+                   })
+years[0][1].append({ "_id": "http://www.logstown.com/"
+                   , "title": "Logstown Publishing Company"
                    })
 years[0][1].sort(key=lambda d: d['title'])
 
