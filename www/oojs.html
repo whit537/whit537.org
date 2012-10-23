@@ -1,13 +1,13 @@
 
-<html> 
-    <head> 
-        <title>Object-Oriented JavaScript: A Tutorial</title> 
-        <style> 
+<html>
+    <head>
+        <title>Object-Oriented JavaScript: A Tutorial</title>
+        <style>
             BODY {
                 margin: 0 0 40em;
                 padding: 0;
                 font: normal 12pt/14pt Tahoma, sans-serif;
- 
+
             }
             #body {
                 width: 600px;
@@ -51,11 +51,11 @@
                 color: #666;
                 font: normal 9pt/12pt Tahoma, sans-serif;
             }
-        </style> 
+        </style>
 
-        <!-- 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
-        <script> 
+        <!--
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script>
             $(document).ready(function() {
                 var symbols = [ '"string literal"'
                               , '.'
@@ -88,533 +88,533 @@
                 symbols = symbols.sort();
                 console.log(symbols);
             });
-        </script> 
+        </script>
         -->
- 
-    </head> 
-    <body><div id="body"> 
+
+    </head>
+    <body><div id="body">
         <!-- Refs
- 
+
         Relevant parts of the spec:
- 
+
             http://bclary.com/2004/11/07/#a-4.2.1
             http://bclary.com/2004/11/07/#a-13.2.2
- 
-        
+
+
         Prototype chaining, commentary on the spec:
- 
+
             http://dhtmlkitchen.com/learn/js/enumeration/prototype-chain.jsp
- 
- 
+
+
         __proto__ vs. constructor.prototype:
- 
+
             http://stackoverflow.com/questions/650764/how-does-proto-differ-from-constructor-prototype
- 
- 
+
+
         Constructors Considered Mildly Confusing
- 
+
             http://joost.zeekat.nl/constructors-considered-mildly-confusing.html
- 
- 
- 
+
+
+
         Adam and Eve:
- 
+
             http://bytes.com/topic/javascript/answers/729978-prototype-__proto__-super-delegation
- 
- 
-        --> 
-    
-        <h1 class="first">Object-Oriented JavaScript</h1> 
-        
+
+
+        -->
+
+        <h1 class="first">Object-Oriented JavaScript</h1>
+
         <p>You are a programmer who wants/needs to learn OO JS.
-        <br />  
-        <br />  
-        <br />  
-        <br />  
-        Scroll down.</p> 
- 
- 
-        <h2>Symbols</h2> 
- 
-        <p>Here are the symbols you will manipulate in this tutorial:</p> 
-        
-        <ol> 
-            <li>.</li> 
-            <li>()</li> 
-            <li>;</li> 
-            <li>=</li> 
-            <li>==</li> 
-            <li>===</li> 
-            <li>{}</li> 
-            <li>"string literal"</li> 
-            <li>[[Prototype]]</li> 
-            <li>Bar</li> 
-            <li>bar</li> 
-            <li>constructor</li> 
-            <li>Foo</li> 
-            <li>foo</li> 
-            <li>Function</li> 
-            <li>function</li> 
-            <li>new</li> 
-            <li>null</li> 
-            <li>Object</li> 
-            <li>prototype</li> 
-            <li>return</li> 
-            <li>this</li> 
-            <li>var</li> 
-            <li>x</li> 
-            <li>y</li> 
-        </ol> 
-        
- 
- 
- 
-        <h1>Basics</h1> 
- 
- 
- 
- 
-        <h2>JavaScript has Functions</h2> 
-        
-        <p></p> 
- 
-<pre>function foo() { return "Greetings, program!"; }</pre> 
-        
-        <h3>Quiz</h3> 
- 
+        <br />
+        <br />
+        <br />
+        <br />
+        Scroll down.</p>
+
+
+        <h2>Symbols</h2>
+
+        <p>Here are the symbols you will manipulate in this tutorial:</p>
+
+        <ol>
+            <li>.</li>
+            <li>()</li>
+            <li>;</li>
+            <li>=</li>
+            <li>==</li>
+            <li>===</li>
+            <li>{}</li>
+            <li>"string literal"</li>
+            <li>[[Prototype]]</li>
+            <li>Bar</li>
+            <li>bar</li>
+            <li>constructor</li>
+            <li>Foo</li>
+            <li>foo</li>
+            <li>Function</li>
+            <li>function</li>
+            <li>new</li>
+            <li>null</li>
+            <li>Object</li>
+            <li>prototype</li>
+            <li>return</li>
+            <li>this</li>
+            <li>var</li>
+            <li>x</li>
+            <li>y</li>
+        </ol>
+
+
+
+
+        <h1>Basics</h1>
+
+
+
+
+        <h2>JavaScript has Functions</h2>
+
+        <p></p>
+
+<pre>function foo() { return "Greetings, program!"; }</pre>
+
+        <h3>Quiz</h3>
+
         <p class="hint"><b>Hint:</b> Use the <a
             href="http://www.chromium.org/devtools">Chrome</a> or <a
-            href="http://developer.apple.com/technologies/safari/developer-tools.html">Safari</a> 
+            href="http://developer.apple.com/technologies/safari/developer-tools.html">Safari</a>
         console or <a href="http://getfirebug.com/">Firebug</a> to type the
-        code above and answer the question.</p> 
- 
-        <div class="quiz"> 
+        code above and answer the question.</p>
+
+        <div class="quiz">
             foo() === ?
-        </div> 
- 
- 
- 
- 
- 
-    
-        <h2>JavaScript has Objects</h2> 
- 
+        </div>
+
+
+
+
+
+
+        <h2>JavaScript has Objects</h2>
+
         <p>Here, <code>Object</code> is a "constructor" and <code>foo</code> is
-        an "instance" of <code>Object</code>.</p> 
- 
-<pre>var foo = new Object();</pre> 
-        
-        <h3>Quiz</h3> 
- 
- 
-        <div class="quiz"> 
+        an "instance" of <code>Object</code>.</p>
+
+<pre>var foo = new Object();</pre>
+
+        <h3>Quiz</h3>
+
+
+        <div class="quiz">
             foo === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
-        <h2>JavaScript has Object Literals</h2> 
-        
-        <p>This is exactly the same as the previous example.</p> 
- 
-<pre>var foo = {};</pre> 
-        
-        <h3>Quiz</h3> 
- 
- 
-        <div class="quiz"> 
+        </div>
+
+
+
+
+
+
+
+        <h2>JavaScript has Object Literals</h2>
+
+        <p>This is exactly the same as the previous example.</p>
+
+<pre>var foo = {};</pre>
+
+        <h3>Quiz</h3>
+
+
+        <div class="quiz">
             foo === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>All Objects are Promiscuous</h2> 
-        
-        <p>You can add any property to any object at any time.</p> 
- 
+        </div>
+
+
+
+
+
+
+
+
+        <h2>All Objects are Promiscuous</h2>
+
+        <p>You can add any property to any object at any time.</p>
+
 <pre>var foo = {};
 foo.x = "Blah.";
-foo.y = "Bloo.";</pre> 
-        
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
-            foo.x === ?<br /> 
-            foo.y === ?<br /> 
-        </div> 
- 
- 
- 
- 
- 
- 
- 
-    
-        <h2>All Functions are Objects</h2> 
-        
+foo.y = "Bloo.";</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
+            foo.x === ?<br />
+            foo.y === ?<br />
+        </div>
+
+
+
+
+
+
+
+
+        <h2>All Functions are Objects</h2>
+
 <pre>function foo() {};
-foo.x = "Blah.";</pre> 
-        
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
-            foo.x === ?<br /> 
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h1>Custom Objects</h1> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>All Functions are Constructors</h2> 
-        
+foo.x = "Blah.";</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
+            foo.x === ?<br />
+        </div>
+
+
+
+
+
+
+
+
+        <h1>Custom Objects</h1>
+
+
+
+
+
+
+
+
+        <h2>All Functions are Constructors</h2>
+
         <p>In other words, any function object is a valid argument for the
         <code>new</code> keyword. Here, <code>foo</code> is an instance
-        of <code>Foo</code>.</p> 
- 
+        of <code>Foo</code>.</p>
+
         <p class="hint"><b>Hint:</b> <code>Foo</code> is only capitalized by
-        convention. Lowercase functions can also be used as constructors.</p> 
- 
+        convention. Lowercase functions can also be used as constructors.</p>
+
 <pre>function Foo() {};
 var foo = new Foo();
-</pre> 
-        
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>The <code>this</code> Keyword</h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+        <h2>The <code>this</code> Keyword</h2>
+
         <p>When called as a constructor, JavaScript automatically creates a new
         clean object, which it exposes within your function as
-        <code>this</code>.</p> 
- 
+        <code>this</code>.</p>
+
         <pre>function Foo() { this.x = "Blam."; }
 var foo = new Foo();
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.x === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>The Missing <code>new</code> Gotcha</h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+        <h2>The Missing <code>new</code> Gotcha</h2>
+
         <p>Your constructor is still a function! Be careful not to use it
-        thus unintentionally.</p> 
- 
+        thus unintentionally.</p>
+
         <p class="hint"><b>Hint:</b> Here are some <a
             href="http://stackoverflow.com/questions/383402/is-javascript-s-new-keyword-considered-harmful/383503#383503">suggestions
-            for guarding against this gotcha</a>.</p> 
- 
+            for guarding against this gotcha</a>.</p>
+
         <pre>function Foo() { this.x = "Blam."; }
 var foo = Foo();
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.x === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>Methods</h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Methods</h2>
+
         <p>Any function attached in any way to any object is a method of that
         object. JavaScript exposes the object as <code>this</code> inside of
-        the function.</p> 
-        
+        the function.</p>
+
         <p class="hint"><b>Hint:</b> But see <a
             href="http://stackoverflow.com/questions/133973/how-does-this-keyword-work-within-a-javascript-object-literal/134149#134149">this
             explanation of the nuances of <code>this</code></a> to avoid some
-        pitfalls.</p> 
- 
+        pitfalls.</p>
+
         <pre>var foo = {};
 foo.bar = function() { return this.x; }
 foo.x = "Greetings, program!";
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.bar() === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h1>Prototypalism</h1> 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>The <code>prototype</code> Attribute</h2>   
-        
+        </div>
+
+
+
+
+
+
+
+
+        <h1>Prototypalism</h1>
+
+
+
+
+
+
+
+
+        <h2>The <code>prototype</code> Attribute</h2>
+
         <p>JavaScript automatically adds a <code>prototype</code> attribute to
-        all functions. It is used to implement inheritance.</p> 
- 
-        <pre>function Foo() {}</pre> 
- 
-    
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
-            Foo.prototype === ?;<br /> 
-        </div> 
- 
- 
- 
- 
- 
- 
-        <h2>The <code>constructor</code> Attribute</h2> 
- 
+        all functions. It is used to implement inheritance.</p>
+
+        <pre>function Foo() {}</pre>
+
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
+            Foo.prototype === ?;<br />
+        </div>
+
+
+
+
+
+
+        <h2>The <code>constructor</code> Attribute</h2>
+
         <p>JavaScript automatically adds a <code>constructor</code> attribute
         to the <code>prototype</code> attribute of each function. It points
-        back to the function itself.</p> 
- 
-        <pre>function Foo() {}</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+        back to the function itself.</p>
+
+        <pre>function Foo() {}</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             Foo.prototype.constructor === ?
-        </div> 
- 
- 
- 
- 
- 
-        <h2>Circular Reference</h2> 
- 
+        </div>
+
+
+
+
+
+        <h2>Circular Reference</h2>
+
         <p>The <code>prototype</code> and <code>constructor</code> attributes
-        form a circular reference.</p> 
- 
-        <pre>function Foo() {}</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+        form a circular reference.</p>
+
+        <pre>function Foo() {}</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             Foo.prototype.constructor.prototype === ?
             Foo.prototype.constructor.prototype.constructor === ?
-        </div> 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>[[Prototype]]</h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+
+        <h2>[[Prototype]]</h2>
+
         <p>When you construct a <code>Foo</code> object named <code>foo</code>,
         JavaScript assigns <code>Foo.prototype</code> to an "implicit" property
         of <code>foo</code>. The ECMAScript spec calls this
-        <code>[[Prototype]]</code>.</p> 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-    
-        <h2>__proto__</h2> 
- 
+        <code>[[Prototype]]</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>__proto__</h2>
+
         <p>You can't get from an object to its <code>[[Prototype]]</code> in
         Internet Explorer or Opera. You can get at it in Chrome, Firefox, and
-        Safari via <code>foo.__proto__</code>. </p> 
- 
+        Safari via <code>foo.__proto__</code>. </p>
+
         <p class="hint"><b>Hint:</b> You could explicitly wire up
-        <code>__proto__</code> in your application if you wanted to.</p> 
- 
+        <code>__proto__</code> in your application if you wanted to.</p>
+
         <pre>function Foo() {}
 var foo = new Foo();
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.__proto__ === ?
-        </div> 
-        
- 
- 
- 
- 
- 
-        <h1>Inheritance</h1> 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>Prototype Chaining</h2> 
- 
+        </div>
+
+
+
+
+
+
+        <h1>Inheritance</h1>
+
+
+
+
+
+
+
+
+
+
+        <h2>Prototype Chaining</h2>
+
         <p>JavaScript looks up object attributes in the object, then in its
         <code>[[Prototype]]</code>, then in <code>[[Prototype]]</code>'s
-        <code>[[Prototype]]</code>, etc.</p> 
- 
+        <code>[[Prototype]]</code>, etc.</p>
+
         <p class="hint"><b>Hint:</b> "Prototype chaining" means
-        <code>[[Prototype]]</code> chaining, not <code>prototype</code> 
-        chaining.</p> 
- 
+        <code>[[Prototype]]</code> chaining, not <code>prototype</code>
+        chaining.</p>
+
         <pre>function Foo() {}
 var foo = new Foo();
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
-            foo.constructor === ?<br /> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
+            foo.constructor === ?<br />
             foo.prototype === ?
-        </div> 
-        
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>Extending <code>prototype</code></h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Extending <code>prototype</code></h2>
+
         <p>You can make changes to a constructor's <code>prototype</code>, and
         these will instantly be available to all existing instances of the
         constructor via <code>[[Prototype]]</code> chaining. Future instances
-        are also affected.</p> 
- 
+        are also affected.</p>
+
         <p class="hint"><b>Hint:</b> Setting <code>prototype</code> to an
         entirely new object will affect future instances, but not existing
-        ones.</p> 
- 
+        ones.</p>
+
         <pre>function Foo() {}
 var foo = new Foo();
 Foo.prototype.x = "Greetings, program!";
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.x === ?
-        </div> 
-        
- 
- 
- 
- 
- 
- 
- 
- 
-        <h2>Overriding <code>prototype</code></h2> 
- 
+        </div>
+
+
+
+
+
+
+
+
+
+        <h2>Overriding <code>prototype</code></h2>
+
         <p>By setting <code>Foo.prototype</code> to an entirely different
         object, you can change the <code>[[Prototype]]</code> for all future
         instances of <code>Foo</code>. This does not affect existing
-        instances.</p> 
- 
+        instances.</p>
+
         <p class="hint"><b>Hint:</b> In other words, changing a constructor's
         explicit <code>prototype</code> reference does not affect any
-        instance's implicit <code>[[Prototype]]</code> reference.</p> 
- 
+        instance's implicit <code>[[Prototype]]</code> reference.</p>
+
         <pre>var bar = {};
 bar.x = "Greetings, program!";
- 
+
 function Foo() {}
 Foo.prototype = bar;
 var foo = new Foo();
-</pre> 
- 
-        <h3>Quiz</h3> 
- 
-        <div class="quiz"> 
+</pre>
+
+        <h3>Quiz</h3>
+
+        <div class="quiz">
             foo.x === ?
-        </div> 
- 
-    
- 
- 
- 
- 
- 
-        <h2>See Also</h2> 
+        </div>
+
+
+
+
+
+
+
+        <h2>See Also</h2>
 
         <ul>
             <li><a href="http://bclary.com/2004/11/07/">ECMAScript Language Specification</a></li>
             <li><a href="http://www.amazon.com/dp/0596806752/">JavaScript Patterns</a></li>
             <li><a href="http://www.amazon.com/dp/0596517742/">JavaScript: The Good Parts</a></li>
         </ul>
- 
- 
+
+
 
 
 
@@ -642,75 +642,75 @@ var foo = new Foo();
 
 
         <!--
- 
- 
+
+
         TODO
         ====
- 
- 
+
+
         o Auto-generate the list of symbols.
- 
+
         o Add context to section headings.
- 
+
         o Add a "Further Reading" section at the end.
- 
- 
- 
+
+
+
         o instanceof
- 
+
         o hasOwnProperty
- 
+
         o show some real-world patterns
-            http://javascript.crockford.com/prototypal.html 
+            http://javascript.crockford.com/prototypal.html
             http://www.kevlindev.com/tutorials/javascript/inheritance/index.htm
-            http://mckoss.com/jscript/object.htm        
+            http://mckoss.com/jscript/object.htm
             whatever jQuery is doing
- 
+
         o talk about the root of the prototype chain (Object?)
- 
+
         o get some images in there, especially for [[Prototype]]
- 
+
         o namespacing
             http://www.dustindiaz.com/namespace-your-javascript/
             http://snook.ca/archives/javascript/javascript_name/
             http://earthcode.com/blog/2006/02/javascript_namespaces.html
             http://weblogs.asp.net/mschwarz/archive/2005/08/26/423699.aspx
- 
+
         o treenav?
- 
-        o slideshow?    
- 
+
+        o slideshow?
+
         o function assignment vs. definition; need for ;
- 
+
         o dig up that link on StackOverflow that I bookmarked as "javascript
           pro tips"
- 
+
         o can't assign to 'this'
- 
- 
+
+
         DONE
         ====
-        
-        o look at `this` 
-        
+
+        o look at `this`
+
             http://www.quirksmode.org/js/this.html
             http://www.switchonthecode.com/tutorials/javascript-tutorial-why-the-this-keyword-breaks
             http://stackoverflow.com/questions/133973/how-does-this-keyword-work-within-a-javascript-object-literal/134149#134149
- 
-        --> 
- 
- 
- 
- 
+
+        -->
+
+
+
+
 </div>
-        <script type="text/javascript"> 
+        <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script> 
-        <script type="text/javascript"> 
+        </script>
+        <script type="text/javascript">
             try {
                 var pageTracker = _gat._getTracker("UA-247427-30");
                 pageTracker._trackPageview();
-                } catch(err) {}</script> 
-</body> 
+                } catch(err) {}</script>
+</body>
 </html>
