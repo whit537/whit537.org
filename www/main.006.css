@@ -1,0 +1,203 @@
+BODY {
+    margin: 0;
+    padding: 0;
+    background: #E6DBB5;
+    font: normal 12pt/17pt "Times New Roman", serif;
+}
+
+DIV#blue {
+    position: fixed;
+    background: #C8DEFE;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+DIV#post {
+    background: white;
+    border: 1px solid #CCC;
+    box-shadow: 0px 5px 5px #999;
+    -webkit-box-shadow: 0px 5px 5px #999;
+    -moz-box-shadow: 0px 5px 5px #999;
+    -o-box-shadow: 0px 5px 5px #999;
+    margin: 24pt auto;
+    padding: 0;
+    width: 800px;
+    position: relative;
+}
+DIV#post-padding {
+    padding: 64pt 96pt;
+}
+
+#not-certified {
+    text-align: center;
+    font-size: smaller;
+    margin: -64pt 0 47pt;
+}
+#not-certified I {
+    background: #FFFE26;
+}
+
+H1 {
+    font: normal 18pt/24pt "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+H2 {
+    font: normal 16pt/20pt "Times New Roman", serif;
+    margin: 2em 0 0.5em;
+    padding: 0;
+    text-align: center;
+}
+H3 {
+    font: normal 14pt/18pt "Times New Roman", serif;
+    margin: 3em 0 1.5em;
+    padding: 0;
+    text-align: center;
+}
+H3.year {
+    font: normal 12pt/17pt "Times New Roman", serif;
+    margin: 0;
+    padding: 11px 0 0;
+    float: left;
+    text-align: right;
+    width: 128pt;
+    margin-left: -18px;
+    color: #999;
+}
+H3 A {
+    display: none;
+}
+H3:hover A {
+    display: inline;
+}
+P {
+    margin: 0;
+    padding: 0;
+    text-indent: 2em;
+}
+TABLE, .chart, .midbar {
+    margin: 24pt auto;
+    border: 1px solid #EEE;
+    border-style: solid none;
+    padding: 12pt 0;
+}
+.midbar {
+    text-align: center;
+}
+.chart H3 {
+    margin: 0 0 12pt;
+    padding: 0;
+}
+CODE {
+    font: normal 10pt/16pt monospace;
+}
+TD, TH {
+    margin: 0;
+    padding: 0 1em 0.5em 0;
+    vertical-align: top;
+}
+TH {
+    text-align: left;
+}
+.nowrap {
+    white-space: nowrap;
+}
+
+.posts {
+    padding: 10px 0 0 128pt;
+}
+.posts A {
+    text-indent: -1em;
+    margin-left: 1em;
+    display: block;
+}
+#nav:hover A {
+    color: black;
+}
+#nav A {
+    color: #CCC;
+    position: absolute;
+    text-decoration: none;
+    font: normal 10pt/10pt "Times New Roman", serif;
+    top: 3pt;
+    left: 3pt;
+    text-transform: uppercase;
+}
+.meta{
+    margin: 24pt 0 36pt;
+    padding: 0;
+    font-style: italic;
+    text-align: center;
+}
+A IMG {
+    border: none;
+}
+HR {
+    margin: 12pt 0;
+}
+.midbar {
+}
+.sidebar {
+    float: right;
+    width: 360px;
+    font-size: 10pt;
+    line-height: 12pt;
+}
+.sidebar-padding {
+    margin: 0 0 10px 30px;
+    border-left: 1px solid #EEE;
+}
+.sidebar P {
+    margin: 5px 0 0 30px;
+    text-indent: 0;
+    font-style: italic;
+}
+.sidebar IMG {
+    display: block;
+    margin: 0 5px 0 30px;
+}
+#footer {
+    text-align: center;
+    font-style: italic;
+    padding: 48pt 0 0;
+}
+@media screen and (max-width: 800px) {
+    DIV#post {
+        width: auto;
+    }
+    DIV#post-padding {
+        padding: 64pt 16%;
+    }
+
+    .sidebar, .midbar {
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+    .sidebar-padding, .midbar {
+        border: 1px solid #CCC;
+        border-style: solid none;
+        padding: 20px;
+        margin: 12pt 0;
+    }
+    .sidebar IMG {
+        margin: 0 auto;
+    }
+    .midbar IMG {
+        margin: 0 auto;
+        width: 300px;
+    }
+}
+@media screen and (max-width: 700px) { DIV#post-padding { padding: 64pt 14%; } }
+@media screen and (max-width: 650px) { DIV#post-padding { padding: 64pt 13%; } }
+@media screen and (max-width: 600px) { DIV#post-padding { padding: 64pt 12%; } }
+@media screen and (max-width: 550px) { DIV#post-padding { padding: 64pt 11%; } }
+@media screen and (max-width: 500px) { DIV#post-padding { padding: 64pt 10%; } }
+@media screen and (max-width: 450px) { DIV#post-padding { padding: 64pt 9%; } }
+@media screen and (max-width: 400px) { DIV#post-padding { padding: 64pt 8%; } }
