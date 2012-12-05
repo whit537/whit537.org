@@ -1,0 +1,213 @@
+title = "Why I Love Balanced"
+#published = "2012-12-05T12:00:0.0"
+certified = True
+^L
+^L
+{% extends base.html %}
+{% block content %}
+
+<p>I run a website called <a href="https://www.gittip.com/">Gittip</a>, which
+is a weekly gift exchange. The idea is that you set up a small
+gift&mdash;between $1 and $24&mdash;to an open source programmer, a musician,
+an artist, etc., and every Thursday we collect and distribute the money. We
+launched five months ago, and we have about 550 active users exchanging $1,500
+per week.</p>
+
+
+<h3>The Broken Road</h3>
+
+<p>Processing payments is complicated and fraught with regulations, so Gittip
+depends on a third party to actually charge credit cards and deposit funds into
+bank accounts. I launched using a service called <a
+    href="https://samurai.feefighters.com/">Samurai</a> from a company called
+<a href="http://feefighters.com/">FeeFighters</a>. In week two of Gittip,
+FeeFighters dropped the ball, and when I went looking for support I found out
+they&rsquo;d been <a
+    href="http://blog.gittip.com/post/25565694263/how-not-to-get-acquired">acquired
+    by GroupOn and had turned off all their support channels</a>. Bad news!
+:-(</p>
+
+<p>I regrouped and switched to <a href="https://stripe.com/">Stripe</a>,
+another credit card processing vendor. Stripe is gorgeous, really world class.
+If you can work with them, you should. Unfortunately, I couldn&rsquo;t, <a
+        href="https://github.com/whit537/www.gittip.com/issues/67">because
+        Gittip is a marketplace</a>, and Stripe isn&rsquo;t designed for
+    marketplaces. If you&rsquo;re an online store or non-profit you can use
+    Stripe to collect credit card payments intended for you, but you&rsquo;re
+    not supposed to use Stripe to accept payments on behalf of someone else.
+    And that&rsquo;s what
+    Gittip is all about. Stripe were very professional and gave me plenty of
+    lead time, but they <a
+        href="https://github.com/whit537/www.gittip.com/issues/67#issuecomment-6553374">asked
+        me to leave</a>. :-(</p>
+
+<p>At this point Gittip was only a few weeks old and I was already looking for
+my third payment processing vendor. I was in a conversation with <a
+    href="https://www.braintreepayments.com/">Braintree</a>, another credit
+card processor like Samurai and Stripe. They&rsquo;re a going concern and they
+do work with marketplaces, notably Airbnb. However, being a marketplace, I was
+looking at either fudging my application or jumping through significant extra
+hoops to get going on their system. :-(</p>
+
+<p>And that&rsquo;s when Balanced showed up.</p>
+
+
+<h3>Engineering as Marketing</h3>
+
+<p>I first heard of Balanced when they were called PoundPay. Someone in the
+Gittip community put them on my radar and I started <a
+    href="https://github.com/whit537/www.gittip.com/issues/78">a ticket</a>.  I
+was wary because they didn&rsquo;t seem to have much market traction, and I had
+already been burned by one startup, FeeFighters. But Balanced were hungry, and
+proactively pursued the relationship. Here&rsquo;s CEO Matin Tamizi <a
+    href="https://github.com/whit537/www.gittip.com/issues/22#issuecomment-6792282">showing
+    up on a GitHub ticket</a>. Here&rsquo;s Jareau Wade, co-founder in charge
+of sales and marketing, <a
+    href="https://github.com/whit537/www.gittip.com/issues/22#issuecomment-7022618">making
+    his case publicly on GitHub</a>. They showed up on <a
+    href="https://twitter.com/whit537/status/221274720388132864">IRC</a> and <a
+    href="https://twitter.com/jkwade/status/223218256704581632">Twitter</a>.
+Here&rsquo;s an etherpad where we <a
+    href="http://sync.in/ep/pad/view/gittip-balanced/cYv4B118eQ">hammered out
+    the details</a> of our relationship, with lots of community involvement via
+IRC. Then Balanced blew me away: one of their engineers, Marshall Jones, made a
+pull request <a
+    href="https://github.com/whit537/www.gittip.com/pull/137">integrating
+    Gittip with their service</a>. :-)</p>
+
+<style>
+    .twt-border {
+        margin: 0 auto ! important;
+    }
+</style>
+<div class="midbar">
+    <blockquote class="twitter-tweet" data-in-reply-to="274958473341591552"><p>@<a href="https://twitter.com/jordanmessina">jordanmessina</a> It was like 'hmm we can't use stripe, who should we use?' "oh hey, just swung by to integrate you with us. &lt;3"</p>&mdash; Steve Klabnik (@steveklabnik) <a href="https://twitter.com/steveklabnik/status/274958895636688896" data-datetime="2012-12-01T19:31:23+00:00">December 1, 2012</a></blockquote>
+    <script src="//platform.twitter.com/widgets.js" charset="utf-8" async="true"></script>
+</div>
+
+<p>Balanced didn&rsquo;t stop there. Designer Damon Chin contributed a <a
+    href="https://github.com/whit537/www.gittip.com/issues/66#issuecomment-7268449">comp
+    for a new visual design</a>. When Gittip started to get hit by
+fraudsters&mdash;I ended up calling it the <a
+    href="http://blog.gittip.com/post/35314128322/the-delpan-incident">Delpan
+    Incident</a>&mdash;risk officer Ganesh Venkataraman <a
+    href="https://github.com/gvenkataraman/www.gittip.com">forked the Gittip
+    repo</a> to start work on fraud signaling, and ended up contributing a
+fraud analysis based on data already in Balanced. We&rsquo;ve even had Tim
+Nguyen&mdash;<i>their lawyer</i>&mdash;show up <i>on GitHub</i> and <a
+    href="https://github.com/whit537/www.gittip.com/issues/96#issuecomment-6979153">participate
+    in a discussion of the tax implications of Gittip</a>. Let me say that
+again: the in-house general counsel for one of my business partners joined a
+public discussion of tax law on a social network for programmers. In the words
+of another lawyer friend of mine, &ldquo;Gold fucking star!&rdquo;</p>
+
+
+<h3>Challenges</h3>
+
+<p>Suffice it to say, Gittip and Balanced are close partners at this point.
+It&rsquo;s a good thing, too, because we&rsquo;re facing significant challenges
+together.</p>
+
+<p>When Gittip&rsquo;s first brush with fraud went down, former Balanced
+employee Shawnee Cook came out of the woodwork with some <a
+    href="http://news.ycombinator.com/item?id=4744982">ugly accusations</a>
+about Matin and Balanced. Factoring out the frustration, her story might still
+cast <a href="http://news.ycombinator.com/item?id=4795495">a shadow of a
+    doubt</a> on Balanced&rsquo;s ability to contain fraud. Matin has addressed
+this <a href="http://news.ycombinator.com/item?id=4744929">briefly</a>. To my
+mind, Balanced&rsquo;s main value proposition is being able to programmatically
+verify identity and approve merchants. You feed a name, address, and date of
+birth to their API, and they give you an instant
+&ldquo;yea&rdquo; or &ldquo;nay.&rdquo; No days or hours of waiting, no
+redirects off my website. That&rsquo;s new and exciting. It&rsquo;s also really
+hard. Balanced is blazing a trail. I can understand some stolen credit cards
+leaking through, but, personally, I was kind of surprised to find people
+spoofing identity on the bank account side with such apparent ease. No one
+expects perfect, 100% fraud-free performance, and so far I&rsquo;m trusting
+that Balanced is managing fraud well enough that this model is going to work.
+We&rsquo;re in this together.</p>
+
+<p>While I&rsquo;m saying uncomfortable things, I&rsquo;ll also say that, in
+terms of fit and finish, the Balanced API and dashboard is not as gorgeous as
+Stripe. But, then again, what is? Gittip is flimsy in comparison to both. More
+importantly, Balanced isn&rsquo;t really a direct competitor to Stripe. Stripe
+is perfecting a well-understood problem, credit card payments.  Balanced is
+innovating.  Balanced handles credit card payments, and then adds something new
+and different: a merchant approval API. For Stripe, credit card payments are
+the product. For Balanced, they&rsquo;re a feature. That said, Balanced&rsquo;s
+API and UI execution is well above average, and they do respond promptly to
+feedback.</p>
+
+
+<h3>Open Partnership</h3>
+
+<p>Gittip and Balanced are in an <a
+    href="http://blog.gittip.com/post/28351995405/open-partnerships">open
+    partnership</a>. This means that we&rsquo;re not acting behind closed
+doors.  I&rsquo;ve had two cell phone calls with Matin, one when we were first
+getting to know one another, and a second after a <a
+    href="https://github.com/balanced/balanced-api/issues/41">downtime
+    incident</a>. I talked privately with Tim and Ganesh during Delpan. And
+I&rsquo;ve had a few private IRC chats with Jareau. Only once has Jareau asked
+me for a marketing referral that I wasn&rsquo;t comfortable giving; I told him
+as much and we got on with life. He approached me about writing this blog post,
+something I&rsquo;d been thinking about doing anyway. I
+hope to visit with them next time I&rsquo;m in Palo Alto. We are collaborating
+closely, and we&rsquo;re doing it out in the open, mostly on GitHub, Twitter,
+Hacker News, and IRC.</p>
+
+<p>Open partnership also means that others are welcome at the table.
+There&rsquo;s a <a
+    href="https://www.balancedpayments.com/community">lively community growing
+    up around Balanced</a>. They have <a
+    href="https://www.balancedpayments.com/#community">other clients</a>, of
+course. But look also at Balanced&rsquo;s welcoming attitude when I&rsquo;ve
+invited other companies to join them at my table: <a
+    href="https://twitter.com/balanced/status/230007562752364544">Dwolla</a>,
+<a
+    href="https://github.com/whit537/www.gittip.com/issues/210#issuecomment-7474026">SpreedlyCore</a>,
+<a href="https://twitter.com/balanced/status/273828088482258944">WePay</a>.
+They&rsquo;re committed to openness to the point of discussing partnership with
+seemingly direct competitors. Gold star.</p>
+
+<p>Balance is not just practicing openness with Gittip, either. They&rsquo;re
+really <a
+    href="https://www.balancedpayments.com/docs/overview#about-balanced">taking
+    it on board as a company value</a>&mdash;all the more remarkable because
+they&rsquo;re in payments, which is pretty much the last place I expect to find
+openness. As Jareau says, &ldquo;<a
+    href="https://twitter.com/jkwade/status/236508468729765888">imagine if our
+    nation&rsquo;s biggest banks</a>&rdquo; were run openly. What does this
+look like? Balanced isn&rsquo;t just reacting to market feedback on Twitter and
+StackOverflow. They&rsquo;re not just open-sourcing <a
+    href="https://github.com/balanced/status.balancedpayments.com">parts of
+    their infrastructure</a>. Balanced is <a
+    href="https://github.com/balanced/balanced-api">designing their product in
+    public</a>. They&rsquo;re holding <i>internal design discussions</i> in
+public on GitHub. Even if no one else comments on this or that ticket, the
+whole thing is there for clients, potential clients&mdash;even
+competitors!&mdash;to see. That&rsquo;s transparency. They even discuss <a
+    href="https://github.com/balanced/balanced-api/issues/48"><i>pricing</i></a>
+in public. Wow!</p>
+
+<p>Openness is guaranteed to feel destabilizing and threatening at times, and
+unless it&rsquo;s a core value, it can be hard to stick with it. Balanced
+&ldquo;gets&rdquo; openness.</p>
+
+
+<h3>Why I Love Balanced</h3>
+
+<p>Why do I <i>like</i> Balanced? I like Balanced because they offer a solid
+merchant approval API that, as far as I&rsquo;m aware, isn&rsquo;t available
+anywhere else. Why do I <i>love</i> Balanced? I love Balanced because they
+believe in transparency and openness, and they stop at nothing to help me
+succeed. If you&rsquo;re building a marketplace, we&rsquo;d love to have you in
+the <a
+    href="https://www.balancedpayments.com/">Balanced community</a>.</p>
+
+<p>Oh ... have I mentioned that they&rsquo;re Y Combinator alums (W11), and
+their other backers include <a
+    href="https://www.balancedpayments.com/about">SV Angel, Ashton Kutcher,
+    Paul Bucheit, and Brian Cheskey</a>? </p>
+
+{% end %}

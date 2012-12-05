@@ -21,7 +21,7 @@
             <h1>{{ title.replace(' - ', ':<br />') }}</h1>
             <div class="meta">
                 By <a href="https://www.gittip.com/whit537/">Chad Whitacre</a><br />
-                {% if published %}
+                {% if 'published' in globals() and published %}
                 {{ render_published(published) }}<br />
                 {% end %}
             </div>
