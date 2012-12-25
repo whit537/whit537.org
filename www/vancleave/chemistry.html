@@ -1,0 +1,244 @@
+import re
+from collections import defaultdict
+
+note_re = re.compile(r"\[(.*)]")
+qty_re = re.compile(r"\((.*)\)")
+desc_re = re.compile(r", (.*)")
+
+
+class Material(object):
+
+    def __init__(self, raw):
+        raw = raw.strip()
+
+        try:
+            raw, note, remaining = note_re.split(raw)
+            assert not remaining
+        except ValueError:
+            note = ""
+        self.note = note
+
+        try:
+            raw, qty, remaining = qty_re.split(raw)
+            assert not remaining
+        except ValueError:
+            qty = ""
+        self.qty = qty
+
+        try:
+            raw, desc, remaining = desc_re.split(raw)
+            assert not remaining
+        except ValueError:
+            desc = ""
+        self.desc = desc
+
+        self.name = raw.strip()
+
+    def __cmp__(self, other):
+        return cmp(self.name, other.name)
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+
+groups = [ ("Matter", 1, 15)
+         , ("Forces", 16, 29)
+         , ("Gases", 30, 42)
+         , ("Changes", 43, 56)
+         , ("Phase Changes", 57, 68)
+         , ("Solutions", 69, 81)
+         , ("Heat", 82, 87)
+         , ("Acid or Base", 88, 101)
+          ]
+
+all_raw = """\
+clear drinking glass; index card; coin, nickel
+clay, ball with a small object inside; toothpick
+index card (3 x 5); scissors
+notebook paper (1 sheet); paper hole punch; balloon, a size easily held in your hand
+clear plastic cup; toothpick, flat; coin, nickel; balloon
+food coloring, dark; glass jar, tall half-pint; water
+plastic bread sack [empty]
+glass jar, 1-quart large-mouth with lid; small jacks ball or walnut
+clear drinking glass, 12 oz.; marble (6); masking tape
+cola bottle [or any small-mouthed bottle]; balloon, large enough to fit over the mouth of the bottle
+clear drinking glass, 12 oz.; notebook paper (1 sheet); bucket, taller than the glass
+glass jar, 1-quart clear; sugar (1 cup); measuring cup; masking tape; pencil; pen
+measuring jar; rubbing alcohol (1 cup); water (1 cup); measuring cup; food coloring, blue
+soda bottle; eyedropper, glass; balloon, 5-inch
+clear plastic cup (2); table salt (3 T); egg, small (2); milk (1/4 t)
+cotton handkerchief; clear drinking glass, with straight smooth sides; rubber band
+celery, fresh stalk with leaves; food coloring, green; clear drinking glass
+toothpick (3); liquid dish soap; glass bowl, 1-quart
+aluminum foil (1-foot sheet); food coloring, red or blue; rubbing alcohol; water; eyedropper; cup (2)
+rubbing alcohol; glass jar, small baby food; straw; food coloring, red or blue ; clay (a piece the size of a marble)
+glass jar, small baby food; straw; food coloring, red or blue; clay (a piece the size of a marble)
+cup and saucer; paper clips; eyedropper
+notebook paper (1 sheet); paper hole punch; clear drinking glass, small - no more than a 2-inch diameter; eyedropper; toothpick
+wax paper (1-foot sheet); toothpick; eyedropper; water
+cup, styrofoam or paper (no less than 6 oz.); pencil
+shampoo; liquid dish soap; toothpick (2); talcum powder; soup bowl (2)
+rubber cement; newspaper (1 sheet); scissors, strong and sharp - not school scissors; talcum powder
+clear drinking glass; rubbing alcohol (1/2 cup); water (1/2 cup); liquid cooking oil; eyedropper
+liquid dish soap; wire, 9-inch piece of 20-gauge wire - any thin bendable wire will work; cup
+glass jar, small baby food; soda, any flavor carbonated beverage
+glass jar, small baby food; table salt (1 t); soda, any flavor carbonated beverage
+soda bottle; petroleum jelly; yeast, dry (1/2 package); sugar (1 t); cork, fits the soda bottle
+lime [used in making pickles]; tablespoon; glass jar, 1-quart with lid (2)
+limewater; straw; glass jar, 1-pint
+soda bottle; sugar (1 t); yeast, powdered (1/2 package); balloon, 9-inch; aquarium tubing (18 inches); clay, modeling; limewater
+soda bottle; baking pan; vinegar (1 cup); baking soda; food coloring, red; dirt
+Alka-Seltzer tablet; soda bottle; clay (a ball the size of a walnut); aquarium tubing (18-inch piece); glass jar
+apple; vitamin C tablet
+glass jar, 1-quart; water, tap; food coloring, red; spoon; eyedropper; bleach; timer
+glass jar, small baby food; food coloring, red; bleach, powdered; teaspoon
+newspaper; automobile
+steel wool, pad with soap; scissors; plate; paper towel (1 sheet); vinegar (1/2 cup); pencil
+saucer; paper towel (1 sheet); vinegar; coin, penny (3-5)
+glass jar, 1-pint with lid; raw egg; vinegar, clear (1 pint)
+hydrogen peroxide; raw potato; clear drinking glass, 10 oz.
+alum (1/2 t); household ammonia (2 t); glass jar, small baby food
+epsom salt (1 teaspoon); household ammonia (2 t); glass jar, small baby food
+vinegar; steel wool; household ammonia; tablespoon; glass jar, small baby food (2)
+flour (1/4 t); tincture of iodine; saucer; tablespoon
+cookie sheet; eyedropper; tincture of iodine; testing samples [this, that, the other]
+bread; tincture of iodine; eyedropper; wax paper
+soup bowl; tincture of iodine; lemon; notebook paper; cup; art brush
+glass jar, pint; tea bag (3); pineapple juice; apple juice; white grape juice; cranberry juice; clear plastic cup (5); tablespoon
+milk; vinegar; glass jar, small baby food; tablespoon
+glass jar, small baby food; vinegar; limewater
+soda bottle, 1-liter plastic; balloon, 18-inch; baking soda (1 t); vinegar (3 T); cellophane tape
+small metal can; thermometer, outdoor; table salt (1 T); ice, crushed
+straw; glass jar, small baby food; food coloring, red or blue; pen, permanent marking; clay (a piece the size of a marble)
+orange juice; ice tray; refrigerator
+paper cup, 5 oz. (2); table salt (1 T); pen, marking
+thermometer, outdoor; cotton ball; rubbing alcohol
+table salt; construction paper, black (1 sheet); art brush; teaspoon; stove with an oven
+charcoal briquets (4-5); household ammonia (1 T); water (2 T); table salt (1 T); laundry bluing (2 T); glass bowl, 2-quart
+ice, crushed; water; table salt (3 T); metal food can, should hold about 2 cups liquid
+saucer; construction paper, dark (1 sheet); epsom salt; glass jar, small baby food with lid; tablespoon; scissors
+table salt (3 T); cup; glass jar, tall slender and clean; construction paper, black; scissors
+saucer; construction paper, dark; scissors; table salt; tablespoon; glass jar, small baby food
+plaster of paris (1/3 cup); tablespoon; paper cup; plastic spoon
+clear drinking glass; powdered fruit drink; flat toothpick
+bite-size soft candy (3 pieces)
+bouillon cubes (2); cups (2); water, hot and cold
+pen, green and black water soluble (2); coffee filter; saucer; paper clip
+large-size baby food jar with lid; boric acid crystals; teaspoon
+liquid cooking oil (1/4 cup); water (1/4 cup); glass jar, 1-pint; food coloring, blue; eyedropper
+instant tea; teaspoon; cup (2)
+hammer; nail; clear drinking glass; coffee can, 1-lb metal; cotton string; flour (2 T)
+flour (2 T); large dried beans (2 T); glass jar, 1-quart with lid
+scissors; cardboard box; clear drinking glass (2); flour (1 t); flashlight
+liquid cooking oil (1/4 cup); water (1/2 cup); food coloring, blue; glass jar, 1-quart with lid
+glass jar, 1-gallon; cup; food coloring, red
+glass jar, small baby food with lid; rubbing alcohol; whole cloves (15)
+glass jar, 1-quart large-mouth clear; food coloring, red; glass jar, small baby food; aluminum foil (1-inch square); rubber band; pencil; ice, cube
+glass jar, 1-quart large-mouth clear (2); food coloring, red; glass jar, small baby food; aluminum foil (6-inch square); rubber band; pencil; ice, cube (4 or 5)
+soda bottle, 2-liter; coin, quarter; water, cup of
+steel wool, pad without soap; vinegar (1/4 cup); thermometer, cooking or outdoor; glass jar, with lid [thermometer must fit inside closed jar]
+thermometer, cooking or outdoor; glass jar, small baby food; bleach, powdered; teaspoon
+light source, 100-watt; construction paper, black; aluminum foil; stapler; thermometer, outdoor (2); ruler
+tea strainer; tablespoon; glass jar, 1-quart with lid (2); water, distilled (1 quart); uncooked purple cabbage
+coffee filter (6); cabbage indicator; cookie sheet; glass bowl, 1-quart; scissors; zip-lock plastic bag
+cabbage paper (1 strip); cookie sheet; notebook paper (1 sheet); eyedropper (2); vinegar; household ammonia; glass jar, small baby food (2)
+eyedropper (2); cabbage paper (1 large sheet); notebook paper (1 sheet); cookie sheet; pencil; lemon; grapefruit; orange; household ammonia
+cabbage indicator; scissors; coffee filter (1); cookie sheet; teaspoon; alum; cream of tartar; Fruit Fresh [a fruit protector used in canning and freezing]
+lemonade; cabbage indicator; clear drinking glass; tablespoon
+vinegar; cups (6); teaspoon (2); tablespoon (2); baking powder; baking soda; notebook paper (2 sheets)
+zip-lock plastic bag; teaspoon; rubbing alcohol (1/3 cup); turmeric powder (1/4 t); coffee filter (6); cup; cookie sheet; quart bowl
+turmeric paper; household ammonia
+turmeric paper; baking soda; cup; teaspoon
+aluminum foil (12-inch sheet); teaspoon; turmeric paper (5 strips); water, cup of; lava soap; glass cleaner; carpet cleaner; powdered abrasive cleaner
+wood ash (2 t); cup; tablespoon; turmeric paper
+turmeric paper; household ammonia; vinegar; eyedropper (2)
+hair (a piece about the size of a walnut); bleach; glass jar, small baby food; teaspoon
+"""
+materials_by_experiment = [[Material(raw) for raw in line.split(';')] \
+                                              for line in all_raw.splitlines()]
+
+by_name = defaultdict(list)
+for materials in materials_by_experiment:
+    for material in materials:
+        by_name[material.name].append(material)
+by_name = dict(by_name)
+
+by_frequency = defaultdict(list)
+for name, materials in by_name.items():
+    i = len(materials)
+    materials.sort(key=lambda m: m.desc)
+    by_frequency[i].append((name, materials))
+by_frequency = sorted(by_frequency.items())
+by_frequency.reverse()
+
+simple = []
+for experiment in materials_by_experiment:
+    is_simple = True
+    for material in experiment:
+        if len(by_name[material.name]) < 3:
+            is_simple = False
+            break
+    simple.append(is_simple)
+nsimple = len([s for s in simple if s])
+
+# ================ ^L
+# ================ ^L
+<style>
+    BODY, TABLE {
+        font: 8.5pt Arial;
+    }
+    TABLE {
+        border-collapse: collapse;
+        margin: 0 0 24pt;
+    }
+    TD.num {
+        text-align: right;
+        }
+    TR.simple TD.num SPAN, SPAN.simple {
+        background: #FFFE26;
+    }
+    TD {
+        vertical-align: top;
+        border: 1px solid #999;
+        border-style: solid none;
+        padding-right: 1em;
+        white-space: nowrap;
+    }
+</style>
+
+<h1>Materials</h1>
+<table>
+    {% for i, kinds in by_frequency %}
+    {% if i >= 0 %}
+    <tr>
+        <td class="num">{{ i }}</td>
+        {% for name, materials in sorted(kinds) %}
+        <td><b>{{ name }}</b><br />
+            {% for material in materials %}
+                {% if material.qty + material.desc %}
+                {{ material.desc }}
+                {% if material.qty %}({{ material.qty }}){% end %}<br />
+                {% end %}
+            {% end %}
+        </td>
+        {% end %}
+    </tr>
+    {% end %}
+    {% end %}
+</table>
+
+<h1>By Experiment</h1>
+<p>{{ nsimple }} <span class="simple">simple</span> experiments.</p>
+<table>
+    {% for i, materials in enumerate(materials_by_experiment, 1) %}
+    <tr{% if simple[i-1] %} class="simple"{% end %}>
+        <td class="num"><span>{{ i }}</span></td>
+        {% for material in materials %}
+        <td>{{ material.name }}</td>
+        {% end %}
+    </tr>
+    {% end %}
+</table>
