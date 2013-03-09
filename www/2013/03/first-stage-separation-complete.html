@@ -1,0 +1,135 @@
+title = "First Stage Separation Complete"
+published = "2013-03-08T23:16:00.00"
+certified = True
+^L
+^L
+{% extends base.html %}
+{% block content %}
+
+<p>There's a half-joking diagram of startup <a
+    href="http://www.avc.com/a_vc/2012/03/the-startup-curve.html">growth</a>
+<a
+    href="http://andrewchen.co/2012/09/10/after-the-techcrunch-bump-life-in-the-trough-of-sorrow/">floating</a>
+<a href="http://8bit.io/trough-of-sorrow/">around</a>, which you can find by
+searching for &ldquo;trough of sorrow&rdquo;:
+
+<div class="midbar">
+    <img src="the-process.png" alt="The Process" />
+</div>
+
+<p>Obviously these are archetypal moments and not to be taken over-literally,
+but at the same time I want to think that Gittip has in fact made it through a
+rough patch:</p>
+
+<div class="midbar">
+    <img src="growing-again.png" alt="Growing Again" />
+</div>
+
+<p>We had two months of intitial energy, upon which I started quitting my job.
+Then I spent the next five months continuing to quit my job, while doing <a
+    href="http://chad.whitacre:8082/2012/10/what-i-am-doing.html">ten other
+    things</a>, and oh yeah meanwhile <a
+    href="http://blog.gittip.com/post/35314128322/the-delpan-incident">fraudsters
+    found us</a>. Bottom line is that I think of everything before week 31
+(Jan.  1) as &ldquo;that crap&rdquo; and since then I've been working on Gittip
+pretty
+much full time and we've grown about 4% per week. Phew!</p>
+
+<p>Moreover, Hacker News was <a
+    href="http://www.hnsearch.com/search#request/submissions&q=gittip&sortby=points+desc">hugely
+    important</a> for Gittip in 2012, but we haven't had a hit since December
+and we're growing again anyway. The first stage rocket is detached. The second
+stage is starting to fire. Get ready for some serious Gs.</p>
+
+
+<h3>Stage Two</h3>
+
+<p>I came out of the holidays feeling like Gittip was stuck and we needed to
+get it unstuck. I'm comfortable now saying we've done that. The two big wins so
+far in 2013 have been recruiting a team, and landing the redesign. We've had to
+punt on the non-U.S. payouts project, and we haven't quite landed the RubyGems
+partnership yet. We've got a stop-gap in place for the former. The latter is in
+the hands of one of the collaborators we recruited in January.</p>
+
+<p>We're building a team a) using carrots only, no sticks, and b) including
+<em>everyone</em>'s input. The view I'm settling into is that the crowd is
+fantastic at surfacing ideas and mapping out the &ldquo;noosphere&rdquo; (as
+ESR would have it). We get many more +1s than new tickets. Actually shipping
+software is another matter. We've hired our first employee and we have three
+more in the pipeline, but of course they still have to have other jobs at this
+point. We've shipped two significant collaborations (the ORM and the redesign),
+but of course I'm still writing most of the code. We need to keep after these
+modest-seeming yet real wins in team-building.</p>
+
+<p>In addition to Hacker News, conferences and meetups were crucial to Gittip's
+success in 2012: PghTechFest (we picked up Steve Klabnik), PyOhio (Python),
+SteelCityRuby (Ruby), and XOXO (Eric Holscher/ReadTheDocs). I'm doubling down
+on this in 2013. Here in Pittsburgh I've been regularly attending both tech and
+non-tech user groups, meetups, and miniconferences, and visiting coworking
+spaces.  I'm also traveling: Buffalo, almost Rochester, Kansas City via Skype,
+San Francisco last week and again next week, New York in April, and potentially
+three trips to Portland this year (Open Source Bridge, OSCON, XOXO). We're
+doing our first booth next week, and I feel great about it. I have anecdotal
+and gut evidence that hoofing it like this makes a big difference between
+Gittip being just another &ldquo;thing on the Internet,&rdquo; and people
+really catching the vision. Twitter and GitHub are also hugely important
+channels for us. I try to redirect all private email into GitHub tickets, and
+constantly cross-link Twitter and GitHub.</p>
+
+<p>We're doing an event with Balanced and others in a couple weeks, and I'm
+seeing that as our first attempt to connect with traditional media. I really
+have no idea whether anyone will show up, let alone write about it, but we'll
+find out. I'm trying to tap into and reenergize the larger conversation around
+#openbusiness so that Gittip can be a side-effect. (My marketing mantra is,
+&ldquo;Be a side effect.&rdquo;)</p>
+
+<p>Meanwhile there's a product to build! Our three segments are software, fine
+art, and pop art. For software the pattern is few givers, many receivers. So
+much wealth is tied up in companies and we need community funds to tap into
+that. The value proposition for companies is to a) see software get written,
+and b) recruit via giver leaderboards per community. I've started reaching out
+to developer marketers and open source program managers at some of the larger
+tech companies. Those partnerships are critical in order to succeed with the
+software segment. Fine art has the same model: a few wealthy art patrons
+supporting many artists. I just met a guy who seems to been in tune with this
+one. Pop art is the opposite, with many givers supporting a few celebrities.
+For pop art we need souped-up profiles that help the celebrity tell their story
+to their fans.</p>
+
+<p>Across all segments we need to streamline onboarding (clicks to first gift,
+funding options), discovery (search, browse, social), and giving (one-offs,
+funds).</p>
+
+<p>Also, partnerships. We need to modularize /on/ so we can connect unlimited
+account types. Then we can add Gittip buttons across the whole web via our
+browser extensions. Then we can partner with more sites to implement that
+functionality server-side.</p>
+
+<p>Also, widgets and such, to spread around the web.</p>
+
+<p>Also, an API, to enable third-party apps.</p>
+
+<p>We've also got infrastructure work to do. We need to convert the rest of our
+schema to an event sourcing model. We also need to prepare to scale. I want as
+a special challenge to attempt to avoid the crash of ineptitude.</p>
+
+<p>And that's just a whole lot to do by myself, and it's a big challenge to
+turn the raw material of the crowd into a high-performing team. I need to
+cultivate the people already on board, watch for the moment to recruit more
+people, and work really smart and hard.</p>
+
+<blockquote>
+
+    &ldquo;People have the sensation that it just happened,&rdquo; [<a
+        href="http://betabeat.com/2012/03/marissa-mayer-google-women-in-technology-computer-science-burnout-92-nd-st-y-03292012/">Marissa
+        Mayer</a>] said of Google's success, offering a version of a quote from
+    the movie Titanic, &ldquo;I assure you the experience of it was quite
+    different.&rdquo; Sometimes, said Ms. Mayer, she goes around to other
+    startups who sheepishly admit they're not quite on their way to becoming
+    Google, and she thinks, well, they're &ldquo;working categorically less
+    hard.&rdquo;
+
+</blockquote>
+
+
+{% end %}
