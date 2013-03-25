@@ -18,28 +18,42 @@ years = []
 for post in posts:
     year = post['published'].split('-')[0]
     if not year:
-        year = "Ongoing"
+        continue
     if not years or (year != years[-1][0]):
         years.append([year, []])
     years[-1][1].append(post)
-
-years.insert(0, years.pop())
-years[0][1].append({ "_id": "https://www.gittip.com/"
-                   , "title": "Gittip - Inspiring Generosity"
-                    })
-years[0][1].append({ "_id": "http://aspen.io/"
-                   , "title": "Aspen Web Framework"
-                   })
-years[0][1].append({ "_id": "http://www.logstown.com/"
-                   , "title": "Logstown Publishing Company"
-                   })
-years[0][1].sort(key=lambda d: d['title'])
 
 
 {% extends "base.html" %}
 {% block nav %}
 {% end %}
 {% block content %}
+
+    <div class="midbar">
+        <a href="/chad-whitacre.jpg"><img src="/chad-whitacre.128.jpg" /></a>
+        <p class="caption center" style="text-align: center">
+            <a href="/chad-whitacre.jpg">full size</a>
+        </p>
+    </div>
+
+    <h2>Bio</h2>
+
+    <p>Greetings, program! I&rsquo;m the founder of <a
+        href="https://www.gittip.com/">Gittip</a>, a platform for sustainable
+    crowd-funding based on small weekly cash gifts. Gittip launched in June,
+    2012, and as of March, 2013, it currently has about 800 active users
+    exchanging about $2,200 per week in gifts. Gittip is funded on Gittip. My
+    background is in programming, and I wrote the <a
+        href="http://aspen.io/">Aspen</a> web framework that Gittip uses, as
+    well as the <a href="http://code.google.com/p/gheat/">Gheat</a> heatmapper
+    and the <a href="/mongs/">Mongs</a> database browser. I also started a
+    small publishing company called <a
+        href="http://www.logstown.com/">Logstown</a>.  I live outside
+    Pittsburgh with my wife and four kids, and I have strong interests in
+    religion and philosophy.</p>
+
+    <h2>Blog</h2>
+
     {% for year, posts in years %}
         <a name="{{ year }}"></a>
         <h3 class="year">
