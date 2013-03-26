@@ -65,16 +65,16 @@ Therefore, using the filesystem for routing is the best way to go with the
 grain of HTTP. All other routing mechanisms&mdash;pattern matching,
 decorators, object traversal, etc.&mdash;all introduce friction between the
 application and HTTP. Question: How do you do URL routing in Django? Answer:
-Regular expressions. Wait for it ... Now you've got two problems! :)</p>
+Regular expressions. Now you've got, as they say, two problems. ;^)</p>
 
 <p>Of course, non-filesystem-based routing mechanisms were developed for a
 reason, and that reason is that CGI and PHP landed us in a morass of
-unmaintainable spaghetti. By the late 1990's we were flailing, looking for
+unmaintainable spaghetti. By the late 1990s we were flailing, looking for
 anything that remotely resembled order and sanity. &ldquo;HAS ANYONE EVER
 ORGANIZED ANY SOURCE CODE EVER BEFORE EVER!?!?!?&rdquo; we cried. And Trygve
-Reenskaug calmly replied, &ldquo;Sure, I invented this pattern called MVC back
-in the late 1970's for Smalltalk desktop GUIs at PARC. You should check it
-out.&rdquo; So we did. Sun introduced its so-called <a
+Reenskaug calmly replied, &ldquo;Sure, I invented this pattern called MVC at
+PARC back in the late 1970s. It's for desktop GUIs, but maybe check it
+out?&rdquo; So we did. Sun introduced its so-called <a
     href="https://en.wikipedia.org/wiki/Model_2">Model 2</a> architecture in
 1998, and, in a 1999 article for JavaWorld.com entitled, &ldquo;<a
     href="https://en.wikipedia.org/wiki/Model_2">Understanding JavaServer Pages
