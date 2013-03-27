@@ -6,11 +6,21 @@ certified = True
 {% extends base.html %}
 {% block content %}
 
-<div class="midbar"><em>I wrote a web framework called Aspen in 2006, and in
-    2012 I built a site with it called Gittip. People looking at Gittip are <a
+<div class="midbar"><em>
+        
+    <b>Full disclosure:</b> I am the author of the <a
+        href="http://aspen.io/">Aspen</a> web framework.</b>
+
+    <br /><br />
+    
+    I started Aspen in 2006, and in 2012 I built a site with it called <a
+        href="https://www.gittip.com/">Gittip</a>.  People looking at Gittip
+    are <a
         href="https://twitter.com/zeeg/status/316440131601063937">wondering</a>
-    what Aspen is all about, so I wrote this post to explain the history and
-    the design philosophy of Aspen from my perspective.</em></div>
+    what Aspen is all about, so I wrote this post to explain the history, the
+    design philosophy, and the current status of Aspen from my perspective.
+
+</em></div>
 
 <p>Ah, the heady days of Python web programming in the early aughts! Everyone
 had their own framework, with almost-forgotten names like Quixote, jonpy, and
@@ -26,10 +36,9 @@ Django the winner of the Python web wars.</p>
 
 <p>My own contribution came comparatively late, in early 2006. When I <a
     href="http://mail.python.org/pipermail/chicago/2006-April/000655.html">presented</a>
-at ChiPy in April, it was called httpy. By November, it was called <a
-    href="http://aspen.io/">Aspen</a>.  Django was all the buzz at PyCon that
-year. I button-holed Guido and pressed him to tell me why he thought raising
-Response objects was a bad idea.
+at ChiPy in April, it was called httpy. By November, it was called Aspen.
+Django was all the buzz at PyCon that year. I button-holed Guido and pressed
+him to tell me why he thought raising Response objects was a bad idea.
 &ldquo;It violates the principle that you should return from only one
 place,&rdquo; he managed, before excusing himself. &ldquo;I have to go. I don't
 want to miss Adrian's talk about Django.&rdquo;</p>
