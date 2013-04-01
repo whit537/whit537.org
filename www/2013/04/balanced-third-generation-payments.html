@@ -100,13 +100,15 @@ do next-day and in some cases <a
     href="http://blog.balancedpayments.com/balanced-payment-method-pay-with-bank-ach/">both
     directions</a> with Balanced. You can also hold money in escrow with
 Balanced, with free transfers to and from your own bank account. Stripe has
-bolted on some marketplace features, but they don't compare: with Stripe it takes seven days for merchants to receive funds.</p>
+bolted on similar features, but they don't compare: with Stripe it takes <a
+    href="https://stripe.com/us/help/faq#funds-transfer">seven days</a> for
+merchants to receive funds.</p>
 
-<p>Real-time merchant underwriting is the really killer feature that Balanced
-has that, as far as I'm aware, no-one else does. With Stripe (etc.) your users
-have to sign up for a Stripe account on Stripe's website before you can move
-money on their behalf.  Balanced makes this an API call. Balanced literally has
-an API call for <a
+<p>Real-time merchant underwriting is the killer feature that Balanced has
+that, as far as I'm aware, no-one else does. With Stripe (etc.) your users have
+to sign up for a Stripe account on Stripe's website and go through an OAuth
+flow before you can move money on their behalf. Balanced makes this an API
+call. Balanced literally has an API call for <a
     href="https://www.balancedpayments.com/docs/api?language=bash#underwriting-an-individual">Underwriting
     an Individual</a> and another one for <a
     href="https://www.balancedpayments.com/docs/api?language=bash#underwriting-a-business">Underwriting
@@ -114,8 +116,9 @@ an API call for <a
 provider with parallel API calls. I double-checked <a
     href="https://stripe.com/docs/api">Stripe</a> and <a
     href="https://www.wepay.com/developer">WePay</a>, and I'm not seeing it if
-it's there. What this means is that Balanced isn't just for merchants, it's
-also for marketplaces. That opens up a whole new dimension in the payments
+it's there. What this means is that Balanced isn't just for merchants. It works
+for merchants, yes, but it's designed from the ground up for
+<em>marketplaces</em>.  This opens up a whole new dimension in the payments
 space.</p>
 
 <div class="midbar">
@@ -123,15 +126,17 @@ space.</p>
 </div>
 
 <p>Yes, Stripe solved payments for merchants. Balanced picks up from there, and
-goes on to solve payments for entire marketplaces. Dunno about you, but I'd
-call that one heck of a <a
+goes on to solve payments for marketplaces as well. I call that one heck of a
+<a
     href="http://www.paulgraham.com/schlep.html">schlep</a>. The schlep isn't
 over, of course. For example, Balanced hasn't expanded beyond the United States
 yet. You should add a +1 on <a
     href="https://github.com/balanced/balanced-api/issues/23">this GitHub
-    issue</a> if that's something you want to see. And if you're doing a
-startup in the U.S. and you're looking for a three-dimensional,
-third-generation online payments provider, you should check out <a
-    href="https://www.balancedpayments.com/">Balanced</a>.</p>
+    issue</a> if that's something you want to see. If you're interested in
+bitcoin, see this <a
+    href="https://github.com/balanced/balanced-api/issues/204">ticket</a>. And
+if you're doing a startup in the U.S. and you're looking for a
+three-dimensional, third-generation online payments provider, you should check
+out <a href="https://www.balancedpayments.com/">Balanced</a>.</p>
 
 {% end %}
