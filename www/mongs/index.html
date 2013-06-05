@@ -57,12 +57,7 @@ published = ""
 
     <pre>$ git clone https://github.com/whit537/mongs.git
 $ cd mongs
-$ virtualenv .
-$ . bin/activate
-(mongs)$ pip install -r requirements.txt
-... blah, blah, blah ...
-(mongs)$ cd www/
-(mongs)$ aspen
+$ make run
 Greetings program! Welcome to port 8080.</pre>
 
     <h2>Usage</h2>
@@ -76,11 +71,8 @@ Greetings program! Welcome to port 8080.</pre>
     key/val to the {} in the URL. It will be popped and the rest of the dict
     will simply be a pymongo query.</p>
 
-    <p>To add more <b>servers</b>, create an <code>~/.aspen/aspen.conf</code> file
-    with content like this, and bounce the server:</p>
-
-    <pre>[mongs]
-servers: localhost you.example.com</pre>
+    <p>To add more <b>servers</b>, create (or link) a <code>servers.txt</code>
+    file in the Mongs distribution root with one server per line.</p>
 
 
     <h2>Development</h2>
