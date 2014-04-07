@@ -1,0 +1,70 @@
+==================================================================
+https://keybase.io/whit537
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://whit537.org
+  * I am whit537 (https://keybase.io/whit537) on keybase.
+  * I have a public key with fingerprint C328 C24F 685E 8D29 13C1  0A4C 6EE1 8A8D C479 77C2
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "c328c24f685e8d2913c10a4c6ee18a8dc47977c2",
+            "host": "keybase.io",
+            "key_id": "6ee18a8dc47977c2",
+            "uid": "1ebbaaf583e6decf3386116b74ed0300",
+            "username": "whit537"
+        },
+        "service": {
+            "hostname": "whit537.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396901467,
+    "expire_in": 157680000,
+    "prev": "8f3b05fa49a0b55ee7a7c4db06f1d339cf585e90ec0ead75a6d03cf5d9f14106",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.15 (Darwin)
+
+owGbwMvMwMSY97Cr90hl+SHG0wc+JDEEO7MlVysl5adUKllVK2Wngqm0zLz01KKC
+osy8EiUrpWRjI4tkI5M0MwvTVIsUI0tD42RDg0STZLPUVEOLRIuUZBNzS3PzZCMl
+HaWM/GKQDqAxSYnFqXqZ+UAxICc+MwUoikV9KVjCMDUpKTExzdTCONUsJTU5zdjY
+wszQ0CzJ3CQ1xcDYwACksDi1KC8xNxWoujwjs8TU2FypVkcJKFiWmZwKcjLIZlQF
+evlF6UCdBUX5JfnJ+TlAiYySkgIrkL6SygKwwtSkeKgR8UmZeSlAXwM1lKUWFWfm
+5ylZGQJVJpdkgsw0NLY0szQwNDEz11FKrSjILEqNzwSpMDU3szAAApA1qWVAIy3S
+jJMMTNMSTSwTDZJMTVNTzRPNk01SkgzM0gxTjI0tk4G+NE21NEhNNkhNTDE3TTQD
++hAomGKZZmhiaGCmBPJUYV6+kpUJ0JmJ6UAjizPT8xJLSotSlWq5OplkWBgYmRjY
+WJlAEcfAxSkAi86qav5fzA6FYToMbMpPg2+w5b40TmS5Ur3ImO9dHZPtHnf3f+d/
+e9cZGn6MF7xUnHyh9d3uK2Fhk6pXiG05defFfuMdMfvS2fimMP3Rt/hWZJqjoZGi
+8yHL8Xfj94ORurySATbFIndZ+hOquxmfLp634IT88cOlHZIRDEd6Zh03nPn+7sWw
+87ffiNpOEYkvTtuutp/vWuD7UwIHzhROT787y9Bqouy+N+mSa6cf4FRJXNm2Z1vZ
+dYdbDDt57rqbvGzZcUIlbKGASWjj432fgjtevnt3JXTd0tscbZUnYx6477vbEMo0
+tTXR/dRxJ9v6R/OWMBmeXxu7JH5e0lSBbzW3VPRlTqza7rna7dyPZ53Tn1cpO86Q
+PJLRJnbG27Tn/kLOzH/OMRtsc+b3s/20TAn/Ktnll/hg57ElfZOu73+3i9uHe0/5
+dY7l081rGOcJOsvYMOS1lP1v/VlrwlS5LG360/Pvz+82CfAQq5jsdlzy6JZfPCl7
+deo5j8uYlevHzTCw8sm4L8C0nHfhVdmjqcx3HW9a1Goz7Q498inIMPfBx7vcCzUO
+hiUuMMlYs/La88UP5ll7Jbb92HJybsz6WQsWO1ctd/PbaGjIcbLl/vxts3pmXblk
+IL4xrvKomtsyxQDLvF/GbHXvzB93fVVpO/LysGui3s2tBqayQvdmeJUI9jsGld25
+JpblXWW0QEbegjOi1fhFW4ZMpW1a2Py5514BAA==
+=EgJt
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/whit537
+
+==================================================================
+
