@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+"""This script parses the feed from Blag and prints a little html snippet.
+"""
+import time
+
+import aspen
+aspen.configure()
+
+import feedparser
+
+
+TIMESTAMP_FORMAT = "%B %d, %Y"
+URL = "http://blag.whit537.org/feeds/posts/summary/-/the-aitch"
+ENTRY = u"""\
+<h3><a href="%(link)s">%(title)s</a><br/></h3>
+<p class="meta">%(x-date)s</p>
+<p>%(x-summary)s</p>
+<p class="more">[ <a href="%(link)s">read on</a> ]</p>
+"""
+
+
+def main():
+    """Import items from blag feed.
+    """
+    feed = feedparser.parse(URL)
+    for entry in feed.entries:
+        x_date = time.strftime(TIMESTAMP_FORMAT, entry['published_parsed'])
+        x_date = x_date.replace(' 0', ' ')
+        entry['x-date'] = x_date
+        entry['x-summary'] = entry['summary'].splitlines()[0]
+        print (ENTRY % entry).encode('UTF-8')
+
+
+if __name__ == '__main__':
+    main()
+
