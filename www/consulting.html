@@ -27,6 +27,7 @@ class Time(object):
 
 y = m = d = None
 by_project = defaultdict(int)
+totals = defaultdict(lambda: datetime.timedelta(0))
 for line in _time.splitlines():
 
     line = line.strip()
@@ -39,7 +40,9 @@ for line in _time.splitlines():
         start, proj, end = line.split()
         start, end = parse_time(start), parse_time(end)
         delta = end - start
-        projects[names[proj]].append(Time(y,m,d, start, end))
+        time = Time(y,m,d, start, end)
+        projects[names[proj]].append(time)
+        totals[names[proj]] += time.duration
 
 
 {% extends "base.html" %}
@@ -70,6 +73,11 @@ href="https://gratipay.com/whit537">Gratipay</a>.</p>
         <td>0.00</td>
     </tr>
     {% end %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{ totals[project] }}</td>
+    </tr>
 </table>
 {% end %}
 
