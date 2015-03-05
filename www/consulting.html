@@ -58,19 +58,18 @@ href="https://gratipay.com/whit537">Gratipay</a>.</p>
 
 {% for project, times in projects.items() %}
 <h2>{{ project }}</h2>
+<p style="text-align: center; font-style: italic;">$0.00 / hour</p>
 <table>
     <tr>
         <td>Start</td>
         <td>End</td>
         <td>Duration</td>
-        <td>$/Hour</td>
     </tr>
     {% for time in times %}
     <tr>
         <td>{{ time.start }}</td>
         <td>{{ time.end }}</td>
         <td>{{ time.duration }}</td>
-        <td>0.00</td>
     </tr>
     {% end %}
     <tr>
