@@ -6,7 +6,7 @@ title = "Consulting"
 certified = True
 
 _projects = """\
-col Pittsburgh City of Learning
+sprout Sprout Fund
 svsd Seneca Valley School District
 """
 names = dict([line.strip().split(None, 1) for line in _projects.splitlines()])
@@ -15,25 +15,25 @@ projects = defaultdict(list)
 
 _time = """\
 2015-03-27
-10:30 col 12:00
-13:00 col 16:30
+10:30 sprout 12:00
+13:00 sprout 16:30
 
 2015-03-20
-11:00 col 12:45
-13:15 col 16:15
+11:00 sprout 12:45
+13:15 sprout 16:15
 
 2015-03-12
-19:15 col 20:15
+19:15 sprout 20:15
 
 2015-03-06
 10:00 svsd 11:00
 
 2015-03-05
-11:15 col 17:30
+11:15 sprout 17:30
 17:30 svsd 18:30
 
 2015-03-03
-12:00 col 14:30
+12:00 sprout 14:30
 """
 
 class Time(object):
