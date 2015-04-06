@@ -11,6 +11,9 @@ website = Website([])
 website.renderer_default = 'unspecified'  # require explicit renderer, to avoid escaping bugs
 website.default_renderers_by_media_type['text/html'] = 'jinja2'
 website.default_renderers_by_media_type['text/plain'] = 'jinja2'
+website.renderer_factories['jinja2'].Renderer.global_context = {
+    'enumerate': enumerate,
+}
 
 
 canonize = Canonizer(os.environ['CANONICAL_LOCATION'])
