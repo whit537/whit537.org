@@ -48,7 +48,9 @@ def startup(website):
         client = Client()
         client._website = website
         for name in files:
-            if name == 'index.html':
+            if name.endswith('.spt'):
+                name = name[:-4]
+            if name in ['index', 'index.html']:
                 name = ''
             url_path = '/'.join([parent, name])
             aspen.log("indexing " + url_path)

@@ -4,7 +4,7 @@ import re
 
 import tree
 
-
+[---]
 title = "whit537.org"
 byline = None
 published = None
@@ -23,10 +23,10 @@ for post in posts:
         years.append([year, []])
     years[-1][1].append(post)
 
-
+[---] text/html via jinja2
 {% extends "base.html" %}
 {% block nav %}
-{% end %}
+{% endblock %}
 {% block content %}
 
     <div class="midbar">
@@ -77,8 +77,8 @@ June 1, 2012, and as of January, 2015, we have about 3,000 active users
         <div class="posts">
         {% for post in posts %}
             <a href="{{ post['_id'] }}">{{ post['title'] }}</a>
-        {% end %}
+        {% endfor %}
         &nbsp;
         </div>
-    {% end %}
-{% end %}
+    {% endfor %}
+{% endblock %}
