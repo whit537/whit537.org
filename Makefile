@@ -1,22 +1,17 @@
-   
+env/lib/python2.7/site-packages/wsgiref: vendor/pypi/wsgiref
+	./env/bin/pip install --no-index --find-links=./vendor/ -r requirements.txt
+
+vendor/pypi/wsgiref: env
+	./env/bin/pip install --download=./vendor/ -r requirements.txt
+
 env:
-	python2.7 ./vendor/virtualenv-1.7.1.2.py \
-				--unzip-setuptools \
+	python2.7 ./vendor/bootstrap/virtualenv.py \
 				--prompt="[whit537.org] " \
-				--never-download \
-				--extra-search-dir=./vendor/ \
-				--distribute \
+				--extra-search-dir=./vendor/bootstrap/ \
 				./env/
-	./env/bin/pip install -r requirements.txt
 
 clean:
 	rm -rf env
 
 run: env
-	./env/bin/swaddle local.env ./env/bin/aspen \
-		--www_root=www/ \
-		--project_root=../ \
-		--show_tracebacks=yes \
-		--changes_reload=yes \
-		--network_address=:8082
-
+	./run_dammit local.env web 

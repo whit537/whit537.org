@@ -4,6 +4,10 @@ import re
 
 import tree
 from aspen.utils import Canonizer
+from aspen.website import Website
+
+
+website = Website([])
 
 
 canonize = Canonizer(os.environ['CANONICAL_LOCATION'])

@@ -1,1 +1,1 @@
-web: aspen --network_address=:$PORT --www_root=www --project_root=..
+web: ./env/bin/gunicorn whit537:website --bind :$PORT $GUNICORN_OPTS

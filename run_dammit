@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import os
+import sys
+import shlex
+from string import Template
+from collections import defaultdict
+
+
+def fail(m, *a):
+    print(m.format(*a))
+    sys.exit(1)
+
+def update_env():
+    envfilepaths = sys.argv[1:-1]
+    for envfilepath in envfilepaths:
+        try:
+            envfile = open(envfilepath)
+        except IOError:
+            print("WARNING: Ignoring missing environment file {}.".format(envfilepath))
+            continue
+        for line in envfile:
+            line = line.split('#', 1)[0].strip()
+            k, v = [x.strip() for x in line.split('=')]
+            os.environ[k] = v
+        print("SUCCESS: Updated environment with values from {}.".format(envfilepath))
+
+try:
+    want = sys.argv[-1]
+except IndexError:
+    fail("usage: {} <proctype>\n\n<proctype> must match an entry in ./Procfile.", sys.argv[0])
+
+try:
+    procfile = open('Procfile')
+except IOError:
+    fail("No ./Procfile found.")
+
+for line in procfile:
+    proctype, command = [x.strip() for x in line.split(':', 1)]
+    if proctype == want:
+        break
+else:
+    fail("Process type '{}' not found in ./Procfile.", want)
+
+update_env()
+subenv = defaultdict(unicode)
+subenv.update(os.environ)
+
+tmp = Template(command)
+subbed = tmp.substitute(subenv)
+parts = shlex.split(subbed)
+
+os.execvp(parts[0], parts)
