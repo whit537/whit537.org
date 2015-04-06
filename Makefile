@@ -14,4 +14,4 @@ clean:
 	rm -rf env
 
 run: env
-	./run_dammit local.env web 
+	PATH=./env/bin:${PATH} ./run_dammit local.env web 
