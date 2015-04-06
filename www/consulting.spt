@@ -69,41 +69,136 @@ for line in _time.splitlines():
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
-<script>
 if (window.location.protocol != "https:" && window.location.hostname === 'whit537.org')
     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 </script>
 
-<p>Thanks for wanting to work with me! I consult on a <a
-href="http://en.wikipedia.org/wiki/Pay_what_you_want">pay-what-you-want</a>
-basis. Contact me via <a
+$(document).ready(function() {
+});
+</script>
+<style>
+form input,
+form textarea,
+form button {
+    font: normal 11pt/14pt sans-serif;
+}
+form i {
+    display: block;
+    text-align: center;
+}
+fieldset {
+    margin: 6pt auto 24pt;
+    padding: 0;
+    border: 0;
+}
+form .invoice-from {
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+    text-align: right;
+}
+form .invoice-to {
+    width: 48%;
+    float: left;
+    margin-left: 2%;
+}
+form label {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+form input[type=text] {
+    width: 80%;
+    margin: 4pt 0;
+    padding: 4pt;
+    border: 1px solid #999;
+}
+form textarea[disabled=true] {
+    background: #EEE;
+    color: #999;
+}
+form textarea {
+    width: 80%;
+    height: 108px;
+    margin: 4pt 0 0px;
+    padding: 4pt;
+    border: 1px solid #999;
+}
+form .email {
+    padding: 0 26%;
+    text-align: center;
+}
+form button {
+    border-radius: 4pt;
+    background: #EEE;
+    margin: 4pt 0;
+    padding: 2pt 5pt 1pt;
+    display: inline;
+}
+form button:hover {
+    background: #CCC;
+    cursor: pointer;
+}
+</style>
+
+<p>I do a limited amount of self-billed,
+pay-what-you-want consulting. Contact me via <a
 href="https://github.com/whit537/whit537.org/issues/new">GitHub</a> or <a
-href="mailto:chad@zetaweb.com">email</a> to invite me to work with you. I'll
-report my hours here. If you would like to pay me, you may do so on <a
-href="https://gratipay.com/whit537">Gratipay</a>.</p>
+href="mailto:chad@zetaweb.com">email</a> to negotiate how much time I can give
+you. I'll report my hours here. If you would like to pay me, you can generate
+an invoice below. Thanks! :-)</p>
+
+
+<h2>Generate an Invoice</h2>
+
+<form action="/invoice.pdf" method="POST" target="_blank">
+    <i>Fill out the basics, and then select line items below.</i>
+    <fieldset class="basics">
+        <div class="invoice-from">
+            <textarea disabled="true">Chad Whitacre
+716 Park Road
+Ambridge, PA 15003
+USA</textarea>
+            <label><input name="from_tax_id" type="text" placeholder="Chad's Tax ID"></label>
+        </div>
+        <div class="invoice-to">
+            <label><textarea name="to_address" placeholder="Your Name & Address"></textarea></label>
+            <label><input name="to_tax_id" type="text" placeholder="Your Tax ID"></label>
+        </div>
+    </fieldset>
 
 {% for project, times in projects.items() %}
 <h2>{{ project }}</h2>
 <p style="text-align: center; font-style: italic;">$0.00 / hour</p>
+
 <table>
     <tr>
+        <td><input type="checkbox"></td>
         <td>Start</td>
         <td>End</td>
         <td>Duration</td>
     </tr>
     {% for time in times %}
     <tr>
+        <td><input type="checkbox" name="" value="{{ time }}"></td>
         <td>{{ time.start }}</td>
         <td>{{ time.end }}</td>
         <td>{{ time.duration }}</td>
     </tr>
     {% endfor %}
     <tr>
-        <td></td>
-        <td></td>
+        <td colspan="3"></td>
         <td>{{ totals[project] }}</td>
     </tr>
 </table>
 {% endfor %}
 
+    <h2>Email the Invoice</h2>
+    <fieldset>
+        <div class="email">
+            <label><input name="email" type="text" placeholder="Your Email Address"></label>
+            <button type="submit">Email the Invoice</button>
+        </div>
+    </fieldset>
+</form>
 {% endblock %}

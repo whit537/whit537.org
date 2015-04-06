@@ -3,12 +3,22 @@ import os
 import re
 
 import tree
+from aspen import renderers
 from aspen.utils import Canonizer
 from aspen.website import Website
 
 
+class EvalRenderer(renderers.Renderer):
+    def render_content(self, context):
+        return eval(self.compiled, context)
+
+class EvalFactory(renderers.Factory):
+    Renderer = EvalRenderer
+
+
 website = Website([])
 website.renderer_default = 'unspecified'  # require explicit renderer, to avoid escaping bugs
+website.renderer_factories['eval'] = EvalFactory(website)
 website.default_renderers_by_media_type['text/html'] = 'jinja2'
 website.default_renderers_by_media_type['text/plain'] = 'jinja2'
 website.renderer_factories['jinja2'].Renderer.global_context = {
