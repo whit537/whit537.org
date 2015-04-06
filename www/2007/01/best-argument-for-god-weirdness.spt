@@ -1,0 +1,29 @@
+title = "Best Argument for God: Weirdness"
+published = "2007-01-24T21:15:00.000-05:00"
+updated = "2011-04-10T09:52:45.352-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>Sometimes <a href="http://www.edge.org/">Brockman & Co.</a> get me down
+about religion. But you know what? The Universe <b>MAKES ABSOLUTELY NO
+    SENSE</b>. I mean: <i>why are we here?!</i> So what if we understand so
+much about the Universe? <i>Why is there a Universe?</i> What&rsquo;s
+<i>outside</i> the Universe? What the heck is time? What&rsquo;s <i>outside</i>
+of time?  If there is nothing outside of space and time, then <b><i>what the
+        heck does that
+        mean?!</i></b></p>
+
+<p>These are the questions that hit you circa 3rd grade. But you know what?
+Turns out <a href="http://www.google.com/search?q=outside+the+universe">no-one
+    has <b><i>any idea</i></b></a>. You can&rsquo;t tell me that God is a bad
+answer.</p>
+
+<p>I started this blog under a <a href="http://www.pugnax.org/">pseudonym</a>,
+but it&rsquo;s time to come out. I&rsquo;m a Christian, and I&rsquo;m no longer
+ashamed, because Dawkins and Harris don&rsquo;t in fact have a better
+answer.</p>
+
+{% endblock %}

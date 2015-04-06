@@ -1,0 +1,9 @@
+title = "How to speed in good conscience"
+published = "2007-07-24T21:01:00.001-04:00"
+updated = "2011-04-10T09:52:45.270-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+"Dad, are you speeding?"<br />    "Nope. I'm going 72."<br />    "But the speed limit is 65."<br />    "You see that cloud up there?"<br />    "Yeah."<br />    "Is the edge straight or fuzzy?"<br />    "Fuzzy."<br />    "Speed limits are a <a href="http://blag.whit537.org/2007/06/boundaries.html">fuzzy boundary</a>. You can go faster if you're not afraid to get a ticket."<br />    "So the people who go really fast aren't afraid at all, are they?"<br />    "Right. Make sense?"<br />    "Yup."<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-955028368377102252?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

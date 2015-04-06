@@ -1,0 +1,21 @@
+title = "Run!"
+published = "2013-09-09T00:00:00.000-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>After five years, I ran a 5k again. This time it was at Brady's Run Park,
+part of a benefit for the <a href="http://www.ohiorivertrail.org/">Ohio River
+  Trail</a>. A much smaller field than the Applefest 5k, which is the only
+  other 5k I've done (<a href="/2007/10/run.html">one</a>, <a
+    href="/2008/10/run.html">two</a>), I <a
+  href="http://smileymiles.com/2013/RES13%20ORTC%20Bradys%20Run%20Park%205K.htm">placed</a>
+10th at 25:47 (8:19).</p>
+
+<p>Paul is now into trail running, and Kim is a <a
+  href="http://www.fuelyourpassion.net/">professional triathlete</a>. She
+recently qualified for Kona!</p>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+title = "Potluck and perilous plunger"
+published = "2007-07-20T07:41:00.000-04:00"
+updated = "2011-04-10T09:52:45.276-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+Last night Leah hosted her first potluck. It was a rousing success! We had 48 people, about half kids. The Venn diagram was complicated, but I think everyone had a good time. It rained hard before and after but not during. And every kid got a whack at the pi&#xf1;ata before Jack finished it off.<br /><br />The potluck was at War Memorial Park in Sewickley, which has an awesome new playground. As awesome as it is, however, it does not have one of these:<br /><br /><object height="350" width="425"><param name="movie" value="http://www.youtube.com/v/tg7xcGJSaok"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/tg7xcGJSaok" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"></embed></object><br /><br />(That's Deb and Rick on the Plunger. Rick's folks were at the potluck.)<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8344143562556962496?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

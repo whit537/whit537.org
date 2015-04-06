@@ -1,0 +1,9 @@
+title = "First C contribution"
+published = "2007-07-09T07:01:00.000-04:00"
+updated = "2011-04-10T09:52:45.284-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+In evaluating <a href="http://www.modwsgi.org/">mod_wsgi</a> I discovered <a href="http://groups.google.com/group/modwsgi/browse_frm/thread/7b12933ad592df25/">a small bug</a>. I submitted <a href="http://code.google.com/p/modwsgi/issues/detail?id=16">a patch</a>, which was accepted: my first contribution to an open source project in C!<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8814908778945942610?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

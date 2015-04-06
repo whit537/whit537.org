@@ -1,0 +1,32 @@
+title = "Work"
+published = "2009-01-25T12:00:00.002-05:00"
+updated = "2011-04-10T09:52:45.006-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>Joseph and I are sitting at his kitchen table, eating brownies with peanut
+butter chips and drinking cold coffee. He just cut his son's hair.</p>
+
+<p>When he finishes sixth grade, Joseph stops going to school and starts
+working, washing dishes at the Country Kitchen. When he is fifteen, his
+alcoholic father kicks him out of the house, because Joseph refuses to drink.
+Miss Hearst charges him a little rent for a small sleeping room above the
+Country Kitchen.</p>
+
+<p>When he is eighteen, Joseph gets into a big fight with his dad.</p>
+
+<p>&ldquo;You're going to Hell!&rdquo;</p>
+
+<p>&ldquo;And you're coming with me!&rdquo; His drunk father approaches.</p>
+
+<p>&ldquo;No I'm not!&rdquo; Joseph lands an uppercut square on his chin.</p>
+
+<p>Joseph is on Social Security. His wife of twenty years died last year.
+Tomorrow his son has an interview at a restaurant.</p>
+
+<p><a href="/dont-forget-the-aitch/">Don't forget the Aitch</a>.</p>
+
+{% endblock %}

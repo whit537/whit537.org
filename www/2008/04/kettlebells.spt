@@ -1,0 +1,9 @@
+title = "Kettlebells"
+published = "2008-04-25T09:38:00.003-04:00"
+updated = "2011-04-10T09:52:45.125-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+So the <a href="http://blag.whit537.org/2007/10/be-cubed.html">men</a> of the <a href="http://www.gracepgh.org/">church</a> are on retreat at <a href="http://www.guswoody.com/">Woody</a>'s place in St. Michael's, Maryland (which, as Mr. X just said, is "flipping gorgeous, isn't it?"). This morning Woody called reveille way too early, and once we were finally out of bed, he introduced us to <a href="http://www.russiankettlebells.com/">kettlebells</a>:<br /><br /><img src="http://static.whit537.org/2008/kettlebells.jpg" alt="pavel" /><br /><br />Train like the Russian secret service! Your workout problem is solved.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5976502496592368353?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

@@ -1,9 +1,0 @@
-title = "BLAS, LAPACK, ATLAS ... and Sage"
-published = "2009-01-14T22:31:00.011-05:00"
-updated = "2011-04-10T09:52:45.010-04:00"
-^L
-^L
-{% extends "base.html" %}
-{% block content %}
-<p>Here's what I think I know so far:<a href="http://www.netlib.org/blas/"></a></p><p></p><ul><li><a href="http://www.netlib.org/blas/">BLAS</a> is a linear algebra library specification. You want to build a BLAS implementation that is optimized for your architecture.<a href="http://www.netlib.org/lapack/"></a></li><li><a href="http://www.netlib.org/lapack/">LAPACK</a> is a huge linear algebra library on top of BLAS, with Fortran and C APIs.</li><li><a href="http://math-atlas.sourceforge.net/">ATLAS</a> is an automatically tuned BLAS with C and Fortran APIs, and optimized C and Fortran APIs for a subset of LAPACK as well. You can optionally build it with LAPACK itself to include the remainder of its (unoptimized) Fortran API.<br /></li><li><a href="http://www.sagemath.org/">Sage</a> is the open source <a href="http://www.mathworks.com/products/matlab/">Matlab</a>. It takes all of the above, along with scores of <a href="http://www.sagemath.org/links-components.html">other packages</a> and their dependencies (including<a href="http://numpy.scipy.org/">NumPy</a>/<a href="http://www.scipy.org/">SciPy</a>), and glues them all together with Python behind a user-friendly CLI and GUI. And their website navigation slider is great. And installation, which is fully automated, takes a long time ...</li></ul><p></p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-6618993881435740364?l=blag.whit537.org' alt='' /></div>
-{% end %}

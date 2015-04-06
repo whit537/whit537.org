@@ -1,0 +1,112 @@
+title = "Mongs - MongoDB Web-based Data Browser"
+published = ""
+[---]
+[---] text/html
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Mongs - MongoDB Web-based Data Browser</title>
+    <style>
+        BODY {
+            font: normal 9pt/12pt Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        PRE {
+            background: #EEE;
+            padding: 5px;
+            font: normal 10pt/12pt Monaco, "Lucida Mono", monospace;
+        }
+        #body {
+            width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        IMG.screenshot {
+            margin-left: -39px;
+        }
+        H1 {
+            margin: 2em 0 0.5em;
+            padding: 0;
+            line-height: 100%;
+        }
+        H2 {
+            margin: 2em 0 0.5em;
+            padding: 0;
+            line-height: 100%;
+        }
+        P {
+            margin: 0 0 1em;
+            padding: 0;
+            line-height: 100%;
+        }
+    </style>
+</head>
+
+<body><div id="body">
+
+    <h1>Mongs</h1>
+
+    <p>Mongs is a <b>web-based data browser</b> for <a
+        href="http://www.mongodb.org/">MongoDB</a>.</p>
+
+    <img src="mongs.png" class="screenshot" />
+
+    <h2>Installation</h2>
+
+    <pre>$ git clone https://github.com/whit537/mongs.git
+$ cd mongs
+$ make run
+Greetings program! Welcome to port 8080.</pre>
+
+    <h2>Usage</h2>
+
+    <p>Click to <b>browse</b>.</p>
+
+    <p>For now you can <b>query</b> using JSON expressions in the URL, where
+    the {} is above.</p>
+
+    <p>You can <b>sort</b> by adding a <code>"sort": [["field", -1]]</code>
+    key/val to the {} in the URL. It will be popped and the rest of the dict
+    will simply be a pymongo query.</p>
+
+    <p>To add more <b>servers</b>, create (or link) a <code>servers.txt</code>
+    file in the Mongs distribution root with one server per line.</p>
+
+
+    <h2>Development</h2>
+
+    <p>Mongs is implemented in Python using the <a
+        href="http://aspen.io/">Aspen</a> web framework.</p>
+
+    <p><a href="https://github.com/whit537/mongs">github</a></p>
+
+
+    <h2>Bonus Picture</h2>
+
+    <p>Mongs is named after a dairy. Herewith, an old milk box repurposed to
+    hold computer cables, showing the Mong's Dairy logo:</p>
+
+    <img src="mongs.jpg" alt="Old timey milk box with Mong's logo">
+
+
+    <h2>Legal</h2>
+
+    <p>Copyright &copy; 2010-2012 <a href="/">Chad Whitacre</a> and <a
+        href="http://corp.yougov.com/">YouGov</a>. <a
+        href="http://www.opensource.org/licenses/mit-license.php">MIT</a>-licensed.</p>
+
+</div>
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-247427-17");
+                pageTracker._trackPageview();
+                } catch(err) {}</script>
+
+        </body>
+        </html

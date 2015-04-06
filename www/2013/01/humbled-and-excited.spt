@@ -1,0 +1,157 @@
+title = "Humbled and Excited"
+published = "2013-01-07T12:57:0.0"
+certified = True
+[---]
+[---] text/html
+{% extends base.html %}
+{% block content %}
+
+<p>Three years ago, three friends and I started a philosophy reading group
+called the Sewickley Area Philosophical Society (SAPS). Our first major project
+was reading Immanuel Kant&rsquo;s <i>Critique of Pure Reason</i>.
+
+<div class="midbar">
+    <img src="http://static.whit537.org/2010/SAPS-CPR/TheSAPS.544.jpg" /> 
+
+    <p class="caption">The Sewickley Area Philosophical Society (SAPS) upon
+    completion of Immanuel Kant&rsquo;s <i>Critique of Pure Reason</i>,
+    November 13, 2010.  Left to right: Jeff Kearns, Chad Whitacre (myself),
+    Earl Johns, and Brandon Smith.</p>
+    
+</div>
+
+<p>I had started the so-called &ldquo;first critique&rdquo; a year <a
+    href="/2008/09/kant.html">prior</a> on my friend Jeremy Sanderson&rsquo;s
+advice in response to a blog <a href="/2008/03/where-to-start.html">post</a>. I
+also <a href="/2008/04/next-mereological-overlaps-and-kant.html">considered</a>
+taking a Kant class from Stephen Engstrom at the University of Pittsburgh.
+Well, I ended up taking (half of) a programming class <a
+    href="/2008/08/im-student-again.html">instead</a>, but a few months ago I
+chanced to get to know one of Engstrom&rsquo;s grad students, Tyke Nunez, and
+he invited me to visit a grad seminar on Kant&rsquo;s <i>Critique of
+    Judgement</i> given by visiting professor Andrew Chignell. It turns out
+that Andrew graduated from Wheaton the year I arrived there, and I knew his
+brother. Andrew was very gracious to let me visit his seminar.</p>
+
+<p>Finally, then, after four years, I&rsquo;ve encountered two of Kant&rsquo;s
+major critical works (along with a number of other books), and I&rsquo;ve had
+an experience of academic philosophy. Honestly, it&rsquo;s not where I need to
+be right now. I&rsquo;m not in a position to switch careers (family, mortgage,
+momentum elsewhere), and visiting Andrew&rsquo;s class&mdash;for which
+I&rsquo;m grateful&mdash;made it clear that my trying to participate as an
+outsider is untenable: I&rsquo;m too distant geographically and professionally.
+Instead, I&rsquo;ve rejoined the SAPS after two years apart. I had stepped away
+after the first critique; the group continued apace. My first book back is
+Alasdair MacIntyre&rsquo;s <i>After Virtue</i>.</p>
+
+<p>I would say that, philosophically, the past four years have been both
+encouraging and humbling. I&rsquo;m still committed to the philosophy of <a
+    href="http://whit537.org/2007/06/objects-scale-abstraction.html">abstraction</a>,
+but coming up with a personal, idiosyncratic language is one thing, and
+establishing that language in the cultural consciousness is another. There was
+an <a
+    href="http://www.bostonglobe.com/ideas/2012/11/03/abc-proof-too-tough-even-for-mathematicians/o9bja4kwPuXhDeDb2Ana2K/story.html">extreme
+    example </a> of this recently, when a top mathematician emerged after two
+decades of isolation with a solution to one of math&rsquo;s toughest problems;
+it&rsquo;s so arcane that it will take years more for the rest of the math
+community to even begin to understand it. I think abstraction has legs. Whether
+it falls to me to bring it forth into the world remains to be seen. I console
+myself that if it&rsquo;s essentially true, something like it is bound to come
+to light eventually, one way or another.</p>
+
+<p>I see myself a few years into an extended period of listening and learning
+with regard to philosophy, during which I expect to continue doing much more
+reading than writing. Writing is a lot of work, and my priority right now is
+launching <a
+    href="https://www.gittip.com/">Gittip</a>. Hopefully one day I&rsquo;ll
+wake up and find that I&rsquo;ve got a solid foundation laid and a chance to do
+something with it. Until then, discussions with SAPS and other friends and
+occasional blog posts will suffice.</p>
+
+<h2>So What Am I Thinking About?</h2>
+
+<p>I&rsquo;m thinking about evolution. I&rsquo;m reading <i>The Selfish
+    Gene</i> by Richard Dawkins. It&rsquo;s the book that launched his career
+in the 70s. More recently he&rsquo;s become renowned for his atheism, and
+he&rsquo;s been something of a bogeyman for me personally (see <a
+    href="/2006/11/taking-edge-off-dawkins.html">here</a> and <a
+    href="/2007/01/best-argument-for-god-weirdness.html">here</a>). He does
+have a religious chip on his shoulder in <i>Selfish Gene</i>, clearer to see in
+hindsight. I use the language of memes, which he coins at the end of this book,
+so I&rsquo;m looking forward to reading that. So far he seems to be confused
+about the difference between efficient and final causes, but we shall see.
+Genetics itself is fascinating. Dawkins admits throughout that, this being a
+popular-level book, his language is imprecise and metaphorical. This makes me
+want to go deeper. How tight is the connection really between genes and
+behavior? What does the math look like?  Evolution seems to me to be something
+of a catch-all theory that totally encompasses the past by reference to the
+present, but what does it say about the future? I have this brainstorm that
+other sciences could be reformulated as limiting cases of evolution. Next stops
+on this train are Lewontin&rsquo;s &ldquo;Units of Selection,&rdquo;
+Dewey&rsquo;s &ldquo;Influence of Darwin on Philosophy,&rdquo; and
+Darwin&rsquo;s <i>Origin of Species</i> itself.</p>
+
+<p>I&rsquo;m thinking some about miracles, mostly because of Christmas.
+Reading <i>The Selfish Gene</i> while celebrating the Virgin Birth had the
+ironic effect of strengthening my faith in that particular miracle. I
+don&rsquo;t think much of interventionist interpretations of the miraculous,
+but I&rsquo;m fairly open to thinking that really weird stuff very
+occassionally happens. Evolution actually depends on it: random mutation. The
+two books on my radar here are those by C.S. Lewis and Craig Keener. But the
+really interesting thing to me is the interplay between miracles and culture.
+Nothing could be more dramatic and life-altering if experienced personally, and
+yet using belief in miracles as a litmus test for group membership is so ...
+fraught.</p>
+
+<p>I&rsquo;m thinking about the
+    Gospels. I published <a href="http://www.logstown.com/the-gospels/">my own
+        edition</a> so I could read them the way I wanted. Now to read them.
+    :-) I&rsquo;m motivated here by the desire to teach my kids, so I&rsquo;d
+    better get moving! I envision a curriculum characterized by a comprehensive
+    analysis. I want to say to my kids things like, &ldquo;There are 26
+    distinct miracles recorded in the Gospels, and 22 of them are healings. Can
+    you name the other four?&rdquo; I made up those numbers, but you get the
+    idea.</p>
+
+<p>I&rsquo;m thinking about Islam. I read a translation of the Koran a while
+back, and now we&rsquo;ve gotten to know a couple from Saudi Arabia.
+They&rsquo;re from Mecca, actually. It&rsquo;s fascinating to start to see the
+world through their eyes.</p>
+
+<p>I&rsquo;m thinking about emotion and morality. I&rsquo;m wondering about a
+moral theory grounded in <i>following</i>. I&rsquo;m interested to grant that
+value judgements are essentially subjective (contra MacIntyre, most
+immediately), and then look at morality as allegiance. The things to tease out
+here are the interplay between group and individual, and especially the way
+that individuals lead and follow. This is deep and rich, and touches on many
+things. I&rsquo;d like to revisit <i>The Hero with a Thousand Faces</i> for
+this. I also have a book on my shelf called <i>Self</i>, by Richard Sorabji; I
+don&rsquo;t know if it directly relates here but I&rsquo;d like to get to it.
+Certainly, besides ethics, there&rsquo;s whole fields of anthropology and
+psychology and cultural criticism that could be fruitfully engaged with this
+project in mind.</p>
+
+<p>I&rsquo;m also still thinking about abstraction. There&rsquo;s a story to be
+told about the early moderns, and how abstraction reconciles their divergent
+metaphysics. Kant comes close, but the tentative story with Kant is how his
+presuppositions, especially his philosophy of science and his logic, constrain
+him. There are three books on Kant&rsquo;s table of judgments that would be the
+next step for me there. I&rsquo;ve also been introduced by Martha Lindeman to
+the field of cognitive psychology, which seems to be situated between
+neuroscience and philosophy. I&rsquo;m eager to explore the body of work there
+on category formation. I intuit that experimental philosophy, which is on the
+edge of my radar, has things to say here as well.</p>
+
+<p>I have one more chapter left in a symbolic logic workbook. I should get
+around to <i>Parts</i> one of these days. I finished a first pass through
+Plato&rsquo;s <i>Republic</i>, and, while I need to read his second critique,
+I&rsquo;m far enough along with Kant that I&rsquo;m ready to hit some other big
+names: Aristotle and Wittgenstein. I&rsquo;d also like to experience the
+presocratics at the root of the Western tradition; Nietzsche and Hegel,
+too.</p>
+
+<p>But now I&rsquo;m really stealing time from Gittip, unfortunately, and I
+have to go. I may not be posting much about philosophy this year, but
+don&rsquo;t worry, I&rsquo;ll be reading.</p>
+
+{% endblock %}

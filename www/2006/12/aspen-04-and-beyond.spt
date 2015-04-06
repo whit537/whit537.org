@@ -1,0 +1,9 @@
+title = "Aspen 0.4 and beyond"
+published = "2006-12-02T23:17:00.000-05:00"
+updated = "2011-04-10T09:52:45.390-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+I <a href="http://mail.python.org/pipermail/web-sig/2006-December/002402.html">released Aspen 0.4 today</a>, which removes the <a href="http://www.zetadev.com/software/httpy/">httpy</a> dependency so that it now speaks pure WSGI. With that, Aspen's <a href="http://www.zetadev.com/software/aspen/0.4/doc/html/node8.html">extension API</a> is <a href="http://code.google.com/p/aspen/issues/detail?id=9">more or less</a> settled, and I can start beefing up the server-y bits. In fact, I just checked in an implementation of module reloading. I kept the <a href="https://www.zetadev.com/svn/public/httpy/tags/0.9a2/site-packages/httpy/couplers/standalone/server.py">restarting tack from the old httpy</a>, but the implementation is now much cleaner. Other things on <a href="http://code.google.com/p/aspen/issues/list">the list</a>:<br /><ul><li>error logging</li><li>access logging</li><li>daemonization</li><li>user/group switching</li><li>SSL</li></ul>Except for SSL, I've done implementations of each before, and I don't expect any to be too difficult. The challenge is to keep the UI simple--the aspen.conf config file, the command line, etc. I expect with the next release to bring back the UI section of <a href="http://www.zetadev.com/software/aspen/0.4/doc/html/">the documentation</a>.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5814154873330665942?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

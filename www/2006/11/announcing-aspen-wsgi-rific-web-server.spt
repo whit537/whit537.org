@@ -1,0 +1,9 @@
+title = "Announcing Aspen, a WSGI-rific web server"
+published = "2006-11-17T15:50:00.000-05:00"
+updated = "2011-04-10T09:52:45.395-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+I've just published <a href="http://www.zetadev.com/software/aspen/">Aspen</a>, a Python webserver. This is what my previous <a href="http://tech.whit537.org/2006/11/httpy-is-now-wsgi-middleware.html">two</a> <a href="http://tech.whit537.org/2006/11/announcing-modepy.html">releases</a> have been leading up to. I've got a couple sites deployed with proto-versions of Aspen, and I'm really excited to finally get it out in the open and hopefully get some feedback. I've put together a <a href="http://www.zetadev.com/software/aspen/0.3/doc/html/tutorial.html">tutorial</a> along with the <a href="http://www.zetadev.com/software/aspen/0.3/doc/html/introduction.html">reference documentation</a>, but I hope to do a screencast too because I'm not sure the doc really captures what I'm trying to do here.<br /><br />(<a href="http://tech.whit537.org/2006/10/my-name-is-chad-and-i-have-nih.html">NIH disclosure</a>: besides drinking the <a href="http://tech.whit537.org/2006/11/httpy-is-now-wsgi-middleware.html">WSGI</a> kool-aid, the core server module is <a href="http://cherrypy.org/browser/trunk/cherrypy/_cpwsgiserver.py">straight outta CherryPy</a>, and I'm using <a href="http://tech.whit537.org/2006/10/extend-nose-generalize-testosterone.html">nose</a> for testing!)<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-168607234983033548?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

@@ -1,0 +1,17 @@
+title = "A Charter"
+published = "2006-10-17T16:24:00.000-04:00"
+updated = "2011-04-10T09:52:45.418-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>This is an outlet for opinions on the practice of technology. I&rsquo;ll
+also be hawking <a href="http://www.zetadev.com/software/">some software that
+    I&rsquo;m
+    working on</a>.</p>
+
+<p>Stay tuned ...</p>
+
+{% endblock %}

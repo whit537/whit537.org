@@ -1,0 +1,9 @@
+title = "Contact card"
+published = "2007-08-14T16:42:00.000-04:00"
+updated = "2011-04-10T09:52:45.252-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+Today I did a card for collecting contact info at our events. It's the first under our new <span style="font-style: italic;">Style Guide</span> (still in the oven), and it's also part of an effort to develop offline channels.<br /><br /><img src="http://static.whit537.org/2007/contact-card.gif" alt="Network Contact Card" /><br /><br />We printed these in-house for next week's <a href="http://www.anglican-evangelism.org/">evangelism conference</a>. I designed it in Illustrator, and thought I'd leave some breadcrumbs here for the next time I do a multi-up w/ bleeds:<br /><ul><li>I developed a "master" instance of the piece that I kept in its own layer. Then I grouped and copied it to the other five locations whenever I was ready to print it. Surely I can just link these additional instances to the master somehow, no?</li><li>I did learn (I think) that the page tiling comes from the printer and is immutable. Just deal with it.</li><li>The layout math is much easier if you can build the piece without regard for bleeds, and then add the bleeds in as a background layer.<br /></li><li>Also, for something to be manually cut, put crop marks in all the corners. You never know in what order the cuts will be made.</li></ul>I've been asked to squeeze communications and design into my responsibilities at work, and I've got to keep it really simple to survive. As far as design goes, expect lots of solid color blocks, and clean, straightforward typography and layout. I'd love any tips on simple-but-effective design details.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5877667219916818471?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

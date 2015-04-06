@@ -1,0 +1,94 @@
+title = "Why I Occupy"
+published = "2011-10-18T10:37:30.654751"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<div class="sidebar"><div class="sidebar-padding">
+    <a href="camp.jpg"><img src="camp.medium.jpg" /></a>
+    <p>My forest hideaway at Occupy Pittsburgh, night one.</p>
+</div></div>
+
+<p>A friend of mine linked me to a post asking &ldquo;<a
+    href="http://www.firstthings.com/blogs/firstthoughts/2011/10/17/what-would-jesus-occupy/">What
+    Would Jesus Occupy?</a>&rdquo; It sounds like the author didn&rsquo;t like
+the way the showdown went down in NYC. I think the occupiers there were right
+that it was a veiled attempt to end their occupation, and to be honest I was
+surprised and energized and inspired when Brookfield and the city backed down.
+It was a decisive moment, and it happened nonviolently. That&rsquo;s Christian
+in my book. There&rsquo;s also the matter that the property is semi-public. My
+understanding is that there are provisions in city law (at least in Pittsburgh)
+that say privately-run parks within the city are held in public trust and are
+open to the public. So it&rsquo;s not the same afront to private property as
+camping out on the White House lawn or the mayor&rsquo;s lawn or my lawn.</p>
+
+<p>In Pittsburgh, relations with BNY Mellon have gotten off to a great start.
+They&rsquo;ve said we can be there indefinitely as long as we don&rsquo;t hurt
+people or property. The grass was wet and muddy and I was worried that messing
+it up would give BNY Mellon an excuse to kick us out. I told a guy as much when
+he started toying around with mud wrestling. But, firstly, the occupation ended
+up laying down cardboard sidewalks and treating the property with respect. And
+then the next day BNY Mellon shipped in straw! How cool is that?</p>
+
+<p>My family and I went down for the kick-off rally on Saturday. I <a
+    href="http://www.youtube.com/watch?v=BL3DBpNRPG0">got on the human mic</a>,
+and I camped out the first night. I made a point while I was there to approach
+the police and get to know them. Ed, the lieutenant on duty while I was there,
+was quite supportive. &ldquo;You guys left Market Square cleaner than you found
+it. As long as you treat Mellon Green the same way we&rsquo;ll be fine.&rdquo;
+He&rsquo;s on record calling the march and rally <a
+    href="http://postgazette.com/pg/11288/1182320-100.stm">the
+    &ldquo;smoothest&rdquo; protest</a> he&rsquo;s ever seen. I saw no police
+stationed around Mellon Green during the night, but we did get supportive honks
+from a few driving past.</p>
+
+<h3>Village, Forum, and Jester</h3>
+
+<div class="sidebar"><div class="sidebar-padding">
+    <a href="outernet.jpg"><img src="outernet.medium.jpg" /></a>
+
+    <p>At 8:00 AM on a Sunday, this small crowd at Occupy Pittsburgh is
+    discussing current affairs. It&rsquo;s like the Internet, only better.</p>
+
+</div></div>
+
+<p>The reason I&rsquo;m excited about the Occupy movement is that it brings
+together the tribal village, the open forum, and the court jester. Yes, it is
+being birthed in a cloud of negative emotion&mdash;anger and frustration and
+entitlement and self-righteousness. But the thing being birthed is
+beautiful.</p>
+
+<p>In Pittsburgh as I write this we have a bunch of hippies and dropouts and
+dreamers and activists setting up a village in the heart of the city.
+It&rsquo;s clean and safe and self-organized. It&rsquo;s like a little tribal
+village in the heart of the concrete jungle. One of the things I want to see is
+homeless people brought into the community that is forming there, given a home
+and a family and a healthier place in society.</p>
+
+<p>The Occupation is a modern Mars Hill, the fora and agora at the roots of
+democracy in Ancient Greece and Rome. In Pittsburgh I met and talked to people
+with a wide range of views, though it does take guts to get up on the human mic
+for the first time. All voices are not just welcome but <i>needed</i>.
+It&rsquo;s like the Internet, but face to face, which makes all the
+difference.</p>
+
+<p>The Occupation is the court jester because it pickets BNY Mellon while
+living on its land. It&rsquo;s a strangely symbiotic relationship. The human
+mic turns the crowd into a single entity speaking its mind to the surrounding
+towers. Occupation works through persistent juxtaposition. Global society needs
+big banks to keep the wheels turning, and we need the Occupation to be our
+conscience and our forum and to help take care of our stragglers.</p>
+ 
+<p>Seriously, you should stop by <a
+    href="http://www.meetup.com/occupytogether/">your local Occupation</a> and
+strike up a conversation with someone&mdash;<i>especially</i> if you&rsquo;re
+in banking. Share your perspective and listen to someone else&rsquo;s, face to
+face. And if you&rsquo;re feeling bold, yell &ldquo;Mic check!&rdquo; in a
+crowd and see what happens. It&rsquo;s inspiring. If you&rsquo;re in
+Pittsburgh, <a href="mailto:chad@zetaweb.com">email me</a> and we&rsquo;ll go
+together.  </p>
+
+
+{% endblock %}

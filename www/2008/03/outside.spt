@@ -1,0 +1,9 @@
+title = "Outside"
+published = "2008-03-08T09:07:00.004-05:00"
+updated = "2011-04-10T09:52:45.159-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+<a href="http://blag.whit537.org/2007/11/exceptionally-simple-theory-of.html">Mentioned</a> surf bum physicist, now <a href="http://en.wikipedia.org/wiki/William_James_Sidis">William James Sidis</a> and <a href="http://plato.stanford.edu/entries/peirce/">Charles Sanders Peirce</a>. Who else?<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-4426811443515590075?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

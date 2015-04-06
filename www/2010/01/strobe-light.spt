@@ -1,0 +1,65 @@
+title = "Strobe Light"
+published = "2010-01-11T23:00:00.012-05:00"
+updated = "2011-04-10T09:52:44.943-04:00"
+certified = "2012-10-18"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>I&rsquo;m trying to learn about electricity. The way I explained it to my
+brother-in-law, who is a chef, is that a programmer should know a little
+something about electricity for the same reason that a chef should grow his own
+herbs: it&rsquo;s good to have a connection to the lower levels of the stack
+you live on.</p>
+
+<p>Disappointingly, I missed <a
+    href="http://www.sparkfun.com/commerce/news.php?id=321">SparkFun&rsquo;s
+    Free Day</a>, but this afternoon my neighbor gave me a chance to redeem
+myself slightly. He plows as a side job, and we&rsquo;ve been getting quite a
+bit of snow this winter. After being on for pretty much three days straight,
+the car adapter for his strobe light had melted. He came up with another one,
+and wanted it attached to the light. Easy enough, but he also wanted the pilot
+light from the old one installed in the new one.</p>
+
+<p>After taking the plug apart, I had to <a
+    href="http://en.wikipedia.org/wiki/Cigar_lighter_receptacle#Technical_details">check
+    Wikipedia to make sure I wired it up again properly</a>&mdash;the center
+post is positive. And I had to check <a
+    href="http://www.ladyada.net/learn/arduino/lesson3.html">the Arduino
+    tutorial I went through a while back</a> to make sure I put the resistor
+for the LED on the correct side&mdash;positive, as it turns out:</p>
+
+<div class="midbar">
+    <img src="http://static.whit537.org/2010/strobe/schematic.jpg" />
+</div>
+
+<p>I managed to fit the pilot light into the new adapter, drilling a hole for
+it and soldering it onto the leads:</p>
+
+<div class="midbar">
+    <img src="http://static.whit537.org/2010/strobe/workbench.jpg" />
+</div>
+
+<p>And it worked! (Mouse over for the full effect.)</p>
+
+<div class="midbar">
+    <img id="strobe" src="http://static.whit537.org/2010/strobe/off.jpg" />
+</div>
+
+<p>A pretty basic repair, but satisfying nonetheless.</p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function ()
+    {
+        $('<img src="http://static.whit537.org/2010/strobe/on.jpg" />');
+        $('#strobe').hover(function() {
+            $('#strobe').attr('src', 'http://static.whit537.org/2010/strobe/on.jpg');
+        }, function()
+            {$('#strobe').attr('src', 'http://static.whit537.org/2010/strobe/off.jpg');
+        })
+    });
+</script>
+   
+{% endblock %}

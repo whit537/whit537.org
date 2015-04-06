@@ -1,0 +1,79 @@
+title = "The Pittsburgh Model"
+published = "2011-10-25T13:39:32.003131"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<style>#mults IMG.pad { padding-right: 30px; }</style>
+</style>
+<div id="mults">
+    <img class="pad" src="camp.0.jpg" />
+    <img class="pad" src="camp.1.jpg" />
+    <img src="camp.2.jpg" />
+</div>
+
+<p>The Occupy Pittsburgh camp is located in a semi-public park called Mellon
+Green on the campus of BNY Mellon, in the heart of downtown Pittsburgh. I used
+to work downtown, and I would sometimes eat lunch at this park. I would buy a
+huge burrito at Qdobapotle, walk across the street, kick off my shoes, lay in
+the grass, and think back a decade to when I was a carefree, idealistic college
+kid. I never expected that a tent city would sprout up in that very park!</p>
+
+<p>Occupations in <a
+    href="http://www.ajc.com/news/atlanta/occupy-atlanta-police-arrest-1209963.html">Atlanta</a>,
+<a
+    href="http://www.reuters.com/article/2011/10/11/us-wallstreet-protests-boston-idUSTRE79A0P320111011">Boston</a>,
+<a
+    href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/10/26/MNUB1LLTC9.DTL">Oakland</a>,
+<a href="http://www.ktvu.com/news/29583107/detail.html">San Jose</a>, and
+elsewhere have been marked by tension with police and city and state
+governments. I have heard from two separate visitors to Zuccotti Park itself
+that the ratio of police to non-police there is one to one. The <a
+    href="http://www.post-gazette.com/pg/11288/1182320-100.stm">situation
+    in Pittsburgh is quite different</a>:</p>
+
+<blockquote>
+
+    <p> Pittsburgh police Lt. Ed Trapp said BNY Mellon executives are allowing
+    the protesters to stay indefinitely.</p>
+
+    <p>He said this is the &ldquo;smoothest&rdquo; protest he has seen as a
+    member of the force. He&rsquo;s been monitoring demonstrations at least
+    since the beginning of the current Iraq war.</p>
+
+    <p>Police spoke with Occupy Pittsburgh organizers before today&rsquo;s
+    events.</p>
+    
+    <p>&ldquo;They kept assuring us they weren&rsquo;t going to be
+    confrontational, and we had the same goal,&rdquo; he said.</p>
+
+</blockquote>
+
+<p>BNY Mellon not only has stated that the camp can remain indefinitely, it has
+actually trucked in straw to help control mud. The police, likewise, have
+barely been seen since that first day. I was in camp during an incident this
+past week when the police arrived to deal with a disruptive individual. There
+was tension in the air, but the situation was resolved without jeopardizing the
+camp as a whole.</p>
+
+<p>This story needs to be told!</p>
+
+<p>Pittsburgh demonstrates that <i>it is possible</i> to be respectful of
+government and corporations while simultaneously voicing a strong opinion. BNY
+Mellon has welcomed the occupation <i>even while <a
+        href="http://www.post-gazette.com/pg/11292/1183268-100-0.stm">they have
+        been picketed</a></i>. This is remarkable! This needs to be highlighted
+and praised. It is <i>exactly</i> the balance we need to strike: vigorous
+debate based upon a strong foundation of mutual respect and commitment to
+non-violence. One person I spoke to even claimed that he had interacted with a
+BNY Mellon senior executive who was visiting the camp, reading signs. They had
+the kind of respectful exchange that only comes from talking to each other face
+to face.  <i>That</i> is what real occupation looks like, and I&rsquo;m damn
+proud of Pittsburgh for showing the world how it&rsquo;s done.</p>
+
+<p>Let&rsquo;s tell this story and work to spread this spirit of respectful,
+vigorous, face-to-face occupation!</p>
+
+
+{% endblock %}

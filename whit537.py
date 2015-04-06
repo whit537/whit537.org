@@ -26,7 +26,7 @@ def render_published(published):
 
 
 def add_stuff(request):
-    request.context['render_published'] = render_published
+    return {'render_published': render_published}
 
 
 tree.startup(website)

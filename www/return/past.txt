@@ -1,7 +1,0 @@
-# Fossilized
-import return_
-
-#out = open(return_.LOG, 'r').read()
-out = return_.PAST
-
-{{ out }}

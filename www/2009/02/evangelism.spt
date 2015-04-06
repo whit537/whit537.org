@@ -1,0 +1,86 @@
+title = "Evangelism"
+published = "2009-02-01T12:00:00.003-05:00"
+updated = "2011-04-10T09:52:45.005-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>So I'm reading philosophy. Descartes, probably, or Hume. Standing at the
+corner of 7th and Liberty with lots of humans, waiting for the Route 1, it hits
+me: philosophy <i>is</i>evangelism. What more do I want from someone than that
+they think seriously about themselves, about life? What more do I want to
+convert a person to, beyond <i>engagement</i>?</p>
+
+<p>I need to test this.Maybe once in ten bus rides, someone will talk to me. My
+pact: if someone talks to me today, I am going to ask them a question:
+&ldquo;What is the most important thing?&rdquo;</p>
+
+<p>I'm sitting in the back, reading Descartes or Hume, for 35 minutes; 10
+minutes until my stop. Mary makes small talk. Electricity. Not that you face
+the person sitting next to you when you talk on the bus, butI don't put on my
+glasses, because I know it's easier if I can't see her. She is wearing a silver
+puffy coat and has wavy hair. She might have an odd piercing. She's about my
+age.</p>
+
+<p>&ldquo;Hey, I'm sorry, but I have to ask you a weird question. Is that
+okay?&rdquo;</p>
+
+<p>&ldquo;Sure.&rdquo;</p>
+
+<p>&ldquo;Ok, I'm sorry, ... this is weird, but ... I promised myself that the
+next person I talked to, I would ask this question ...  What's the most
+important thing?&rdquo; I'm looking at the floor in between us, fidgeting with
+my glasses.</p>
+
+<p>&ldquo;What do you mean? Like ...&rdquo;</p>
+
+<p>&ldquo;Like, what's the most important thing in life. What is the Good. To
+you, that is ...&rdquo;</p>
+
+<p>&ldquo;To love yourself.&rdquo; No question; confident.</p>
+
+<p>I pause. &ldquo;To love yourself. Can I ask why?&rdquo; (What is philosophy
+except &ldquo;why?&rdquo;)</p>
+
+<p>&ldquo;Because if you don't love yourself then you can't give a shit about
+other people.&rdquo; No question.</p>
+
+<p>I'm the only one feeling uncomfortable.This is going really well. &ldquo;So,
+do you love yourself?&rdquo;</p>
+
+<p>&ldquo;Yeah, for the most part ... Do I have regrets? Sure, some.&rdquo;</p>
+
+<p>Pause. &ldquo;Is it too much to ask what some of the regrets might be? You
+don't have to ...&rdquo;</p>
+
+<p>&ldquo;Suicide.&rdquo;</p>
+
+<p>&ldquo;You tried to commit suicide?!&rdquo;</p>
+
+<p>&ldquo;Yes. Right after my dad died, 11 years ago.  He was the reason my
+life had meaning. When he died, I tried to kill myself.&rdquo;</p>
+
+<p>&ldquo;Sheesh! That's heavy!&rdquo;</p>
+
+<p>&ldquo;Sorry, I was just being honest. I'm a very honest person.&rdquo;</p>
+
+<p>&ldquo;No ... thank you! That's awesome! ...  That you're honest, I mean,
+not that you tried to kill yourself ... or that your dad died ...&rdquo;</p>
+
+<p>Time's up. I shove my book in my bag and my glasses in my shirt pocket. I
+grab my coat, stand up, and push the button.</p>
+
+<p>&ldquo;Hey, sorry, this is my stop. Thanks for answering my question. My
+name's Chad, what's your name?&rdquo;</p>
+
+<p>&ldquo;Mary.&rdquo;</p>
+
+<p>&ldquo;Thanks, Mary.&rdquo;</p>
+
+<p>&ldquo;Have a good day, sir.&rdquo;</p>
+
+<p><a href="/dont-forget-the-aitch/">Don't forget the Aitch</a>.</p>
+
+{% endblock %}

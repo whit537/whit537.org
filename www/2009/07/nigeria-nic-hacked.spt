@@ -1,0 +1,9 @@
+title = "Nigeria NIC hacked"
+published = "2009-07-02T22:43:00.007-04:00"
+updated = "2011-04-10T09:52:44.968-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+<p><a href="http://www.nira.org.ng/"><img src="http://static.whit537.org/2009/www.nira.org.ng.jpg" alt="hacked" /></a></p><p>Really gives you a lot of confidence in <a href="http://www.iana.org/domains/root/db/ng.html">the .ng TLD</a>, doesn't it?</p><br /><p><i>Update: This appears to be pretty common, <a href="http://www.google.com/search?q=ng+hacked" alt="NG sites hacked">.ng sites getting hacked</a>. Revenge for <a href="http://www.snopes.com/crime/fraud/nigeria.asp">Nigerian scams</a>? Or is this not limited to Nigeria?</i></p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-700205959577412092?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

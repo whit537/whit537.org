@@ -1,0 +1,9 @@
+title = "Keller@Google"
+published = "2008-05-27T11:55:00.004-04:00"
+updated = "2011-04-10T09:52:45.118-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+I missed Tim Keller last week <a href="http://www.ccojubilee.org/2008/05/01/the-cco-presents-timothy-keller/">in Pittsburgh</a> and haven't read <a href="http://thereasonforgod.com/">his book</a>, but here's a talk he gave at Google in March:<br /><br /><object height="355" width="425"><param name="movie" value="http://www.youtube.com/v/Kxup3OS5ZhQ&amp;hl=en"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Kxup3OS5ZhQ&amp;hl=en" type="application/x-shockwave-flash" wmode="transparent" height="355" width="425"></embed></object><br /><br />The talk is interesting but he botches the Q&amp;A. He must have expected a lot more flaming, because he was ready with a combative attitude. A few missteps:<br /><ul><li>He never really understood the first guy's question, which was a good one.</li><li>He introduces a questioner by saying, "Come on." Sounds like he meant "Bring it on!"<br /></li><li>Using "you" is a defensive move--"What <span style="font-style: italic;">you</span> are trying to do is ..."<br /></li><li>He argues from authority: first the Bible (gets burned), then "Nicholas Wolterstorff's new book, <span style="font-style: italic;">Justice: Rights and Wrongs</span>, it's brand new, it's a hard book, he's a philosopher from Yale, it's Princeton University Press ..." blah, blah, blah.<br /></li><li>Makes a big deal out of Cornelius. He was supposed to roll with Cornelius.<br /></li></ul>The bottom line is that he's dealing with reeking geeks here. He's erudite but he's not a geek, so he comes across as a bit of a colonizing alien.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-4262275963933212752?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

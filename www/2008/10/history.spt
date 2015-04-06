@@ -1,0 +1,9 @@
+title = "History"
+published = "2008-10-28T10:03:00.005-04:00"
+updated = "2011-04-10T09:52:45.071-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+<div>I'm <a href="http://blog.dowski.com/2008/04/12/command-history/">late</a> <a href="http://blog.extracheese.org/2008/04/shell-meme-wins.html">to</a> <a href="http://michael.susens-schurter.com/blog/2008/04/11/history-meme/">the</a> <a href="http://exilejedi.livejournal.com/198371.html">party</a>.</div><pre style="padding-left: 1em">silouan$ history|awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head<br />166 l<br />85 cd<br />84 svn<br />24 sudo<br />20 aspen<br />15 ssh<br />9 grep<br />9 cat<br />7 rm<br />6 date</pre><div>Explanation:</div><div><ul><li><code>l</code> is an alias for <code>pwd&amp;&amp;ls -lFG</code>. It's almost always preceded by ^l.</li><li><code>aspen</code> is <a href="http://www.zetadev.com/software/aspen/">Aspen</a>.</li><li><code>date</code>: I'm actually running FreeBSD under VMWare, but I didn't install the VMWare tools because they require X, so when I want to sync the clock I do it manually.<br /></li></ul></div><div>I use <code>vim</code> (with tabs) and <code>screen</code>, but those stay running for a long time.</div><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-299459688963151828?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

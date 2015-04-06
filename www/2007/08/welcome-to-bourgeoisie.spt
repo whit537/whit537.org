@@ -1,0 +1,15 @@
+title = "Welcome to the bourgeoisie"
+published = "2007-08-16T14:46:00.000-04:00"
+updated = "2011-04-10T09:52:45.250-04:00"
+certified = True
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<div class="midbar">
+    <img src="http://static.whit537.org/2007/sienna.jpg" alt="Toyota Sienna" />
+    <div class="centered caption">It's only got 44 miles on it.</div>
+</div>
+
+{% endblock %}

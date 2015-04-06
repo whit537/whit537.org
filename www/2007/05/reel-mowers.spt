@@ -1,0 +1,9 @@
+title = "Reel mowers"
+published = "2007-05-20T16:45:00.000-04:00"
+updated = "2011-04-10T09:52:45.319-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+I'm trying to get in touch with my inner Amishman by establishing a fully human-powered lawn care system. There are basically three nuts to crack:<br /><ol><li>Cutting the grass</li><li>Edging the grass</li><li>Trimming the hedge</li></ol>For each, I figure I need to find the right tools, and I need to landscape our lawn smartly.<br /><br />Let's start with tools for cutting the grass. We have a dull old Sears reel mower, which works much better now that I've adjusted the blades. But I've got my eye on a <a href="http://www.peoplepoweredmachines.com/sunlawn-reel/mm1-reel-mower.htm">Sunlawn MM2</a>. It's the widest of the Brill/Sunlawn mowers, and has the most blades. From what I can tell, <a href="http://www.brill.de/">Brill</a> is a German company that is re-branded in the US by <a href="http://www.sunlawn.com/">Sunlawn</a>. Then there are <a href="http://www.peoplepoweredmachines.com/">other</a> <a href="http://www.cleanairgardening.com/">companies</a> that resell both Brill and Sunlawn. In any case, looks like those are the best reel mowers available in the States. And you can <a href="http://www.reelmowerguide.com/">see them in action here</a>. When is Father's Day again?<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2858257814569506538?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

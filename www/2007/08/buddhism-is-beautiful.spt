@@ -1,0 +1,9 @@
+title = "Buddhism is beautiful"
+published = "2007-08-03T06:04:00.000-04:00"
+updated = "2011-04-10T09:52:45.261-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+Buddhism is <a href="http://www.darkroastedblend.com/2007/08/creation-and-destruction-of-sand.html">beautiful</a>.<br /><br /><a href="http://www.darkroastedblend.com/2007/08/creation-and-destruction-of-sand.html"><img src="http://static.whit537.org/2007/mandala.jpg" alt="monks working on a mandala" /></a><br /><br /><a href="http://www.darkroastedblend.com/2007/08/creation-and-destruction-of-sand.html"><img src="http://static.whit537.org/2007/mandala-detail.jpg" alt="close-up shot of a mandala being constructed" /></a><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-6908653093961750043?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

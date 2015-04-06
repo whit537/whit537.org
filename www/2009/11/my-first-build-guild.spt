@@ -1,0 +1,9 @@
+title = "My first Build Guild"
+published = "2009-11-11T22:38:00.004-05:00"
+updated = "2011-04-10T09:52:44.955-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+<p>Made it out to my first <a href="http://pittsburgh.buildguild.org/">Build Guild</a> event tonight. It's a very casual geek night that is filling in the cracks: No Bay Area, Seattle, or NYC chapters yet. Instead you've got Salem, Pittsburgh, Philly, Albany, and apparently new chapters in the works in Billings, Tampa, and Houston.</p><p>Dave and Bridget are the welcoming hosts of the Pittsburgh edition. They work at <a href="http://www.cmu.edu/">CMU</a> along with a few other attendees. The evening was very human but also resulted in some connections of business value. Probably the highest name-check rating goes to Eric Richie, project manager for the <a href="http://www.adium.im/">Adium</a> chat client. Who knew?</p><p>Having been reminded that humans make this whole geek thing more fun (slash profitable), there are a <a href="http://www.meetup.com/pittsburghwebdesign/">few</a> <a href="http://www.pghgeeks.org/">other</a> <a href="http://www.facebook.com/group.php?gid=38286955086">events</a> I intend to check out. I'll keep you posted.</p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2770878996214149662?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

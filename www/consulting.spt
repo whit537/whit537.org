@@ -1,0 +1,105 @@
+import re
+import datetime
+from collections import defaultdict
+
+title = "Consulting"
+certified = True
+[---]
+_projects = """\
+sprout Sprout Fund
+svsd Seneca Valley School District
+"""
+names = dict([line.strip().split(None, 1) for line in _projects.splitlines()])
+
+projects = defaultdict(list)
+
+_time = """\
+2015-04-03
+08:45 sprout 10:45
+
+2015-03-27
+10:30 sprout 12:00
+13:00 sprout 16:30
+
+2015-03-20
+11:00 sprout 12:45
+13:15 sprout 16:15
+
+2015-03-12
+19:15 sprout 20:15
+
+2015-03-06
+10:00 svsd 11:00
+
+2015-03-05
+11:15 sprout 17:30
+17:30 svsd 18:30
+
+2015-03-03
+12:00 sprout 14:30
+"""
+
+class Time(object):
+    def __init__(self, y,m,d, start, end):
+        self.date = datetime.date(y,m,d)
+        self.start = start
+        self.end = end
+        self.duration = end - start
+
+
+y = m = d = None
+by_project = defaultdict(int)
+totals = defaultdict(lambda: datetime.timedelta(0))
+for line in _time.splitlines():
+
+    line = line.strip()
+    if not line:
+        continue
+    elif re.match(r'\d\d\d\d-\d\d-\d\d', line):
+        y, m, d = [int(x) for x in line.split('-')]
+        parse_time = lambda t: datetime.datetime(y, m, d, *tuple([int(x) for x in t.split(':')]))
+    else:
+        start, proj, end = line.split()
+        start, end = parse_time(start), parse_time(end)
+        delta = end - start
+        time = Time(y,m,d, start, end)
+        projects[names[proj]].append(time)
+        totals[names[proj]] += time.duration
+
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>Thanks for wanting to work with me! I consult on a <a
+href="http://en.wikipedia.org/wiki/Pay_what_you_want">pay-what-you-want</a>
+basis. Contact me via <a
+href="https://github.com/whit537/whit537.org/issues/new">GitHub</a> or <a
+href="mailto:chad@zetaweb.com">email</a> to invite me to work with you. I'll
+report my hours here. If you would like to pay me, you may do so on <a
+href="https://gratipay.com/whit537">Gratipay</a>.</p>
+
+{% for project, times in projects.items() %}
+<h2>{{ project }}</h2>
+<p style="text-align: center; font-style: italic;">$0.00 / hour</p>
+<table>
+    <tr>
+        <td>Start</td>
+        <td>End</td>
+        <td>Duration</td>
+    </tr>
+    {% for time in times %}
+    <tr>
+        <td>{{ time.start }}</td>
+        <td>{{ time.end }}</td>
+        <td>{{ time.duration }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{ totals[project] }}</td>
+    </tr>
+</table>
+{% endfor %}
+
+{% endblock %}

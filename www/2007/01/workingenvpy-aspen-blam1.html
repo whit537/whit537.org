@@ -1,9 +1,0 @@
-title = "workingenv.py + Aspen = BLAM!!!!1"
-published = "2007-01-17T16:32:00.000-05:00"
-updated = "2011-04-10T09:52:45.360-04:00"
-^L
-^L
-{% extends "base.html" %}
-{% block content %}
-So I finally got around to trying out <a href="http://cheeseshop.python.org/pypi/workingenv.py">workingenv.py</a>, which took all of about 2 minutes. It's wonderful beyond my wildest expectations!<br /><br />Aspen websites all have a "magic directory" named __ (that's two underscores), which is a Unix-style userland for all the junk needed to run your website. Sweep all the crap under that rug, and you can use the site root itself to store actual hierarchical data and things.<br /><br />The bottom line is that workingenv dovetails perfectly with this scheme. Make the magic directory your workingenv, and wherever you are you can install and access the libraries for the site you're currently working on. What a boon! Thanks Ian!<br /><br /><span style="font-weight: bold;">PS:</span> For the <a href="http://tech.whit537.org/search/label/nih">NIH record</a>, I didn't <a href="http://blog.ianbicking.org/workingenv-update.html">invent workingenv</a>. Am I <a href="http://tech.whit537.org/2006/10/my-name-is-chad-and-i-have-nih.html">cured yet</a>?<br /><br /><span style="font-weight: bold;">Update:</span> Since all magic directories are named __, workingenv's new prompt isn't that helpful. To make it more so, apply <a href="http://tech2.whit537.org/2007/workingenv-magic-directory.patch">this patch</a>.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-1087800928580666759?l=blag.whit537.org' alt='' /></div>
-{% end %}

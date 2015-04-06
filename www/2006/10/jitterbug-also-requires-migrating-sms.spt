@@ -1,0 +1,9 @@
+title = "Jitterbug: Also requires migrating SMS to VoIP"
+published = "2006-10-28T16:13:00.000-04:00"
+updated = "2011-04-10T09:52:45.406-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+I have a script called <a href="https://www.zetadev.com/svn/public/sanity/trunk/sanity.py">sanity</a> that checks every 15 minutes to see if all of my websites are up, and reports via email if not. The email forwards to my cell phone. Pretty standard, I think.<br /><br />The <a href="/2006/10/jitterbug-more-expensive-no.html">Jitterbug</a> doesn't have text messaging though, so I'd have to come up with an alternate solution, like actually placing voice calls to my cell. After some digging, here's what I think that would take to implement:<br /><ul><li>install <a href="http://www.asterisk.org/">Asterisk<br /></a></li><li>install an <a href="http://www.voip-info.org/wiki/view/FXO">FXO adapter</a>, which appear to run about <a href="http://www.voip-info.org/wiki/view/FXO"><a href="http://froogle.google.com/froogle?q=fxo+adapter&num=100&amp;scoring=p">$50 to $75</a><br /></a></li><li>hack sanity to place calls via Asterisk</li></ul>Afaict from here, Asterisk acts a bit like a web server, and you talk to it via CGI/FastCGI-style interfaces called AGI and FastAGI. Looks like there's a few Python options for this: <a href="http://sourceforge.net/projects/pyst">pyst</a>, <a href="http://py-asterisk.berlios.de/py-asterisk.php">py-Asterisk</a>, <a href="http://www.vrplumber.com/programming/starpy/">StarPy</a>. Ironically, I just moved sanity off of my home machine, but I doubt I'll be able to get a POTS connection at the colo. :)<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8003025342176963880?l=blag.whit537.org' alt='' /></div>
+{% endblock %}

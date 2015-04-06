@@ -1,9 +1,0 @@
-title = "Flaky network on FreeBSD 6.2 under VMware"
-published = "2007-05-22T11:46:00.000-04:00"
-updated = "2011-04-10T09:52:45.317-04:00"
-^L
-^L
-{% extends "base.html" %}
-{% block content %}
-I like <a href="http://www.vmware.com/">VMware</a>. I use it to run a FreeBSD virtual machine, where I do all of my development. This works swimmingly at home, but here at work I've been seeing a flaky network connection between my host OS and the FreeBSD guest. The result is that I edit a file and refresh the browser, only to get a "The connection was rest" error in Firefox. ACK. What a buzz-kill!<br /><br />Thankfully, the VMware forums are lively and helpful. I find plain-text mail archives to be cleaner, but whatever: I think I got <a href="http://www.vmware.com/community/thread.jspa?messageID=650836">my answer</a> (<a href="http://ivoras.sharanet.org/freebsd/vmware.html">good background</a>).<br /><br /><span style="font-weight: bold;">Update:</span> With <a href="http://www.vmware.com/community/thread.jspa?messageID=651024&#651024">further assistance</a>, I installed VMware tools after all, and am now using the provided vmxnet driver.<br /><br />Overall, this was a really positive experience with the VMware community. Looks to me like VMware nails the business/FOSS mix.<br /><br /><span style="font-weight: bold;">Update Update: </span>ACK. Problem persists, though less frequently? Workaround is `cd /etc/rc.d/ &&amp; ./netif restart &&amp; ./routing restart` in the VMware console window.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8490410757974001543?l=blag.whit537.org' alt='' /></div>
-{% end %}

@@ -1,0 +1,119 @@
+title = "Crimpers"
+published = "2009-06-06T09:51:00.002-04:00"
+updated = "2011-04-10T09:52:44.971-04:00"
+updated = "2012-10-18T15:13"
+certified = True
+
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+
+<p>At 9:00 AM on Monday, June 1, <a href="http://www.pghacs.com/">Pittsburgh
+    Area Computer Services</a> opens its doors for the first time, two blocks
+from my house. At 9:45, my friend Rick and I walk in to buy some network cable
+so we can fix up my home network for the week that Rick is in town. There are
+four people in PghACS t-shirts: Chris and Brian run the joint, with wife and
+fiance. The walls are stocked with computer miscellany in PghACS-branded bags.
+The radio is up too loud.</p>
+
+<p>We introduce ourselves and ask Chris for 50&rsquo; of CAT-5 cable, some cable
+ends, and a cable crimper. The ends are hanging on the wall; we pick up a bag.
+Chris sends Brian to the back room to measure out the cable. The crimpers are
+on order but haven&rsquo;t arrived yet. Ten minutes later Chris goes into the back
+room and turns down the radio. A minute later, he and Brian return with no
+cable (and no explanation). The credit card machine isn&rsquo;t working yet, so Rick
+and I pay $7 cash for the cable ends, and promise to return tomorrow for the
+cable and crimpers.</p>
+
+<p>On Tuesday morning, June 2, we stop back in at PghACS. Chris is the only one
+in the store. The radio is off. Chris greets us warmly and pulls out our cable,
+neatly coiled. Have the crimpers arrived yet? Nope. The credit card machine is
+working, so we swipe $8 for the cable and leave. On the way out, we notice one
+of our fifteen dollars hanging on the wall.</p>
+
+<p>On Wednesday, June 3, we give PghACS the day off.</p>
+
+<p>On Thursday, June 4, I call Chris. No crimpers yet.</p>
+
+<p>On Friday afternoon, June 5, we stop in at PghACS. Brian greets us with a
+jocular, &ldquo;Ok ... what are you guys doing in here AGAIN?!?!&rdquo;</p>
+
+<p>&ldquo;We&rsquo;re here to buy crimpers.&rdquo;</p>
+
+<p>&ldquo;Sorry, they&rsquo;re not in yet,&rdquo; Brian explains, as if PghACS
+is a trading post in the Yukon, and we have to wait for the raft to arrive from
+up-river before we can buy crimpers.</p>
+
+<p>&ldquo;Well,&rdquo; says Rick. &ldquo;It seems like one of us is going to
+have to drive to Radio Shack and buy some crimpers.&rdquo; Mind you, Rick
+passes Radio Shack on the way to my house each morning.</p>
+
+<p>&ldquo;Trust me, you&rsquo;ll be back! Radio Shack sells crappy
+crimpers.&rdquo;</p>
+
+<p>&ldquo;Well, can we buy your pair?&rdquo;</p>
+
+<p>&ldquo;What, like my own pair?  No, I couldn&rsquo;t do that. I mean, I
+could let you borrow them. You guys have been in here a few times, I trust
+you.&rdquo;</p>
+
+<p>At this point, the subject changes to World of Warcraft. &ldquo;Do you guys
+know how much money they make?&rdquo; Brian asks. &ldquo;When somebody wants
+something, they don&rsquo;t care how much they have to pay for it.&rdquo;</p>
+
+<p>Now is my chance. &ldquo;I&rsquo;ll tell you what I want: some crimpers. How
+much do I have to pay you to walk out of here with your crimpers?&rdquo;</p>
+
+<p>&ldquo;Hold on a second.&rdquo;</p>
+
+<p>Brian calls Chris and asks for permission to sell me Brian&rsquo;s crimpers. Chris
+grants him permission, after I shout to him reassurances that it was my idea.
+Brian calls his fiance (they live upstairs), who watches the store while Brian
+goes upstairs and brings down his toolbag. He pulls out his crimpers and sells
+them to us for $18, cash.</p>
+
+<div class="midbar">
+
+    <img src="http://static.whit537.org/2009/crimpers.jpg" 
+        alt="Crimpers!" />
+
+</div>
+
+<p>We then attempt to buy his cable tester for $25 (after another call to
+Chris), but the credit card machine isn&rsquo;t working.</p>
+
+<p>Regarding the issue of the crimpers, however, here are some of the options
+that Chris and Brian might have explored:</p>
+
+<ul>
+    
+    <li>On Monday, order <a
+        href="http://www.amazon.com/dp/B0000AZK4G/">crimpers from Amazon</a>,
+    with next-day shipping. Sell us crimpers on Tuesday.</li>
+    
+    <li>On Monday, drive to Radio Shack and buy cheap crimpers.  Sell us
+    crimpers on Tuesday.</li>
+    
+    <li>On Monday, drive to Best Buy and buy three different crimpers. Sell us
+    crimpers on Tuesday. Then, drive to Best Buy and return the other two
+    crimpers.</li>
+    
+    <li>On Monday (while three people watch the store), walk upstairs, retrieve
+    their crimpers, and then sell us their crimpers.</li>
+    
+    <li>On Monday, lend their crimpers to us.</li>
+    
+    <li>On Monday, walk two blocks to my house with their bag of tools and a
+    roll of cable, and crimp two cables for us on the spot.</li>
+    
+    <li>On Monday, ask us what our cabling needs are. Sell us an 8&rsquo; cable
+    that is hanging on their wall, and crimp us a 20&rsquo; cable on the
+    spot.</li>
+
+</ul>
+
+<p>What else could Chris and Brian have done to sell me crimpers? More
+importantly, who is asking me for crimpers? What am I telling them?</p>
+
+{% endblock %}

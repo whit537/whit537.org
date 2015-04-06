@@ -1,9 +1,0 @@
-title = "One repo, 27,923 nodes"
-published = "2007-02-06T15:06:00.000-05:00"
-updated = "2011-04-10T09:52:45.339-04:00"
-^L
-^L
-{% extends "base.html" %}
-{% block content %}
-I lost patience. <a href="http://tech.whit537.org/2007/02/one-directory-500000-files.html">Creating 500,000 files</a> is one thing. Listing them with <code>ls(1)</code> isn't even really that bad. But after 20 minutes of churn, I only added 27,922 of them to a Subversion working copy. And the actual commit is still spinning after another 45 minutes!<br /><br />I don't think you'd plan for this exact situation in the real world. MySpace adds what, 10k users a day or something? So you could manage your commits in such a way that you only dealt with at most a few hundred nodes at a time.<br /><br />Here's the basic pattern I envision: Your web app deals with a working copy, not the repo directly. So users are manipulating data on the filesystem. At various points in the workflow, their work is <span style="font-style: italic;">snapshotted</span>&mdash;committed to the repo. You've got a little ACID fudge in there, but that's web apps, no? <a href="http://www.google.com/search?q=acid+bigtable">How ACID is bigtable?</a><br /><br />In short: I have a vague feeling that this would scale fairly smoothly, given that the filesystem is designed for partitioning, and Subversion for replication. And since I'm <a href="http://gettingreal.37signals.com/ch04_Scale_Later.php">not supposed to worry about this</a> anyway, that's enough for today. Worst case, I can always create 500,000 empty files in a single directory, and commit 5.6% of them to a Subversion repo, in about two hours.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-1310700129081270487?l=blag.whit537.org' alt='' /></div>
-{% end %}

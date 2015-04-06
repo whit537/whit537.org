@@ -1,0 +1,9 @@
+title = "Me and my boy"
+published = "2007-06-25T06:08:00.000-04:00"
+updated = "2011-04-10T09:52:45.296-04:00"
+[---]
+[---] text/html
+{% extends "base.html" %}
+{% block content %}
+<img src="http://tech2.whit537.org/2007/samuel.awesome.jpg" /><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8568540988391223104?l=blag.whit537.org' alt='' /></div>
+{% endblock %}
