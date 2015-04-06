@@ -2,6 +2,7 @@ import os
 import os.path
 
 import aspen
+from aspen.testing.client import Client
 import pymongo
 import pymongo.uri_parser
 
@@ -44,12 +45,14 @@ def startup(website):
         # ============
 
         parent = path[len(website.www_root):].replace(os.sep, '/')
+        client = Client()
+        client._website = website
         for name in files:
             if name == 'index.html':
                 name = ''
             url_path = '/'.join([parent, name])
             aspen.log("indexing " + url_path)
-            resource = website.load_simplate(url_path)
+            resource = client.load_resource(url_path)
             doc = {"_id": url_path}
             if hasattr(resource, 'pages'):
                 assert isinstance(resource.pages[0], dict) # sanity check

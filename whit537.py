@@ -28,5 +28,5 @@ def add_stuff(request):
 
 tree.startup(website)
 
-website.hooks.inbound_early.register(canonize)
-website.hooks.inbound_early.register(add_stuff)
+website.algorithm.insert_after('parse_environ_into_request', canonize)
+website.algorithm.insert_after('canonize', add_stuff)
