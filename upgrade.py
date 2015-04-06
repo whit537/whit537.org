@@ -2,10 +2,28 @@
 from __future__ import print_function
 import os
 
+def jinjaize(template):
+    for line in template.splitlines():
+        if '{% block' in line:
+            print(line)
+            end = '{% endblock %}'
+        if '{% if' in line:
+            print(line)
+            end = '{% endif %}'
+        if '{% for' in line:
+            print(line)
+            end = '{% endfor %}'
+
+        if '{% end %}' in line:
+            print(line)
+            line.replace('{% end %}', end)
+
+
 def migrate(ext, contents, sep):
     one, two, three = contents.split(sep + '\n')
     media_type = {'txt': 'text/plain', 'html': 'text/html'}[ext]
-    return one + '[---]\n' + two + '[---] ' + media_type + '\n' + three
+    return one + '[---]\n' + two + '[---] ' + media_type + '\n' + jinjaize(three)
+
 
 for path, dirs, files in os.walk('www'):
     for filename in files:
