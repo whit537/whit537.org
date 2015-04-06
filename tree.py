@@ -50,7 +50,7 @@ def startup(website):
         for name in files:
             if name.endswith('.spt'):
                 name = name[:-4]
-            if name in ['index', 'index.html']:
+            if name in 'index':
                 name = ''
             url_path = '/'.join([parent, name])
             aspen.log("indexing " + url_path)

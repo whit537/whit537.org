@@ -8,6 +8,9 @@ from aspen.website import Website
 
 
 website = Website([])
+website.renderer_default = 'unspecified'  # require explicit renderer, to avoid escaping bugs
+website.default_renderers_by_media_type['text/html'] = 'jinja2'
+website.default_renderers_by_media_type['text/plain'] = 'jinja2'
 
 
 canonize = Canonizer(os.environ['CANONICAL_LOCATION'])
