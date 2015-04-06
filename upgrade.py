@@ -3,20 +3,24 @@ from __future__ import print_function
 import os
 
 def jinjaize(template):
+    contexts = []
+    lines = []
     for line in template.splitlines():
+        if line.count('{% end %}') > 1:
+            print(line)
+
         if '{% block' in line:
-            print(line)
-            end = '{% endblock %}'
+            contexts.append('{% endblock %}')
         if '{% if' in line:
-            print(line)
-            end = '{% endif %}'
+            contexts.append('{% endif %}')
         if '{% for' in line:
-            print(line)
-            end = '{% endfor %}'
+            contexts.append('{% endfor %}')
 
         if '{% end %}' in line:
-            print(line)
-            line.replace('{% end %}', end)
+            line = line.replace('{% end %}', contexts.pop())
+
+        lines.append(line)
+    return '\n'.join(lines)
 
 
 def migrate(ext, contents, sep):

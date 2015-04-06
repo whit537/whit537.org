@@ -48,8 +48,9 @@ def startup(website):
         client = Client()
         client._website = website
         for name in files:
-            if name.endswith('.spt'):
-                name = name[:-4]
+            if not name.endswith('.spt'):
+                continue
+            name = name[:-4]
             if name in 'index':
                 name = ''
             url_path = '/'.join([parent, name])
