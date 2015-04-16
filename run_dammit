@@ -22,7 +22,9 @@ def update_env():
             continue
         for line in envfile:
             line = line.split('#', 1)[0].strip()
-            k, v = [x.strip() for x in line.split('=')]
+            if not line:
+                continue
+            k, v = [x.strip() for x in line.split('=', 1)]
             os.environ[k] = v
         print("SUCCESS: Updated environment with values from {}.".format(envfilepath))
 
