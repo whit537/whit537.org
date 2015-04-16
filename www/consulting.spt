@@ -64,43 +64,23 @@ fieldset {
     margin: 6pt auto 24pt;
     padding: 0;
     border: 0;
-}
-form .invoice-from {
-    width: 48%;
-    float: left;
-    margin-right: 2%;
-    text-align: right;
-}
-form .invoice-to {
-    width: 48%;
-    float: left;
-    margin-left: 2%;
+    padding: 0 25%;
+    text-align: center;
 }
 form label {
     display: block;
     margin: 0;
     padding: 0;
 }
-form input[type=text] {
+form input[type=text],
+form input[type=password] {
     width: 80%;
     margin: 4pt 0;
     padding: 4pt;
     border: 1px solid #999;
 }
-form textarea[disabled=true] {
-    background: #EEE;
-    color: #999;
-}
-form textarea {
-    width: 80%;
-    height: 108px;
-    margin: 4pt 0 0px;
-    padding: 4pt;
-    border: 1px solid #999;
-}
-form .email {
-    padding: 0 26%;
-    text-align: center;
+form input[name=rate] {
+    width: 61%;
 }
 form button {
     border-radius: 4pt;
@@ -122,57 +102,43 @@ href="mailto:chad@zetaweb.com">email</a> to negotiate how much time I can give
 you. I'll report my hours here. If you would like to pay me, you can generate
 an invoice below. Thanks! :-)</p>
 
-
-<h2>Generate an Invoice</h2>
-
 <form action="/invoice.pdf" method="POST" target="_blank">
-    <i>Fill out the basics, and then select line items below.</i>
-    <fieldset class="basics">
-        <div class="invoice-from">
-            <textarea disabled="true">Chad Whitacre
-716 Park Road
-Ambridge, PA 15003
-USA</textarea>
-            <label><input name="from_tax_id" type="text" placeholder="Chad's Tax ID"></label>
-        </div>
-        <div class="invoice-to">
-            <label><textarea name="to_address" placeholder="Your Name & Address"></textarea></label>
-            <label><input name="to_tax_id" type="text" placeholder="Your Tax ID"></label>
-        </div>
-    </fieldset>
 
-{% for client, times in clients.items() %}
-<h2>{{ client}}</h2>
-<p style="text-align: center; font-style: italic;">$0.00 / hour</p>
+    {% for client, times in clients.items() %}
+    <h2>{{ client}}</h2>
+    <p style="text-align: center; font-style: italic;">$0.00 / hour</p>
 
-<table>
-    <tr>
-        <td><input type="checkbox"></td>
-        <td>Start</td>
-        <td>End</td>
-        <td>Duration</td>
-    </tr>
-    {% for time in times %}
-    <tr>
-        <td><input type="checkbox" name="" value="{{ time }}"></td>
-        <td>{{ time.start }}</td>
-        <td>{{ time.end }}</td>
-        <td>{{ time.duration }}</td>
-    </tr>
+    <table>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Start</td>
+            <td>End</td>
+            <td>Duration</td>
+        </tr>
+        {% for time in times %}
+        <tr>
+            <td><input type="checkbox" name="" value="{{ time }}"></td>
+            <td>{{ time.start }}</td>
+            <td>{{ time.end }}</td>
+            <td>{{ time.duration }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3"></td>
+            <td>{{ totals[client] }}</td>
+        </tr>
+    </table>
     {% endfor %}
-    <tr>
-        <td colspan="3"></td>
-        <td>{{ totals[client] }}</td>
-    </tr>
-</table>
-{% endfor %}
 
-    <h2>Email the Invoice</h2>
+    <h2>Generate an Invoice</h2>
+    <i>Select line items above.</i>
+
     <fieldset>
-        <div class="email">
-            <label><input name="email" type="text" placeholder="Your Email Address"></label>
-            <button type="submit">Email the Invoice</button>
-        </div>
+        <label>$<input name="rate" type="text" placeholder="Hourly Rate"> per hour</label>
+        <label><input name="email" type="text" placeholder="Your Email Address"></label>
+        <label><input name="password" type="password" placeholder="Your Password"></label>
+        <button type="submit">Email the Invoice</button>
     </fieldset>
+
 </form>
 {% endblock %}
