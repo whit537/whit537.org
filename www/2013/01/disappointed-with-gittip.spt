@@ -3,7 +3,7 @@ published = "2013-01-30T13:57:0.0"
 certified = True
 [---]
 [---] text/html
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
 
 <p class="no-indent"><i>I drafted this as an email to <a

@@ -3,7 +3,7 @@ published = "2012-12-05T12:00:0.0"
 certified = True
 [---]
 [---] text/html
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
 
 <p>I run a website called <a href="https://www.gittip.com/">Gittip</a>, which

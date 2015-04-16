@@ -3,7 +3,7 @@ published = "2013-03-08T23:16:00.00"
 certified = True
 [---]
 [---] text/html
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
 
 <p>There's a half-joking diagram of startup <a

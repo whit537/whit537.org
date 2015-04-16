@@ -3,7 +3,7 @@ published = "2012-11-15T12:00:0.0"
 certified = True
 [---]
 [---] text/html
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
 
 <p>There was a guy a while ago who was on a kick about adding &ldquo;<a
