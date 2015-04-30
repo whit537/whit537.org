@@ -20,12 +20,14 @@ class Vault(Fernet):
             self.dump({})
 
     def load(self):
-        raw = open(self.filepath).read()
-        return pickle.loads(self.decrypt(raw))
+        encrypted = open(self.filepath).read()
+        clear = self.decrypt(encrypted)
+        return pickle.loads(clear)
 
     def dump(self, entities):
-        raw = self.encrypt(pickle.dumps(entities))
-        open(self.filepath, 'w+').write(raw)
+        clear = pickle.dumps(entities)
+        encrypted = self.encrypt(clear)
+        open(self.filepath, 'w+').write(encrypted)
 
     def list(self):
         return list(sorted(self.load().keys()))
