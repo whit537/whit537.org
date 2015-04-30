@@ -1,18 +1,27 @@
-import time
+import bcrypt
 import datetime
+import os
+import time
+from aspen import Response
 from fpdf import FPDF
+from vault import Vault
 
 def number():
     digits = str(int(time.time()*1000000))
     return digits[:-4] + '-' + digits[-4:]
 
-FROM = """\
-Chad Whitacre
-716 Park Road
-Ambridge, PA 15003
-USA"""
-
 [---]
+entities = Vault(os.environ['VAULT_SECRET']).load()
+from_ = entities['whit537']
+code =  request.body['code']
+to = entities[code]
+
+email = request.body['email']
+password = request.body['password'].encode('utf8')
+hashed = to['password']
+if bcrypt.hashpw(password, hashed) != hashed:
+    raise Response(403)
+
 pdf = FPDF(unit='pt', format='letter')
 pdf.add_page()
 
@@ -20,11 +29,11 @@ def writeln(text='', font_size=14, font_weight=''):
     pdf.set_font('Arial', font_weight, font_size)
     pdf.cell(0, font_size*1.5, text, ln='1')
 
-from_address = [x.strip() for x in FROM.splitlines()]
-from_tax_id = request.body.get('from_tax_id', 'n/a')
+from_address = from_.get('address', 'n/a').splitlines()
+from_tax_id = from_.get('tax_id', 'n/a')
 
-to_address = [x.strip() for x in request.body.get('to_address', '').splitlines()]
-to_tax_id = request.body.get('to_tax_id', '')
+to_address = to.get('address', 'n/a').splitlines()
+to_tax_id = to.get('tax_id', 'n/a')
 
 address_height = (max(len(from_address), len(to_address))) * 21
 tax_id_position = 72 + 36 + 15 + 21 + 21 + 15 + address_height + 21

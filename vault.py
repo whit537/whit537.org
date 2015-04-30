@@ -6,6 +6,7 @@ from __future__ import print_function
 import cmd
 import os
 import pickle
+import bcrypt
 from cryptography.fernet import Fernet
 
 
@@ -52,9 +53,10 @@ class Vault(Fernet):
 
 class VaultCmd(cmd.Cmd):
 
-    def __init__(self, secret, initial_cwe):
+    def __init__(self, secret, salt, initial_cwe):
         cmd.Cmd.__init__(self)
         self.vault = Vault(secret)
+        self.salt = salt
         self.cwe = initial_cwe  # cwe == current working entity (think cwd)
         self.update_prompt()
 
@@ -86,11 +88,6 @@ class VaultCmd(cmd.Cmd):
                     print(("\x1b[36;1m{:%d}\x1b[0m" % two).format(line))
                     k = ''  # don't show key after first line
 
-    def complete_l(self, text, line, begidx, endidx):
-        entities = self.vault.load()
-        if self.cwe in entities:
-            return [n for n in entities[self.cwe].keys() if n.startswith(text)]
-
 
     def do_ls(self, line):
         "List available entities."
@@ -109,7 +106,7 @@ class VaultCmd(cmd.Cmd):
     complete_ce = complete_ls
 
 
-    def do_set(self, line):
+    def do_set(self, line, salt=None):
         "Set a key/value pair for the current working entity."
         try:
             key, value = line.split(None, 1)
@@ -117,8 +114,23 @@ class VaultCmd(cmd.Cmd):
         except ValueError:
             pass
         else:
+            if salt:
+                value = bcrypt.hashpw(value, salt)
             self.vault.upsert(self.cwe, **{key: value})
     do_s = do_set
+
+    def complete_set(self, text, line, begidx, endidx):
+        entities = self.vault.load()
+        if self.cwe in entities:
+            return [n for n in entities[self.cwe].keys() if n.startswith(text)]
+
+
+    def do_seth(self, line):
+        "Set a key/hashed value for the current working entity."
+        return self.do_set(line, salt=self.salt)
+
+    complete_seth = complete_set
+
 
     def do_rm(self, key):
         "Remove an entity key."
@@ -126,7 +138,7 @@ class VaultCmd(cmd.Cmd):
             self.vault.remove(self.cwe, key=key)
     do_r = do_rm
 
-    complete_r = complete_rm = complete_l
+    complete_r = complete_rm = complete_set
 
 
     def do_remove_entity(self):
@@ -135,14 +147,15 @@ class VaultCmd(cmd.Cmd):
     # no tab-completion; make it hard!
 
 
-def main(secret, initial_cwe):
+def main(secret, salt, initial_cwe):
     try:
-        VaultCmd(secret, initial_cwe).cmdloop()
+        VaultCmd(secret, salt, initial_cwe).cmdloop()
     except KeyboardInterrupt:
         print()
 
 
 if __name__ == '__main__':
     secret = os.environ['VAULT_SECRET']
+    salt = os.environ['VAULT_SALT']
     initial_cwe = os.environ['VAULT_INITIAL_CWE']
-    main(secret, initial_cwe)
+    main(secret, salt, initial_cwe)

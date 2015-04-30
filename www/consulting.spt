@@ -135,6 +135,7 @@ an invoice below. Thanks! :-)</p>
 
     <fieldset>
         <label>$<input name="rate" type="text" placeholder="Hourly Rate"> per hour</label>
+        <label><input name="code" type="text" placeholder="Your Entity Code"></label>
         <label><input name="email" type="text" placeholder="Your Email Address"></label>
         <label><input name="password" type="password" placeholder="Your Password"></label>
         <button type="submit">Email the Invoice</button>
