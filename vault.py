@@ -9,12 +9,8 @@ import pickle
 from cryptography.fernet import Fernet
 
 
-class EntityVault(Fernet):
-    """A securely stored database of business entities.
-
-    Business entities are recorded as dictionaries. One entity is me, the
-    biller (distinguished by a particular code). The rest are my clients.
-
+class Vault(Fernet):
+    """A simple database of dictionaries, with encrypted persistence.
     """
 
     def __init__(self, secret, filepath=os.path.join(os.path.dirname(__file__), 'vault.db')):
@@ -56,7 +52,7 @@ class VaultCmd(cmd.Cmd):
 
     def __init__(self, secret, initial_cwe):
         cmd.Cmd.__init__(self)
-        self.entity_vault = EntityVault(secret)
+        self.vault = Vault(secret)
         self.cwe = initial_cwe  # cwe == current working entity (think cwd)
         self.update_prompt()
 
@@ -73,7 +69,7 @@ class VaultCmd(cmd.Cmd):
 
     def do_l(self, line):
         "List key/values for current working entity."
-        entities = self.entity_vault.load()
+        entities = self.vault.load()
         entity = entities.get(self.cwe)
         if entity:
             one, two = 0, 0
@@ -89,18 +85,18 @@ class VaultCmd(cmd.Cmd):
                     k = ''  # don't show key after first line
 
     def complete_l(self, text, line, begidx, endidx):
-        entities = self.entity_vault.load()
+        entities = self.vault.load()
         if self.cwe in entities:
             return [n for n in entities[self.cwe].keys() if n.startswith(text)]
 
 
     def do_ls(self, line):
         "List available entities."
-        for code in self.entity_vault.list():
+        for code in self.vault.list():
             print("\x1b[36;1m{}\x1b[0m".format(code))
 
     def complete_ls(self, text, line, begidx, endidx):
-        return [n for n in self.entity_vault.list() if n.startswith(text)]
+        return [n for n in self.vault.list() if n.startswith(text)]
 
 
     def do_ce(self, code):
@@ -119,13 +115,13 @@ class VaultCmd(cmd.Cmd):
         except ValueError:
             pass
         else:
-            self.entity_vault.upsert(self.cwe, **{key: value})
+            self.vault.upsert(self.cwe, **{key: value})
     do_s = do_set
 
     def do_rm(self, key):
         "Remove an entity key."
         if key.strip():
-            self.entity_vault.remove(self.cwe, key=key)
+            self.vault.remove(self.cwe, key=key)
     do_r = do_rm
 
     complete_r = complete_rm = complete_l
@@ -133,7 +129,7 @@ class VaultCmd(cmd.Cmd):
 
     def do_remove_entity(self):
         "Remove an entire entity."
-        self.entity_vault.remove(self.cwe)
+        self.vault.remove(self.cwe)
     # no tab-completion; make it hard!
 
 
