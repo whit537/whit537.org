@@ -80,9 +80,13 @@ class VaultCmd(cmd.Cmd):
             kv = [('code', self.cwe)] + sorted(entity.items())
             for k,v in kv:
                 one = max(one, len(k))
-                two = max(two, len(v))
+                for line in v.splitlines():
+                    two = max(two, len(line))
             for k,v in kv:
-                print(("\x1b[34;1m{:%d}\x1b[0m \x1b[36;1m{:%d}\x1b[0m" % (one, two)).format(k, v))
+                for line in v.splitlines():
+                    print(("\x1b[34;1m{:%d}\x1b[0m " % one).format(k), end='')
+                    print(("\x1b[36;1m{:%d}\x1b[0m" % two).format(line))
+                    k = ''  # don't show key after first line
 
     def complete_l(self, text, line, begidx, endidx):
         entities = self.entity_vault.load()
@@ -111,6 +115,7 @@ class VaultCmd(cmd.Cmd):
         "Set a key/value pair for the current working entity."
         try:
             key, value = line.split(None, 1)
+            value = value.decode('string_escape')  # allow user to enter newlines, etc.
         except ValueError:
             pass
         else:
