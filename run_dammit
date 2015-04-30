@@ -12,13 +12,13 @@ def fail(m, *a):
     print(m.format(*a))
     sys.exit(1)
 
-def update_env():
-    envfilepaths = sys.argv[1:-1]
+def update_env(envfilepaths, verbose=False):
     for envfilepath in envfilepaths:
         try:
             envfile = open(envfilepath)
         except IOError:
-            print("WARNING: Ignoring missing environment file {}.".format(envfilepath))
+            if verbose:
+                print("WARNING: Ignoring missing environment file {}.".format(envfilepath))
             continue
         for line in envfile:
             line = line.split('#', 1)[0].strip()
@@ -26,26 +26,44 @@ def update_env():
                 continue
             k, v = [x.strip() for x in line.split('=', 1)]
             os.environ[k] = v
-        print("SUCCESS: Updated environment with values from {}.".format(envfilepath))
+        if verbose:
+            print("SUCCESS: Updated environment with values from {}.".format(envfilepath))
+
+
+if len(sys.argv) < 2:
+    fail( """\
+usage: {0} <envfile>* <proctype>
+       {0} <envfile>* -c <cmd>
+
+<proctype> must match an entry in ./Procfile. <cmd> can be whatever."""
+        , sys.argv[0]
+         )
 
 try:
-    want = sys.argv[-1]
-except IndexError:
-    fail("usage: {} <proctype>\n\n<proctype> must match an entry in ./Procfile.", sys.argv[0])
-
-try:
-    procfile = open('Procfile')
-except IOError:
-    fail("No ./Procfile found.")
-
-for line in procfile:
-    proctype, command = [x.strip() for x in line.split(':', 1)]
-    if proctype == want:
-        break
+    cindex = sys.argv.index('-c')
+except ValueError:
+    proctype = sys.argv[-1]
 else:
-    fail("Process type '{}' not found in ./Procfile.", want)
+    proctype = None
+    envfilepaths = sys.argv[1:cindex]
+    command = " ".join(sys.argv[cindex+1:])
 
-update_env()
+if proctype:
+    envfilepaths = sys.argv[1:-1]
+
+    try:
+        procfile = open('Procfile')
+    except IOError:
+        fail("Process type given ('{}'), but no ./Procfile found.", proctype)
+
+    for line in procfile:
+        proctype, command = [x.strip() for x in line.split(':', 1)]
+        if proctype == proctype:
+            break
+    else:
+        fail("Process type '{}' not found in ./Procfile.", proctype)
+
+update_env(envfilepaths)
 subenv = defaultdict(unicode)
 subenv.update(os.environ)
 
