@@ -84,10 +84,10 @@ chad"""
 
 [---]
 from_ = entities['whit537']
-code =  request.body['code']
-to = entities[code]
+to = entities.get(request.body['code'])
+if to is None:
+    raise Response(403)
 
-email = request.body['email']
 password = request.body['password']
 hashed = to['password']
 if bcrypt.hashpw(password.encode('utf8'), hashed) != hashed:

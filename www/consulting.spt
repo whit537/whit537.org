@@ -80,7 +80,9 @@ form input[type=password] {
     border: 1px solid #999;
 }
 form input[name=rate] {
-    width: 61%;
+    width: 40px;
+    text-align: center;
+    font: bold 14px/16px monospace;
 }
 form button {
     border-radius: 4pt;
@@ -92,6 +94,9 @@ form button {
 form button:hover {
     background: #CCC;
     cursor: pointer;
+}
+.some-selected {
+    display: none;
 }
 </style>
 
@@ -106,18 +111,17 @@ an invoice below. Thanks! :-)</p>
 
     {% for client, times in clients.items() %}
     <h2>{{ client}}</h2>
-    <p style="text-align: center; font-style: italic;">$0.00 / hour</p>
-
     <table>
         <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" class="select-all"></td>
             <td>Start</td>
             <td>End</td>
             <td>Duration</td>
         </tr>
         {% for time in times %}
         <tr>
-            <td><input type="checkbox" name="" value="{{ time }}"></td>
+            <td><input type="checkbox" class="line-item"
+                       value="{{ time.duration.seconds / 3600.0 }}"></td>
             <td>{{ time.start }}</td>
             <td>{{ time.end }}</td>
             <td>{{ time.duration }}</td>
@@ -131,12 +135,51 @@ an invoice below. Thanks! :-)</p>
     {% endfor %}
 
     <h2>Generate an Invoice</h2>
-    <i>Select line items above.</i>
+
+    <script>
+        function update_total() {
+            var selected = $('input[type=checkbox].line-item:checked');
+            if (selected.length > 0) {
+                $('.none-selected').hide();
+                $('.some-selected').show();
+
+                // hours
+                var nhours = 0;
+                selected.each(function() {
+                    console.log($(this).val());
+                    nhours += Number($(this).val());
+                });
+                $('.hours').text(nhours + (nhours == 1 ? ' hour' : ' hours'));
+
+                // rate
+                var rate = Number($('input[name=rate]').val());
+
+                // dollars
+                var dollars = nhours * rate;
+                $('.dollars').text(dollars.toFixed(2));
+            } else {
+                $('.none-selected').show();
+                $('.some-selected').hide();
+            }
+        }
+
+        $(document).ready(function() {
+            $('input[type=checkbox]').click(update_total);
+            $('input[name=rate]').keyup(update_total);
+        });
+    </script>
+
+    <div class="none-selected"><i>Select line items above.</i></div>
+    <div class="some-selected">
+        <i>
+            <span class="hours">10 hours</span>
+            at $<input name="rate" type="text" value="537"> per hour
+            = $<span class="dollars">1,000.00</span>
+        </i>
+    </div>
 
     <fieldset>
-        <label>$<input name="rate" type="text" placeholder="Hourly Rate"> per hour</label>
-        <label><input name="code" type="text" placeholder="Your Entity Code"></label>
-        <label><input name="email" type="text" placeholder="Your Email Address"></label>
+        <label><input name="code" type="text" placeholder="Your Client Code"></label>
         <label><input name="password" type="password" placeholder="Your Password"></label>
         <button type="submit">Email the Invoice</button>
     </fieldset>
