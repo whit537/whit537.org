@@ -5,39 +5,13 @@ from collections import defaultdict
 title = "Consulting"
 certified = True
 [---]
-_projects = """\
-sprout Sprout Fund
-svsd Seneca Valley School District
+_clients = """\
+sprout      Sprout Fund
+svsd        Seneca Valley School District
 """
-names = dict([line.strip().split(None, 1) for line in _projects.splitlines()])
+names = dict([line.strip().split(None, 1) for line in _clients.splitlines()])
 
-projects = defaultdict(list)
-
-_time = """\
-2015-04-03
-08:45 sprout 10:45
-
-2015-03-27
-10:30 sprout 12:00
-13:00 sprout 16:30
-
-2015-03-20
-11:00 sprout 12:45
-13:15 sprout 16:15
-
-2015-03-12
-19:15 sprout 20:15
-
-2015-03-06
-10:00 svsd 11:00
-
-2015-03-05
-11:15 sprout 17:30
-17:30 svsd 18:30
-
-2015-03-03
-12:00 sprout 14:30
-"""
+clients = defaultdict(list)
 
 class Time(object):
     def __init__(self, y,m,d, start, end):
@@ -48,9 +22,9 @@ class Time(object):
 
 
 y = m = d = None
-by_project = defaultdict(int)
+by_client = defaultdict(int)
 totals = defaultdict(lambda: datetime.timedelta(0))
-for line in _time.splitlines():
+for line in open('www/timesheet.txt'):
 
     line = line.strip()
     if not line:
@@ -59,51 +33,165 @@ for line in _time.splitlines():
         y, m, d = [int(x) for x in line.split('-')]
         parse_time = lambda t: datetime.datetime(y, m, d, *tuple([int(x) for x in t.split(':')]))
     else:
-        start, proj, end = line.split()
+        start, client, end = line.split()
         start, end = parse_time(start), parse_time(end)
         delta = end - start
         time = Time(y,m,d, start, end)
-        projects[names[proj]].append(time)
-        totals[names[proj]] += time.duration
+        clients[names[client]].append(time)
+        totals[names[client]] += time.duration
 
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
-<script>
 if (window.location.protocol != "https:" && window.location.hostname === 'whit537.org')
     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 </script>
 
-<p>Thanks for wanting to work with me! I consult on a <a
-href="http://en.wikipedia.org/wiki/Pay_what_you_want">pay-what-you-want</a>
-basis. Contact me via <a
+$(document).ready(function() {
+});
+</script>
+<style>
+form th, form td {
+    font: normal 14px/16px monospace;
+}
+form th {
+    font-weight: bold;
+}
+form .duration {
+    text-align: right;
+}
+form input,
+form textarea,
+form button {
+    font: normal 11pt/14pt sans-serif;
+}
+form i {
+    display: block;
+    text-align: center;
+}
+fieldset {
+    margin: 6pt auto 24pt;
+    padding: 0;
+    border: 0;
+    padding: 0 25%;
+    text-align: center;
+}
+form label {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+form input[type=text],
+form input[type=password] {
+    width: 80%;
+    margin: 4pt 0;
+    padding: 4pt;
+    border: 1px solid #999;
+}
+form input[name=rate] {
+    width: 40px;
+    text-align: center;
+    font: bold 14px/16px monospace;
+}
+form button {
+    border-radius: 4pt;
+    background: #EEE;
+    margin: 4pt 0;
+    padding: 2pt 5pt 1pt;
+    display: inline;
+}
+form button:hover {
+    background: #CCC;
+    cursor: pointer;
+}
+.some-selected {
+    display: none;
+}
+</style>
+
+<p>I do a limited amount of self-billed,
+pay-what-you-want consulting. Contact me via <a
 href="https://github.com/whit537/whit537.org/issues/new">GitHub</a> or <a
-href="mailto:chad@zetaweb.com">email</a> to invite me to work with you. I'll
-report my hours here. If you would like to pay me, you may do so on <a
-href="https://gratipay.com/whit537">Gratipay</a>.</p>
+href="mailto:chad@zetaweb.com">email</a> to negotiate how much time I can give
+you. I'll report my hours here. If you would like to pay me, you can generate
+an invoice below. Thanks! :-)</p>
 
-{% for project, times in projects.items() %}
-<h2>{{ project }}</h2>
-<p style="text-align: center; font-style: italic;">$0.00 / hour</p>
-<table>
-    <tr>
-        <td>Start</td>
-        <td>End</td>
-        <td>Duration</td>
-    </tr>
-    {% for time in times %}
-    <tr>
-        <td>{{ time.start }}</td>
-        <td>{{ time.end }}</td>
-        <td>{{ time.duration }}</td>
-    </tr>
+<form action="/invoice.pdf" method="POST" target="_blank">
+
+    {% for client, times in clients.items() %}
+    <h2>{{ client}}</h2>
+    <table>
+        <tr>
+            <th><!--<input type="checkbox" class="select-all">--></th>
+            <th>Start</th>
+            <th>End</th>
+            <th class="duration">Duration</th>
+        </tr>
+        {% for time in times %}
+        <tr>
+            <td><input type="checkbox" name="items" class="line-item"
+                       data-duration="{{ time.duration.seconds / 3600.0 }}"
+                       value="{{ time.start.date() }}|{{ time.duration.seconds / 3600.0 }}"></td>
+            <td>{{ time.start }}</td>
+            <td>{{ time.end }}</td>
+            <td class="duration">{{ time.duration }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3"></td>
+            <td class="duration">{{ totals[client] }}</td>
+        </tr>
+    </table>
     {% endfor %}
-    <tr>
-        <td></td>
-        <td></td>
-        <td>{{ totals[project] }}</td>
-    </tr>
-</table>
-{% endfor %}
 
+    <h2>Generate an Invoice</h2>
+
+    <script>
+        function update_total() {
+            var selected = $('input[type=checkbox].line-item:checked');
+            if (selected.length > 0) {
+                $('.none-selected').hide();
+                $('.some-selected').show();
+
+                // hours
+                var nhours = 0;
+                selected.each(function() {
+                    nhours += Number($(this).data('duration'));
+                });
+                $('.hours').text(nhours + (nhours == 1 ? ' hour' : ' hours'));
+
+                // rate
+                var rate = Number($('input[name=rate]').val());
+
+                // dollars
+                var dollars = nhours * rate;
+                $('.dollars').text(dollars.toFixed(2));
+            } else {
+                $('.none-selected').show();
+                $('.some-selected').hide();
+            }
+        }
+
+        $(document).ready(function() {
+            $('input[type=checkbox]').click(update_total);
+            $('input[name=rate]').keyup(update_total);
+        });
+    </script>
+
+    <div class="none-selected"><i>Select line items above.</i></div>
+    <div class="some-selected">
+        <i>
+            <span class="hours">10 hours</span>
+            at $<input name="rate" type="text" value="537"> per hour
+            = $<span class="dollars">5,370.00</span>
+        </i>
+    </div>
+
+    <fieldset>
+        <label><input name="code" type="text" placeholder="Your Client Code"></label>
+        <label><input name="password" type="password" placeholder="Your Password"></label>
+        <button type="submit">Display and Email the Invoice</button>
+    </fieldset>
+
+</form>
 {% endblock %}

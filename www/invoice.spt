@@ -1,0 +1,117 @@
+import bcrypt
+import datetime
+import os
+import requests
+import time
+from aspen import Response
+from decimal import Decimal as D
+from fpdf import FPDF
+from vault import Vault
+from StringIO import StringIO
+
+entities = Vault(os.environ['VAULT_SECRET']).load()
+
+def number():
+    digits = str(int(time.time()*1000000))
+    return digits[:-4] + '-' + digits[-4:]
+
+def build_invoice(from_, to, invoice_number, items, rate):
+    pdf = FPDF(unit='pt', format='letter')
+    pdf.add_page()
+
+    def writeln(text='', font_size=14, font_weight=''):
+        pdf.set_font('Arial', font_weight, font_size)
+        pdf.cell(0, font_size*1.5, text, ln='1')
+
+    from_address = from_.get('address', 'n/a').splitlines()
+    from_tax_id = from_.get('tax_id', 'n/a')
+
+    to_address = to.get('address', 'n/a').splitlines()
+    to_tax_id = to.get('tax_id', 'n/a')
+
+    address_height = (max(len(from_address), len(to_address))) * 21
+    tax_id_position = 72 + 36 + 15 + 21 + 21 + 15 + address_height + 21
+
+    pdf.set_xy(72, 72)
+    writeln('Invoice', 24, 'b')
+
+    pdf.set_xy(72, 108)
+    writeln('DATE', 10, 'b')
+    writeln(datetime.date.today().strftime('%B %d, %Y').replace(' 0', ' '))
+    writeln()
+    writeln('FROM', 10, 'b')
+    [writeln(x) for x in from_address]
+
+    pdf.set_xy(72, tax_id_position)
+    writeln('TAX ID', 10, 'b')
+    writeln(from_tax_id)
+
+    pdf.set_xy(306, 108)
+    writeln('NUMBER', 10, 'b')
+    writeln(invoice_number)
+    writeln()
+    writeln('TO', 10, 'b')
+    [writeln(x) for x in to_address]
+
+    pdf.set_xy(306, tax_id_position)
+    writeln('TAX ID', 10, 'b')
+    writeln(to_tax_id)
+
+    pdf.set_xy(72, 396)
+    headings = ['DATE', 'DESCRIPTION', 'HOURS', 'RATE ($)', 'TOTAL ($)']
+    writeln("{:32}{:34}{:19}{:19}{:19}".format(*headings), 10, 'b')
+    TOTAL = D('0.00')
+    dates = []
+    hourses = []
+
+
+    for date, hours in items:
+        hours = D(hours).quantize(D('0.00'))
+        total = (hours * rate).quantize(D('0.00'))
+        line = (date, "IT services", hours, rate, total)
+        writeln("{:19}{:19}{:15}{:15}{:15}".format(*line))
+        TOTAL += total
+
+    writeln()
+    writeln("{:106}".format(TOTAL), font_weight='b')
+    return pdf.output(dest='S')
+
+def send_invoice(from_, to, invoice_number, invoice):
+    html = """\
+Woo-hoo! Thanks for paying me! :-)<br>
+<br>
+chad"""
+    requests.post( "https://api.mailgun.net/v3/zetaweb.com/messages"
+                 , auth=("api", os.environ['MAILGUN_KEY'])
+                 , files={"attachment[0]": ( "Invoice-{}.pdf".format(invoice_number)
+                                           , StringIO(invoice)
+                                            )}
+                 , data={ "from": from_
+                        , "to": [to]
+                        , "bcc": [from_]
+                        , "subject":  "Invoice #{}".format(invoice_number)
+                        , "html": html
+                        , "text": html.replace('<br>', '')
+                         })
+
+[---]
+from_ = entities['whit537']
+to = entities.get(request.body['code'])
+if to is None:
+    raise Response(403)
+
+password = request.body['password']
+hashed = to['password']
+if bcrypt.hashpw(password.encode('utf8'), hashed) != hashed:
+    raise Response(403)
+
+invoice_number = number()
+rate = D(request.body['rate']).quantize(D('0.00'))
+if 'items' in request.body:
+    items = [rec.split('|') for rec in request.body.all('items')]
+else:
+    items = []
+invoice = build_invoice(from_, to, invoice_number, items, rate)
+send_invoice(from_['email'], to['email'], invoice_number, invoice)
+[---] application/pdf via eval
+invoice
