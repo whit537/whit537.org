@@ -47,10 +47,6 @@ for line in open('www/timesheet.txt'):
 if (window.location.protocol != "https:" && window.location.hostname === 'whit537.org')
     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 </script>
-
-$(document).ready(function() {
-});
-</script>
 <style>
 form th, form td {
     font: normal 14px/16px monospace;
