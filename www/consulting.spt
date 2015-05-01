@@ -51,6 +51,15 @@ $(document).ready(function() {
 });
 </script>
 <style>
+form th, form td {
+    font: normal 14px/16px monospace;
+}
+form th {
+    font-weight: bold;
+}
+form .duration {
+    text-align: right;
+}
 form input,
 form textarea,
 form button {
@@ -113,10 +122,10 @@ an invoice below. Thanks! :-)</p>
     <h2>{{ client}}</h2>
     <table>
         <tr>
-            <td><input type="checkbox" class="select-all"></td>
-            <td>Start</td>
-            <td>End</td>
-            <td>Duration</td>
+            <th><input type="checkbox" class="select-all"></th>
+            <th>Start</th>
+            <th>End</th>
+            <th class="duration">Duration</th>
         </tr>
         {% for time in times %}
         <tr>
@@ -124,12 +133,12 @@ an invoice below. Thanks! :-)</p>
                        value="{{ time.duration.seconds / 3600.0 }}"></td>
             <td>{{ time.start }}</td>
             <td>{{ time.end }}</td>
-            <td>{{ time.duration }}</td>
+            <td class="duration">{{ time.duration }}</td>
         </tr>
         {% endfor %}
         <tr>
             <td colspan="3"></td>
-            <td>{{ totals[client] }}</td>
+            <td class="duration">{{ totals[client] }}</td>
         </tr>
     </table>
     {% endfor %}
@@ -174,7 +183,7 @@ an invoice below. Thanks! :-)</p>
         <i>
             <span class="hours">10 hours</span>
             at $<input name="rate" type="text" value="537"> per hour
-            = $<span class="dollars">1,000.00</span>
+            = $<span class="dollars">5,370.00</span>
         </i>
     </div>
 
