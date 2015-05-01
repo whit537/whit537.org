@@ -69,6 +69,10 @@ for line in _time.splitlines():
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
+<script>
+if (window.location.protocol != "https:" && window.location.hostname === 'whit537.org')
+    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+</script>
 
 <p>Thanks for wanting to work with me! I consult on a <a
 href="http://en.wikipedia.org/wiki/Pay_what_you_want">pay-what-you-want</a>
