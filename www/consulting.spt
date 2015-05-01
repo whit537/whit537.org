@@ -43,6 +43,7 @@ for line in open('www/timesheet.txt'):
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
+<script>
 if (window.location.protocol != "https:" && window.location.hostname === 'whit537.org')
     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 </script>
