@@ -6,6 +6,7 @@ import time
 from aspen import Response
 from fpdf import FPDF
 from vault import Vault
+from StringIO import StringIO
 
 entities = Vault(os.environ['VAULT_SECRET']).load()
 
@@ -13,7 +14,7 @@ def number():
     digits = str(int(time.time()*1000000))
     return digits[:-4] + '-' + digits[-4:]
 
-def build_invoice(from_, to):
+def build_invoice(from_, to, invoice_number):
     pdf = FPDF(unit='pt', format='letter')
     pdf.add_page()
 
@@ -46,7 +47,7 @@ def build_invoice(from_, to):
 
     pdf.set_xy(306, 108)
     writeln('NUMBER', 10, 'b')
-    writeln(number())
+    writeln(invoice_number)
     writeln()
     writeln('TO', 10, 'b')
     [writeln(x) for x in to_address]
@@ -63,18 +64,37 @@ def build_invoice(from_, to):
 
     return pdf.output(dest='S')
 
+def send_invoice(from_, to, invoice_number, invoice):
+    html = """\
+Woo-hoo! Thanks for paying me! :-)<br>
+<br>
+chad"""
+    requests.post( "https://api.mailgun.net/v3/zetaweb.com/messages"
+                 , auth=("api", os.environ['MAILGUN_KEY'])
+                 , files={"attachment[0]": ( "Invoice-{}.pdf".format(invoice_number)
+                                           , StringIO(invoice)
+                                            )}
+                 , data={ "from": from_
+                        , "to": [to]
+                        , "bcc": [from_]
+                        , "subject":  "Invoice #{}".format(invoice_number)
+                        , "html": html
+                        , "text": html.replace('<br>', '')
+                         })
+
 [---]
 from_ = entities['whit537']
 code =  request.body['code']
 to = entities[code]
 
 email = request.body['email']
-password = request.body['password'].encode('utf8')
+password = request.body['password']
 hashed = to['password']
-if bcrypt.hashpw(password, hashed) != hashed:
+if bcrypt.hashpw(password.encode('utf8'), hashed) != hashed:
     raise Response(403)
 
-invoice = build_invoice(from_, to)
-
+invoice_number = number()
+invoice = build_invoice(from_, to, invoice_number)
+send_invoice(from_['email'], to['email'], invoice_number, invoice)
 [---] application/pdf via eval
 invoice
