@@ -122,7 +122,7 @@ an invoice below. Thanks! :-)</p>
     <h2>{{ client}}</h2>
     <table>
         <tr>
-            <th><input type="checkbox" class="select-all"></th>
+            <th><!--<input type="checkbox" class="select-all">--></th>
             <th>Start</th>
             <th>End</th>
             <th class="duration">Duration</th>
@@ -190,7 +190,7 @@ an invoice below. Thanks! :-)</p>
     <fieldset>
         <label><input name="code" type="text" placeholder="Your Client Code"></label>
         <label><input name="password" type="password" placeholder="Your Password"></label>
-        <button type="submit">Email the Invoice</button>
+        <button type="submit">Display and Email the Invoice</button>
     </fieldset>
 
 </form>
