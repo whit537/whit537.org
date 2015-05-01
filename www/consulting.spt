@@ -129,8 +129,9 @@ an invoice below. Thanks! :-)</p>
         </tr>
         {% for time in times %}
         <tr>
-            <td><input type="checkbox" class="line-item"
-                       value="{{ time.duration.seconds / 3600.0 }}"></td>
+            <td><input type="checkbox" name="items" class="line-item"
+                       data-duration="{{ time.duration.seconds / 3600.0 }}"
+                       value="{{ time.start.date() }}|{{ time.duration.seconds / 3600.0 }}"></td>
             <td>{{ time.start }}</td>
             <td>{{ time.end }}</td>
             <td class="duration">{{ time.duration }}</td>
@@ -155,8 +156,7 @@ an invoice below. Thanks! :-)</p>
                 // hours
                 var nhours = 0;
                 selected.each(function() {
-                    console.log($(this).val());
-                    nhours += Number($(this).val());
+                    nhours += Number($(this).data('duration'));
                 });
                 $('.hours').text(nhours + (nhours == 1 ? ' hour' : ' hours'));
 
