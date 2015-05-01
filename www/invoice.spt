@@ -1,17 +1,69 @@
 import bcrypt
 import datetime
 import os
+import requests
 import time
 from aspen import Response
 from fpdf import FPDF
 from vault import Vault
 
+entities = Vault(os.environ['VAULT_SECRET']).load()
+
 def number():
     digits = str(int(time.time()*1000000))
     return digits[:-4] + '-' + digits[-4:]
 
+def build_invoice(from_, to):
+    pdf = FPDF(unit='pt', format='letter')
+    pdf.add_page()
+
+    def writeln(text='', font_size=14, font_weight=''):
+        pdf.set_font('Arial', font_weight, font_size)
+        pdf.cell(0, font_size*1.5, text, ln='1')
+
+    from_address = from_.get('address', 'n/a').splitlines()
+    from_tax_id = from_.get('tax_id', 'n/a')
+
+    to_address = to.get('address', 'n/a').splitlines()
+    to_tax_id = to.get('tax_id', 'n/a')
+
+    address_height = (max(len(from_address), len(to_address))) * 21
+    tax_id_position = 72 + 36 + 15 + 21 + 21 + 15 + address_height + 21
+
+    pdf.set_xy(72, 72)
+    writeln('Invoice', 24, 'b')
+
+    pdf.set_xy(72, 108)
+    writeln('DATE', 10, 'b')
+    writeln(datetime.date.today().strftime('%B %d, %Y').replace(' 0', ' '))
+    writeln()
+    writeln('FROM', 10, 'b')
+    [writeln(x) for x in from_address]
+
+    pdf.set_xy(72, tax_id_position)
+    writeln('TAX ID', 10, 'b')
+    writeln(from_tax_id)
+
+    pdf.set_xy(306, 108)
+    writeln('NUMBER', 10, 'b')
+    writeln(number())
+    writeln()
+    writeln('TO', 10, 'b')
+    [writeln(x) for x in to_address]
+
+    pdf.set_xy(306, tax_id_position)
+    writeln('TAX ID', 10, 'b')
+    writeln(to_tax_id)
+
+    pdf.set_xy(72, 396)
+    items = []
+    writeln('DESCRIPTION', 10, 'b')
+    for line in items:
+        writeln()
+
+    return pdf.output(dest='S')
+
 [---]
-entities = Vault(os.environ['VAULT_SECRET']).load()
 from_ = entities['whit537']
 code =  request.body['code']
 to = entities[code]
@@ -22,52 +74,7 @@ hashed = to['password']
 if bcrypt.hashpw(password, hashed) != hashed:
     raise Response(403)
 
-pdf = FPDF(unit='pt', format='letter')
-pdf.add_page()
-
-def writeln(text='', font_size=14, font_weight=''):
-    pdf.set_font('Arial', font_weight, font_size)
-    pdf.cell(0, font_size*1.5, text, ln='1')
-
-from_address = from_.get('address', 'n/a').splitlines()
-from_tax_id = from_.get('tax_id', 'n/a')
-
-to_address = to.get('address', 'n/a').splitlines()
-to_tax_id = to.get('tax_id', 'n/a')
-
-address_height = (max(len(from_address), len(to_address))) * 21
-tax_id_position = 72 + 36 + 15 + 21 + 21 + 15 + address_height + 21
-
-pdf.set_xy(72, 72)
-writeln('Invoice', 24, 'b')
-
-pdf.set_xy(72, 108)
-writeln('DATE', 10, 'b')
-writeln(datetime.date.today().strftime('%B %d, %Y').replace(' 0', ' '))
-writeln()
-writeln('FROM', 10, 'b')
-[writeln(x) for x in from_address]
-
-pdf.set_xy(72, tax_id_position)
-writeln('TAX ID', 10, 'b')
-writeln(from_tax_id)
-
-pdf.set_xy(306, 108)
-writeln('NUMBER', 10, 'b')
-writeln(number())
-writeln()
-writeln('TO', 10, 'b')
-[writeln(x) for x in to_address]
-
-pdf.set_xy(306, tax_id_position)
-writeln('TAX ID', 10, 'b')
-writeln(to_tax_id)
-
-pdf.set_xy(72, 396)
-items = []
-writeln('DESCRIPTION', 10, 'b')
-for line in items:
-    writeln()
+invoice = build_invoice(from_, to)
 
 [---] application/pdf via eval
-pdf.output(dest='S')
+invoice
