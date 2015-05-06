@@ -19,8 +19,8 @@ def build_invoice(from_, to, invoice_number, items, rate):
     pdf = FPDF(unit='pt', format='letter')
     pdf.add_page()
 
-    def writeln(text='', font_size=14, font_weight=''):
-        pdf.set_font('Arial', font_weight, font_size)
+    def writeln(text='', font_size=14, font_weight='', font='Arial'):
+        pdf.set_font(font, font_weight, font_size)
         pdf.cell(0, font_size*1.5, text, ln='1')
 
     from_address = from_.get('address', 'n/a').splitlines()
@@ -59,7 +59,7 @@ def build_invoice(from_, to, invoice_number, items, rate):
 
     pdf.set_xy(72, 396)
     headings = ['DATE', 'DESCRIPTION', 'HOURS', 'RATE ($)', 'TOTAL ($)']
-    writeln("{:32}{:34}{:19}{:19}{:19}".format(*headings), 10, 'b')
+    writeln("{:14}{:24}{:>12}{:>12}{:>12}".format(*headings), 10, 'b', 'Courier')
     TOTAL = D('0.00')
     dates = []
     hourses = []
@@ -69,11 +69,11 @@ def build_invoice(from_, to, invoice_number, items, rate):
         hours = D(hours).quantize(D('0.00'))
         total = (hours * rate).quantize(D('0.00'))
         line = (date, "IT services", hours, rate, total)
-        writeln("{:19}{:19}{:15}{:15}{:15}".format(*line))
+        writeln("{:14}{:24}{:12}{:12}{:12}".format(*line), 10, '', 'Courier')
         TOTAL += total
 
     writeln()
-    writeln("{:106}".format(TOTAL), font_weight='b')
+    writeln("{:74}".format(TOTAL), 10, 'b', 'Courier')
     return pdf.output(dest='S')
 
 def send_invoice(from_, to, invoice_number, invoice):
