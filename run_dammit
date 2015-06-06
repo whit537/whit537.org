@@ -20,12 +20,16 @@ def update_env(envfilepaths, verbose=False):
             if verbose:
                 print("WARNING: Ignoring missing environment file {}.".format(envfilepath))
             continue
-        for line in envfile:
-            line = line.split('#', 1)[0].strip()
-            if not line:
-                continue
-            k, v = [x.strip() for x in line.split('=', 1)]
-            os.environ[k] = v
+        try:
+            for line in envfile:
+                line = line.split('#', 1)[0].strip()
+                if not line:
+                    continue
+                k, v = [x.strip() for x in line.split('=', 1)]
+                os.environ[k] = v
+        except:
+            print("CHOKED ON: {}".format(line))
+            raise
         if verbose:
             print("SUCCESS: Updated environment with values from {}.".format(envfilepath))
 
