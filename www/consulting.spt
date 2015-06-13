@@ -40,6 +40,15 @@ for line in open('www/timesheet.txt'):
         clients[names[client]].append(time)
         totals[names[client]] += time.duration
 
+def invoices():
+    for line in open('www/invoices.txt'):
+        date, client, hours, rate, amount = line.split()
+        date = datetime.datetime.fromtimestamp(int(date.replace('-', ''))/1e6)
+        date = date.strftime("%B %d, %Y").replace(' 0', ' ')
+        client = names[client]
+        yield date, client, hours, rate, amount
+invoices = invoices()
+
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
@@ -53,8 +62,15 @@ form th, form td {
 }
 form th {
     font-weight: bold;
+    white-space: nowrap;
 }
 form .duration {
+    text-align: right;
+}
+form .date {
+    white-space: nowrap;
+}
+form .dollars {
     text-align: right;
 }
 form input,
@@ -116,7 +132,7 @@ an invoice below. Thanks! :-)</p>
 <form action="/invoice.pdf" method="POST" target="_blank">
 
     {% for client, times in clients.items() %}
-    <h2>{{ client}}</h2>
+    <h2>{{ client }}</h2>
     <table>
         <tr>
             <th><!--<input type="checkbox" class="select-all">--></th>
@@ -189,6 +205,27 @@ an invoice below. Thanks! :-)</p>
         <label><input name="password" type="password" placeholder="Your Password"></label>
         <button type="submit">Display and Email the Invoice</button>
     </fieldset>
+
+    <h2>Paid Invoices</h2>
+
+    <table>
+        <tr>
+            <th class="date">Date</th>
+            <th>Client</th>
+            <th class="duration">Hours</th>
+            <th class="dollars">Rate ($)</th>
+            <th class="dollars">Amount ($)</th>
+        </tr>
+        {% for date, client, hours, rate, amount in invoices %}
+        <tr>
+            <td class="date">{{ date }}</td>
+            <td>{{ client }}</td>
+            <td class="duration">{{ hours }}</td>
+            <td class="dollars">{{ rate }}</td>
+            <td class="dollars">{{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 </form>
 {% endblock %}

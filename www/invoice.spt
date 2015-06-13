@@ -12,7 +12,7 @@ from StringIO import StringIO
 entities = Vault(os.environ['VAULT_SECRET']).load()
 
 def number():
-    digits = str(int(time.time()*1000000))
+    digits = str(int(time.time()*1e6))
     return digits[:-4] + '-' + digits[-4:]
 
 def build_invoice(from_, to, invoice_number, items, rate):
