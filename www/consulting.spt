@@ -178,7 +178,7 @@ an invoice below. Thanks! :-)</p>
 
                 // dollars
                 var dollars = nhours * rate;
-                $('.dollars').text(dollars.toFixed(2));
+                $('span.dollars').text(dollars.toFixed(2));
             } else {
                 $('.none-selected').show();
                 $('.some-selected').hide();
@@ -195,8 +195,8 @@ an invoice below. Thanks! :-)</p>
     <div class="some-selected">
         <i>
             <span class="hours">10 hours</span>
-            at $<input name="rate" type="text" value="537"> per hour
-            = $<span class="dollars">5,370.00</span>
+            at $<input name="rate" type="text" value="100"> per hour
+            = $<span class="dollars">1,000.00</span>
         </i>
     </div>
 
