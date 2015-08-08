@@ -210,7 +210,7 @@ an invoice below. Thanks! :-)</p>
 
     <table>
         <tr>
-            <th class="date">Date</th>
+            <th class="date">Date Billed</th>
             <th>Client</th>
             <th class="duration">Hours</th>
             <th class="dollars">Rate ($)</th>
