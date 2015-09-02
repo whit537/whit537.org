@@ -219,14 +219,14 @@ href="mailto:chad@zetaweb.com">email</a> to set something up. Thanks! :-)</p>
     <div class="some-selected">
         <i>
             <span class="hours">10 hours</span>
-            at $<input name="rate" type="text" value="100"> per hour
-            = $<span class="dollars">1,000.00</span>
+            at $<input name="rate" type="text" value="80"> per hour
+            = $<span class="dollars">800.00</span>
         </i>
     </div>
 
     <fieldset>
-        <label><input name="code" type="text" placeholder="Your Client Code"></label>
-        <label><input name="password" type="password" placeholder="Your Password"></label>
+        <label><input name="code" type="text" placeholder="Client Code"></label>
+        <label><input name="password" type="password" placeholder="Password"></label>
         <button type="submit">Display and Email the Invoice</button>
     </fieldset>
 

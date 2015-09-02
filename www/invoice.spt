@@ -68,7 +68,7 @@ def build_invoice(from_, to, invoice_number, items, rate):
     for date, hours in items:
         hours = D(hours).quantize(D('0.00'))
         total = (hours * rate).quantize(D('0.00'))
-        line = (date, "IT services", hours, rate, total)
+        line = (date, "software development", hours, rate, total)
         writeln("{:14}{:24}{:12}{:12}{:12}".format(*line), 10, '', 'Courier')
         TOTAL += total
 
