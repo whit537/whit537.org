@@ -78,7 +78,7 @@ def build_invoice(from_, to, invoice_number, items, rate):
 
 def send_invoice(from_, to, invoice_number, invoice):
     html = """\
-Woo-hoo! Thanks for paying me! :-)<br>
+Thanks for the work! :-)<br>
 <br>
 chad"""
     requests.post( "https://api.mailgun.net/v3/zetaweb.com/messages"
