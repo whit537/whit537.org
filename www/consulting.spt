@@ -42,11 +42,11 @@ for line in open('www/timesheet.txt'):
 
 def invoices():
     for line in open('www/invoices.txt'):
-        date, client, hours, rate, amount = line.split()
+        date, client, hours, rate, amount, paid = line.split()
         date = datetime.datetime.fromtimestamp(int(date.replace('-', ''))/1e6)
         date = date.strftime("%B %d, %Y").replace(' 0', ' ')
         client = names[client]
-        yield date, client, hours, rate, amount
+        yield date, client, hours, rate, amount, paid == 'paid'
 invoices = invoices()
 
 [---] text/html
@@ -63,6 +63,9 @@ form th, form td {
 form th {
     font-weight: bold;
     white-space: nowrap;
+}
+form .paid {
+    text-align: center;
 }
 form .duration {
     text-align: right;
@@ -122,14 +125,35 @@ form button:hover {
 }
 </style>
 
-<p>I do a limited amount of self-billed,
-pay-what-you-want consulting. Contact me via <a
+<p>I do a limited amount of consulting to stay afloat while we relaunch <a
+    href="https://gratipay.com/">Gratipay</a>. Contact me via <a
 href="https://github.com/whit537/whit537.org/issues/new">GitHub</a> or <a
-href="mailto:chad@zetaweb.com">email</a> to negotiate how much time I can give
-you. I'll report my hours here. If you would like to pay me, you can generate
-an invoice below. Thanks! :-)</p>
+href="mailto:chad@zetaweb.com">email</a> to set something up. Thanks! :-)</p>
 
 <form action="/invoice.pdf" method="POST" target="_blank">
+
+    <h2>Invoices</h2>
+
+    <table>
+        <tr>
+            <th class="paid">$?</th>
+            <th class="date">Date Billed</th>
+            <th>Client</th>
+            <th class="duration">Hours</th>
+            <th class="dollars">Rate ($)</th>
+            <th class="dollars">Amount ($)</th>
+        </tr>
+        {% for date, client, hours, rate, amount, paid in invoices %}
+        <tr>
+            <td class="paid">{{ '&#9989;' if paid else '&#10060;' }}</td>
+            <td class="date">{{ date }}</td>
+            <td>{{ client }}</td>
+            <td class="duration">{{ hours }}</td>
+            <td class="dollars">{{ rate }}</td>
+            <td class="dollars">{{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
     {% for client, times in clients.items() %}
     <h2>{{ client }}</h2>
@@ -205,27 +229,6 @@ an invoice below. Thanks! :-)</p>
         <label><input name="password" type="password" placeholder="Your Password"></label>
         <button type="submit">Display and Email the Invoice</button>
     </fieldset>
-
-    <h2>Paid Invoices</h2>
-
-    <table>
-        <tr>
-            <th class="date">Date Billed</th>
-            <th>Client</th>
-            <th class="duration">Hours</th>
-            <th class="dollars">Rate ($)</th>
-            <th class="dollars">Amount ($)</th>
-        </tr>
-        {% for date, client, hours, rate, amount in invoices %}
-        <tr>
-            <td class="date">{{ date }}</td>
-            <td>{{ client }}</td>
-            <td class="duration">{{ hours }}</td>
-            <td class="dollars">{{ rate }}</td>
-            <td class="dollars">{{ amount }}</td>
-        </tr>
-        {% endfor %}
-    </table>
 
 </form>
 {% endblock %}
