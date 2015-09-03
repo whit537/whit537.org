@@ -49,6 +49,8 @@ def invoices():
         yield date, client, hours, rate, amount, paid == 'paid'
 invoices = invoices()
 
+timesheet = clients.items()
+
 [---] text/html
 {% extends "base.html" %}
 {% block content %}
@@ -155,7 +157,7 @@ href="mailto:chad@zetaweb.com">email</a> to set something up. Thanks! :-)</p>
         {% endfor %}
     </table>
 
-    {% for client, times in clients.items() %}
+    {% for client, times in timesheet %}
     <h2>{{ client }}</h2>
     <table>
         <tr>
@@ -181,6 +183,7 @@ href="mailto:chad@zetaweb.com">email</a> to set something up. Thanks! :-)</p>
     </table>
     {% endfor %}
 
+    {% if timesheet %}
     <h2>Generate an Invoice</h2>
 
     <script>
@@ -229,6 +232,7 @@ href="mailto:chad@zetaweb.com">email</a> to set something up. Thanks! :-)</p>
         <label><input name="password" type="password" placeholder="Password"></label>
         <button type="submit">Display and Email the Invoice</button>
     </fieldset>
+    {% endif %}
 
 </form>
 {% endblock %}
