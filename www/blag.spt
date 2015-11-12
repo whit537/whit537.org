@@ -30,7 +30,7 @@ for post in posts:
     {% for year, posts in years %}
         <a name="{{ year }}"></a>
         <h3 class="year">
-            <a href="/#{{ year }}">#</a>{{ year }}
+            <a href="/blag#{{ year }}">#</a>{{ year }}
         </h3>
         <div class="posts">
         {% for post in posts %}
