@@ -36,50 +36,17 @@ for post in posts:
         </p>
     </div>
 
-    <h2>Bio</h2>
-
-    <p>Greetings, program! I'm the founder of <a
-href="https://gratipay.com/">Gratipay</a>. Our <a
-href="http://inside.gratipay.com/big-picture/mission">mission</a> is to
-cultivate an economy of gratitude, generosity, and love. Towards that end, our
-<a href="https://gratipay.com/">product</a> provides voluntary payments and
-payroll for open work. Gratipay launched on June 1, 2012, and relaunched on May
-21, 2015.  As of August, 2015, we have about 60 <a
-href="https://gratipay.com/explore/teams/">teams</a> receiving and distributing
-about $1,400 per week. Gratipay itself is funded <a
-href="https://gratipay.com/Gratipay/">on Gratipay</a>.</p>
-
-    <p>I run Gratipay as openly as possible, and I helped launch the <a
-        href="http://www.opencompany.org/">Open Company Initiative</a> to
-    associate with other companies committed to openness as a defining element
-    in how we create value.</p>
-
-    <p>The best places to find me are <a
-href="https://github.com/whit537">GitHub</a> and <a
+    <p>Greetings! I founded <a href="https://gratipay.com/">Gratipay</a>. The
+best places to find me are <a href="https://github.com/whit537">GitHub</a> and
+<a
 href="https://medium.com/gratipay-blog/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
 My address is 716 Park Road, my email is <a
 href="mailto:chad@zetaweb.com">chad@zetaweb.com</a>, and my cell is
 +1-412-925-4220.</p>
 
-    <h2><a href="/dont-forget-the-aitch/">Don't Forget the Aitch</a></h2>
-
-    <h2><a href="/interviews">Interview Policy</a></h2>
+    <h2><a href="/interviews">Interviews</a></h2>
 
     <h2><a href="/consulting">Consulting</a></h2>
 
-
-    <h2>Blog</h2>
-
-    {% for year, posts in years %}
-        <a name="{{ year }}"></a>
-        <h3 class="year">
-            <a href="/#{{ year }}">#</a>{{ year }}
-        </h3>
-        <div class="posts">
-        {% for post in posts %}
-            <a href="{{ post['_id'] }}">{{ post['title'] }}</a>
-        {% endfor %}
-        &nbsp;
-        </div>
-    {% endfor %}
+    <h2><a href="/blag">Blag</a></h2>
 {% endblock %}
