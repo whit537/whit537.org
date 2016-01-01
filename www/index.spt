@@ -47,7 +47,5 @@ aitch</a>.</p>
 
     <h2><a href="/interviews">Interviews</a></h2>
 
-    <h2><a href="/consulting">Consulting</a></h2>
-
     <h2><a href="/blag">Blag</a></h2>
 {% endblock %}
