@@ -1,9 +1,0 @@
-title = "You said crossing the streams was bad, Egon."
-published = "2007-07-10T21:10:00.001-04:00"
-updated = "2011-04-10T09:52:45.279-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-I've finally folded <a href="http://tech.whit537.org/">my old tech blog</a> into this one. Now I have <a href="http://blag.whit537.org/">a single blog</a>, with <a href="http://blag.whit537.org/search/label/tech">tech posts labeled</a> as such. This is the fruit of my <a href="http://blag.whit537.org/2007/03/docs-for-google-python-gdata-client.html">fiddling</a> with the GData Python client a while back. Now to notify Planets Python and the other readers of tech537 of the change.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2500088455298919256?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

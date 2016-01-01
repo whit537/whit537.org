@@ -1,9 +1,0 @@
-title = "Book on the loose!"
-published = "2007-06-08T07:42:00.000-04:00"
-updated = "2011-04-10T09:52:45.300-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-Congrats to my <a href="http://www.thewhitacres.com/rod">old man</a> on his <a href="http://www.hendrickson.com/html/product/560433.acad.html">new book</a>!<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-3662367482018559435?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

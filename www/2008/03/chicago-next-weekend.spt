@@ -1,9 +1,0 @@
-title = "Chicago next weekend?"
-published = "2008-03-03T21:28:00.003-05:00"
-updated = "2011-04-10T09:52:45.164-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-I'm going to be in Chicago next weekend for <a href="http://us.pycon.org/2008/about/">a conference</a>. I'll be flying solo and won't have much spare time, but I am planning to go to <a href="http://www.bensonkrause.com/">this show in Naperville</a> on Saturday night. (I know <a href="http://www.pinklemusic.com/player/player.html">one of</a> the bands&mdash;and it's for a good cause.) Anyone want to go to this show with me, and maybe get dinner beforehand?<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2388724546076214242?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

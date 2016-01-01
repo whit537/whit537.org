@@ -1,7 +1,0 @@
-# Fossilized.
-#import return_
-[---]
-#out = return_.do("deadline")
-out = ''
-[---] text/plain
-{{ out }}

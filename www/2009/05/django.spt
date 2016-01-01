@@ -1,9 +1,0 @@
-title = "$ django"
-published = "2009-05-28T09:33:00.006-04:00"
-updated = "2011-04-10T09:52:44.973-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<p>For one reason and another, I am trying to work more and more with stock Django, rather than wrangling Django into Aspen. One specific way this plays out is that I want to "sit" inside of a Django project directory while developing. I want to treat the Django project as top-level, not bury it inside of a <code>lib/python</code> directory. That way, I am close to <code>settings.py</code>, <code>manage.py</code>, etc.</p><p>However, to my eye, this is ugly:</p><pre>$ python manage.py foo</pre><p>If I make <code>manage.py</code> executable, then I get this:</p><pre>$ ./manage.py foo</pre><p>Aesthetically, I think that's worse. What I really want is:</p><pre>$ django foo</pre><p>Well that's easy enough. I just copied <code>manage.py</code> to <code>~/bin</code> and <a href="http://static.whit537.org/2009/django">tweaked it a little bit</a>. Now I can call <code><a href="http://static.whit537.org/2009/django">django</a></code> on any directory that has a <code>settings.py</code> in it. The amount of Django API that this script uses is limited enough that it should work across multiple versions, so I can have a globally-installed <code><a href="http://static.whit537.org/2009/django">django</a></code> executable and (via, e.g., <code>virtualenv</code>) use local versions of the <code>django</code> libraries as needed per-project. Huzzah!</p><p>Now, if only Django would <a href="http://code.djangoproject.com/ticket/10966">stop trying to treat my projects as Python modules ...</a></p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5074353093767918198?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

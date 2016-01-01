@@ -1,9 +1,0 @@
-title = "Centralized milk"
-published = "2008-11-08T21:40:00.003-05:00"
-updated = "2011-04-10T09:52:45.055-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-Let the record show that after further conversation in the real world, I have agreed with Christy to give <a href="http://blag.whit537.org/2008/11/decentralized-milk.html">Dean Foods a score</a> of 1 on my scale of 1 to 10.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-6705149401871305682?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

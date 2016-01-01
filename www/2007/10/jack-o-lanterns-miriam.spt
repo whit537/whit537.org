@@ -1,9 +1,0 @@
-title = "Jack-o-lanterns: Miriam's"
-published = "2007-10-27T22:32:00.001-04:00"
-updated = "2011-04-10T09:52:45.207-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<img src="http://static.whit537.org/2007/jackolanterns/miriam-concept.jpg" /><br /><br /><br /><img src="http://static.whit537.org/2007/jackolanterns/miriam-half.jpg" /><br /><br /><br /><img src="http://static.whit537.org/2007/jackolanterns/miriam-dark.jpg" /><br /><br />(See also: <a href="http://blag.whit537.org/2007/10/jack-o-lanterns-leah.html">Leah's</a> | <a href="http://blag.whit537.org/2007/10/jack-o-lanterns.html">together</a>)<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-9193443135521026595?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

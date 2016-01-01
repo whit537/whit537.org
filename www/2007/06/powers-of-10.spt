@@ -1,9 +1,0 @@
-title = "Powers of 10"
-published = "2007-06-29T09:16:00.000-04:00"
-updated = "2011-04-10T09:52:45.291-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<a href="http://powersof10.com/">This</a> is all about <a href="http://blag.whit537.org/2007/06/objects-scale-abstraction.html">scale</a>.<br /><br /><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/wKU73gxTdlk"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/wKU73gxTdlk" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object><br /><br /><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/yCfDRvDWid0"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/yCfDRvDWid0" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object><br /><br /><a href="http://xkcd.com/c271.html"><img src="http://imgs.xkcd.com/comics/powers_of_one.png" /></a><br /><br />[See also: <a href="http://micro.magnet.fsu.edu/primer/java/scienceopticsu/powersof10/">Java applet that won't let me embed it</a>.]<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2950077589029297358?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

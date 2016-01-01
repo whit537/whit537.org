@@ -1,9 +1,0 @@
-title = "Regarding spiritual agencies"
-published = "2007-09-11T21:14:00.000-04:00"
-updated = "2011-04-10T09:52:45.238-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-It's like we in life are traveling along this continuum of &pi;&mdash;3.141592653...&mdash;and every so often you notice coincidences in life just like you notice <a href="http://www.angio.net/pi/piquery#comments">patterns in &pi;</a>. Some easily ascribe these coincidences to an unseen personal agency. But perhaps the true intentionality in the Universe is not seen in the micro-patterns that are within our narrow, narrow field of vision&mdash;and our largest view is always infinitely small; and yet indeed we might properly enjoy these "snippets of meaning" when we "pass through them" (so to speak); and in fact, as agents ourselves we may try to effect such orderings. Rather, the true "meaning" of the Universe&mdash;the order in the chaos, the signal in the noise, the information in the transmission, the pattern in the data&mdash;is perhaps only seen when the whole seemingly random complex messiness of the entire infinite &pi;-line is gathered up into the stunningly, beautifully simple ratio: circumference to diameter.<br /><br />Then again, <a href="http://jack-out-of-the-box.blogspot.com/">Jack</a> tells some really crazy demon stories. So I dunno.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-5375850483749715278?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

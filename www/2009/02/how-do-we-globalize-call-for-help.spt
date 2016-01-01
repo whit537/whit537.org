@@ -1,9 +1,0 @@
-title = "How do we globalize? Call for help"
-published = "2009-02-25T10:22:00.006-05:00"
-updated = "2011-04-10T09:52:44.994-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<p>Hey all, I need your help. I just figured out in outline what needs to happen in order for globalization to succeed. My understanding is that we need to write a book that lays this out, but I can't do it by myself. I propose instead that we do it together, basically as an open-source project. We'll set up infrastructure in proportion to uptake, but for now <a href="http://docs.google.com/Doc?id=ajgh2bm55jzd_31fkvhk8kj">check out this Google Doc</a>, which represents my initial brainstorm. <a href="mailto:chad@zetaweb.com">Email me</a>with your email or Google ID if you want an invite to collaborate. Thanks all.</p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8944811348562268469?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

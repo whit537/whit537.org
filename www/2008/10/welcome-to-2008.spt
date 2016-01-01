@@ -1,9 +1,0 @@
-title = "Welcome to 2008 ..."
-published = "2008-10-06T09:42:00.001-04:00"
-updated = "2011-04-10T09:52:45.083-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-... where <a href="http://abcnews.go.com/video/playerIndex?id=5946602">bluegrass and brain surgery collide</a>.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2940102435944228350?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

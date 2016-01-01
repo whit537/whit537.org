@@ -1,9 +1,0 @@
-title = "Be Cubed"
-published = "2007-10-26T19:20:00.000-04:00"
-updated = "2011-04-10T09:52:45.210-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-We're starting <a href="http://bbb.whit537.org/">a bible study</a>, me and some guys from church. The timing is <a href="http://blag.whit537.org/2007/10/they-did-it.html#4974887268806053752">perfect</a>.<br /><br /><a href="http://bbb.whit537.org/"><img src="http://static.whit537.org/2007/bull.jpg" alt="bull" /></a><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-1748265513507630489?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

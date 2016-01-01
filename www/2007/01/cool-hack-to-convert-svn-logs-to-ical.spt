@@ -1,9 +1,0 @@
-title = "Cool hack to convert SVN logs to iCAL"
-published = "2007-01-08T08:58:00.000-05:00"
-updated = "2011-04-10T09:52:45.371-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-Brian Ray posted <a href="http://kazavoo.com/blog/index.php?/archives/28-SVN-to-ICAL.html">a nifty hack</a> that puts an SVN commit log onto a calendar. What a great visualization!<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-8865145011959775355?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

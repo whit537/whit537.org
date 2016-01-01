@@ -1,9 +1,0 @@
-title = "Corn"
-published = "2008-09-02T10:37:00.001-04:00"
-updated = "2011-04-10T09:52:45.093-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-Lots going on. Snapshot:<br /><br /><img src="http://static.whit537.org/2008/corn.jpg" /><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-4353655332822786430?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

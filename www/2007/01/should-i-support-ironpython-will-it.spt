@@ -1,9 +1,0 @@
-title = "Should I support IronPython? Will it hurt?"
-published = "2007-01-18T09:31:00.000-05:00"
-updated = "2011-04-10T09:52:45.358-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-Everything I know about IronPython, I learned from <a href="http://www.voidspace.org.uk/python/weblog/index.shtml">Fuzzyman</a>'s titles passing through my feed reader. I see it as a neat hack: Python + Microsoft, lol. So when Calvin Spealman <a href="http://ironfroggy-code.blogspot.com/2007/01/snake-pit-is-about-to-burst.html">sounds an alarm</a> that CPython and IronPython are in danger of forking, it makes me think that there's something more going on here.<br /><br />Now conceptually, I love the idea that Python should maintain its cohesion as it scales. But in practice, it's like targeting multiple web browsers: the higher the market-share-to-PITA ratio for a given implementation, the more likely I am to support it as a <a href="http://www.zetadev.com/software/">third-party library</a> maintainer.<br /><br />So what would really help me would be posts demonstrating the respective market shares of the various Python implementations, and resources detailing the differences between them. These may already exist, but remember: I'm a web designer stuck on &lt;table&gt; and &lt;font&gt;, and you're a <a href="http://www.webstandards.org/">WASP</a>. Evangelize me.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-2400488165348752747?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

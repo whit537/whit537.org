@@ -1,9 +1,0 @@
-title = "Chad: 1, Outlook: 0"
-published = "2008-02-18T16:12:00.004-05:00"
-updated = "2011-04-10T09:52:45.168-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-For purposes of their PageRank and my future reference, I record here that www.slipstick.com has <a href="http://www.slipstick.com/">good info on Outlook troubleshooting</a>. They showed me where the <a href="http://support.microsoft.com/?kbid=287623">name resolution cache</a> is documented. I am migrating away from Exchange, and have been trying to get X.400 addresses to stop popping up in the "To" field of new messages.<br /><br />On a related note, the Outlook address book architecture is a <a href="http://office.microsoft.com/training/training.aspx?AssetID=RC011894951033&amp;pid=CH102262211033">dismal wreck</a>. They have an entire tutorial for "advanced users" to explain the <a href="http://office.microsoft.com/training/training.aspx?AssetID=RC011894951033&amp;pid=CH102262211033">differences and incompatibilities</a> between the following:<br /><ul><li>Address Book</li><li>Outlook Address Book</li><li>Windows Address Book</li><li>Personal Address Book</li><li>Contacts<br /></li><li>Global Address List</li></ul>I'm so glad I'm not the one who had to write that <a href="http://office.microsoft.com/training/training.aspx?AssetID=RC011894951033&amp;pid=CH102262211033">dreck</a>, with segment titles like "How the Address Book helps you get it right." ACK.<br /><br />Yes, I'm bashing Microsoft. *sigh*<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-7421112147222563538?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

@@ -1,9 +1,0 @@
-title = "Sorry PNC, hello Citizens"
-published = "2007-08-05T16:37:00.000-04:00"
-updated = "2011-04-10T09:52:45.257-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-So I tried again today to <a href="http://blag.whit537.org/2007/07/how-not-to-convert.html">apply for a checking account at PNC</a>. And I'll be damned if I didn't hit a dead-end "Error 500" at Step 4 of 5 ... twice!<br /><br /><img src="http://static.whit537.org/2007/pnc/5.gif" alt="'Error 500' screenshot" /><br /><br />I've notified my friend Doug again (for the record, he actually works on the commercial side of the bank), but it's too late for this prospect. <a href="http://www.citizensbank.com/pf/circle_package.aspx">Citizens</a>' online app may have had 14 steps (and they don't reimburse <span style="font-style: italic;">all</span> your ATM fees like PNC), but I made it through on the first try without any technical problems.<br /><br />Larger question: why can't <a href="http://37signals.com/">37 signals</a> make a product for banks, one that doesn't suck? Is it because good web development involves creativity and risk-tolerance that simply have no place in a bank's corporate culture? I mean, do you want your money with a bank known for being risky?<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-4161318977609525743?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

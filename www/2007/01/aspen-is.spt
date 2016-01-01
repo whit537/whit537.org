@@ -1,9 +1,0 @@
-title = "Aspen is a \"simple,\" \"reloading\" \"wsgictl\""
-published = "2007-01-22T17:12:00.000-05:00"
-updated = "2011-04-10T09:52:45.355-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-I just had a conversation on <a href="irc://irc.freenode.net/#plone">#plone</a>, in which I ended up explaining <a href="http://www.zetadev.com/software/aspen/">Aspen</a> as a sort of <code>wsgictl</code>: <a href="http://tech.whit537.org/2007/01/first-public-aspen-site.html">like <code>apachectl</code> or <code>zopectl</code></a>, but for WSGI-centric websites. Maybe that helps.<br /><br />I also had someone on the mailing list make <a href="http://groups.google.com/group/aspen-users/browse_frm/thread/7fe191b15dda46e0">these comments</a>:<br /><blockquote>I'm definitely going to use Aspen, at least for development, since it reloads! That's HUGE to me, you should sell it more!<br /></blockquote><blockquote></blockquote>The same user also had <a href="http://groups.google.com/group/aspen-users/browse_frm/thread/448a878fb7756cb2">this to say</a>:<br /><blockquote>Thanks for such an awesome webserver! simple, clean, pure, no dependencies, very nice and clean!<br /></blockquote>Tee-hee. :^)<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-9013091429597625251?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

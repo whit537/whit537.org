@@ -1,9 +1,0 @@
-title = "OMeGle"
-published = "2009-04-02T13:23:00.006-04:00"
-updated = "2011-04-10T09:52:44.981-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<p>This is great:<a href="http://www.omegle.com/">chat with strangers</a>!</p><p><a href="http://www.omegle.com/"><img style="border: 1px solid black;" src="http://static.whit537.org/2009/omegle.png" /></a></p><p>The site's (18-year-old) creator is <a href="http://omegler.blogspot.com/2009/03/welcome-to-omegle-blog.html">worried about trolls</a>, but I don't think he should be. I think he thinks you're actually going to make friends here, but I don't see that happening at all. I love Omegle because itgives you that vertiginous Internet-y feeling from seeing all of humanity in a great big soup, but in realtime.</p><p>There are so many patterns to be explored here. One interesting thing I've found so far is that chatting a lot with anonymous people makes you more forward in non-anonymous chats. I am being more bold with the people I'm working with, but without being defensive. That's what anonymity and the instant disconnect option trains you to be: bold but not defensive. Honest and not threatened. Nothing to lose. I like that.</p><p>Also, I've watched the user base double over the course of the past 7 hours.<br /></p><p>P.S. It's <a href="http://www.digitalmediatraining.com/blog/design/tess-salalac/omegle-what-the-hell-are-you">written in Twisted</a>.</p><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-317796259223763404?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

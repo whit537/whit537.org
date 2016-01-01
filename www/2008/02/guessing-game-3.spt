@@ -1,9 +1,0 @@
-title = "Guessing Game, #3"
-published = "2008-02-18T13:29:00.003-05:00"
-updated = "2011-04-10T09:52:45.170-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-The three pictures below are all of the same thing.<br /><br /><img src="http://static.whit537.org/2008/guess/00.jpg" /><br /><br /><img src="http://static.whit537.org/2008/guess/01.jpg" /><br /><br /><img src="http://static.whit537.org/2008/guess/02.jpg" /><br /><br />It's not <a href="http://blag.whit537.org/2008/02/guessing-game.html">a blue box, a blue LED</a>, or <a href="http://blag.whit537.org/2008/02/guessing-game-2.html">the sky</a> (you know, northern lights).<br /><br />What is it?<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-4037934347861376195?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

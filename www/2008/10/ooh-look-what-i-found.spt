@@ -1,9 +1,0 @@
-title = "Ooh! Look what I found!"
-published = "2008-10-14T11:23:00.001-04:00"
-updated = "2011-04-10T09:52:45.077-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/WNBb98N79nM&amp;hl=en&amp;fs=1"><param name="allowFullScreen" value="true"><embed src="http://www.youtube.com/v/WNBb98N79nM&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed></object><br /><div><br /></div><div><a href="http://www.briarpress.org/">See also</a>.</div><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-6459375583846353973?l=blag.whit537.org' alt='' /></div>
-{% endblock %}

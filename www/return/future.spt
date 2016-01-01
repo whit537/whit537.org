@@ -1,7 +1,0 @@
-# Fossilized
-#import return_
-[---]
-#out = return_.do("future")
-out = ""
-[---] text/plain
-{{ out }}

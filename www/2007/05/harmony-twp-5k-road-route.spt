@@ -1,9 +1,0 @@
-title = "Harmony Twp. 5k (Road Route)"
-published = "2007-05-25T16:26:00.001-04:00"
-updated = "2011-04-10T09:52:45.316-04:00"
-[---]
-[---] text/html
-{% extends "base.html" %}
-{% block content %}
-I've started running. Here's <a href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&amp;msa=0&msid=100859649110530092918.00000112c4ee6f149e38d&amp;amp;t=h&z=16&amp;om=1">my route</a>. The course goes up a big hill after the 2 mile mark, so I haven't ventured past that yet. However, my times so far are encouraging:<br /><ul><li>May 15, 2.0 miles, 16:22 (8:11 mile)</li><li>May 22, 2.0, 15:46 (7:53)</li><li>May 25, 2.0, 15:00 (7:30)</li></ul>I definitely felt spent after this morning! It will be a while before I can run the <a href="http://www.laurelultra.com/">Laurel Highlands Ultra</a> with <a href="http://picasaweb.google.com/paulfuener">Paul</a>. Really, though, I just want to avoid the "hacker 30 by 30." I hope to run twice a week throughout the summer, and then maybe I'll run in some 5k races this fall.<br /><br /><span style="font-weight: bold;">P.S.</span> I marked out this route by car. Now, if Google Maps told me the length of a line, then I could use Maps to mark out an off-road course!<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/36506138-7431379953982368021?l=blag.whit537.org' alt='' /></div>
-{% endblock %}
