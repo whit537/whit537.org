@@ -8,9 +8,18 @@ from string import Template
 from collections import defaultdict
 
 
-def fail(m, *a):
-    print(m.format(*a))
+if sys.version_info[0] < 3:
+    strtype = unicode
+else:
+    strtype = str
+
+
+def fail(m='', *a):
+    if m:
+        print(m.format(*a))
+    print("usage: {0} <foo.env>* <cmd>".format(os.path.basename(sys.argv[0])))
     sys.exit(1)
+
 
 def update_env(envfilepaths, verbose=False):
     for envfilepath in envfilepaths:
@@ -26,6 +35,8 @@ def update_env(envfilepaths, verbose=False):
                 if not line:
                     continue
                 k, v = [x.strip() for x in line.split('=', 1)]
+                if v and v[0] in ('"', "'"):
+                    v = v[1:-1]
                 os.environ[k] = v
         except:
             print("CHOKED ON: {}".format(line))
@@ -35,41 +46,33 @@ def update_env(envfilepaths, verbose=False):
 
 
 if len(sys.argv) < 2:
-    fail( """\
-usage: {0} <envfile>* <proctype>
-       {0} <envfile>* -c <cmd>
+    fail()
 
-<proctype> must match an entry in ./Procfile. <cmd> can be whatever."""
-        , sys.argv[0]
-         )
-
-try:
-    cindex = sys.argv.index('-c')
-except ValueError:
-    proctype = sys.argv[-1]
-else:
-    proctype = None
-    envfilepaths = sys.argv[1:cindex]
-    command = " ".join(sys.argv[cindex+1:])
-
-if proctype:
-    envfilepaths = sys.argv[1:-1]
-
-    try:
-        procfile = open('Procfile')
-    except IOError:
-        fail("Process type given ('{}'), but no ./Procfile found.", proctype)
-
-    for line in procfile:
-        proctype, command = [x.strip() for x in line.split(':', 1)]
-        if proctype == proctype:
-            break
+envfilepaths = []
+for i, arg in enumerate(sys.argv[1:]):
+    if arg == '-':
+        envfilepaths.append('/dev/stdin')
+    elif arg.endswith('.env'):
+        envfilepaths.append(arg)
     else:
-        fail("Process type '{}' not found in ./Procfile.", proctype)
+        break
+
+command = " ".join(sys.argv[i+1:])
 
 update_env(envfilepaths)
-subenv = defaultdict(unicode)
+subenv = defaultdict(strtype)
 subenv.update(os.environ)
+
+try:
+    procfile = open('Procfile')
+except IOError:
+    pass
+else:
+    for line in procfile:
+        candidate, new_command = [x.strip() for x in line.split(':', 1)]
+        if candidate == command:
+            command = new_command
+            break
 
 tmp = Template(command)
 subbed = tmp.substitute(subenv)
