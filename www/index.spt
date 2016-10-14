@@ -30,7 +30,7 @@ for post in posts:
 {% block content %}
 
     <div class="midbar">
-        <a href="/photos"><img src="/chad-whitacre.128.jpg" /></a>
+        <a href="/photos"><img src="/chad-whitacre.thumb.jpg" /></a>
         <p class="caption centered" style="text-align: center">
             <a href="/photos">download</a>
         </p>
