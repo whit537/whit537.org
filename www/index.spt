@@ -30,9 +30,9 @@ for post in posts:
 {% block content %}
 
     <div class="midbar">
-        <a href="/chad-whitacre.jpg"><img src="/chad-whitacre.128.jpg" /></a>
-        <p class="caption center" style="text-align: center">
-            <a href="/chad-whitacre.jpg">full size</a>
+        <a href="/photos"><img src="/chad-whitacre.128.jpg" /></a>
+        <p class="caption centered" style="text-align: center">
+            <a href="/photos">download</a>
         </p>
     </div>
 

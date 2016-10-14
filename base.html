@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>@import url("/main.011.css");</style>
+        <style>@import url("/main.012.css");</style>
         <script src="/jquery-1.8.1.min.js"></script>
         <title>{{ title }}</title>
         {% block head %}{% endblock %}
@@ -19,12 +19,14 @@
             </div>
             {% endif %}
             <h1>{{ title.replace(' - ', ':<br />') }}</h1>
+            {% if not suppress_byline %}
             <div class="meta">
                 By <a href="http://whit537.org/">Chad Whitacre</a><br />
                 {% if published %}
                 {{ render_published(published) }}<br />
                 {% endif %}
             </div>
+            {% endif %}
             {% block nav %}
             <div id="nav">
                 <a href="/" class="text">Up to Index</a>

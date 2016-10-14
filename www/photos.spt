@@ -1,0 +1,34 @@
+[---]
+title = "Photos"
+certified = True
+suppress_byline = True
+[---] text/html via jinja2
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="midbar">
+
+        <p class="caption center">All photograph reproduction use in website,
+        blog, social media network, newspaper, magazine, business cards,
+        flyers, or brochures must either include a watermark or explicit
+        photography credit to <a
+        href="http://sewickleyphotography.com/">Sewickley Photography</a>.</p>
+
+        <p class="caption centered bordered">
+            <a href="/chad-whitacre.jpg">
+                <img src="/chad-whitacre.jpg" />
+                full size
+            </a>
+        </p>
+
+
+        <p class="caption centered bordered">
+            <a href="/chad-whitacre.full.jpg">
+                <img src="/chad-whitacre.full.jpg" />
+                full size
+            </a>
+        </p>
+
+    </div>
+
+{% endblock %}
