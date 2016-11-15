@@ -42,9 +42,8 @@ for post in posts:
             href="https://twitter.com/whit537">Twitter</a>, <a
             href="https://www.linkedin.com/in/chad-whitacre">LinkedIn</a>, <a
             href="https://github.com/whit537">GitHub</a> and <a
-            href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
-        My address is 716 Park Road, my email is <a
-        href="mailto:chad@gratipay.com">chad@gratipay.com</a>, and my cell is
-    +1-412-925-4220.</p>
+        href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
+    My email is <a href="mailto:chad@gratipay.com">chad@gratipay.com</a>, my
+    cell is +1-412-925-4220, and my address is 716 Park Road.</p>
 
 {% endblock %}
