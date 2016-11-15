@@ -38,12 +38,13 @@ for post in posts:
 
     <p>Greetings! My name is Chad Whitacre, and this is my personal website.
     I'm best known for founding <a href="https://gratipay.com/">Gratipay</a>.
-    The best places to find me are <a
-    href="https://github.com/whit537">GitHub</a> and <a
-href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.  My
-address is 716 Park Road, my email is <a
-href="mailto:chad@zetaweb.com">chad@zetaweb.com</a>, and my cell is
-+1-412-925-4220.</p>
+        The best places to find me are <a
+            href="https://twitter.com/whit537">Twitter</a>, <a
+            href="https://www.linkedin.com/in/chad-whitacre">LinkedIn</a>, <a
+            href="https://github.com/whit537">GitHub</a> and <a
+            href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
+        My address is 716 Park Road, my email is <a
+        href="mailto:chad@gratipay.com">chad@gratipay.com</a>, and my cell is
+    +1-412-925-4220.</p>
 
-    <h2><a href="/interviews">Interviews</a></h2>
 {% endblock %}
