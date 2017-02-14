@@ -44,6 +44,7 @@ for post in posts:
             href="https://github.com/whit537">GitHub</a> and <a
         href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
     My email is <a href="mailto:chad@gratipay.com">chad@gratipay.com</a>, my
-    cell is +1-412-925-4220, and my address is 716 Park Road.</p>
+    cell is +1-412-925-4220, and my address is 716 Park Road. I'm open to <a
+    href="/interviews">interviews</a>. ;-)</p>
 
 {% endblock %}
