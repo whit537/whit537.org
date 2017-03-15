@@ -36,14 +36,42 @@ for post in posts:
         </p>
     </div>
 
-    <p>Greetings! My name is Chad Whitacre, and this is my personal website.
-    I'm best known for founding <a href="https://gratipay.com/">Gratipay</a>.
-        The best places to find me are <a
-            href="http://inside.gratipay.com/appendices/chat">Slack</a> and <a
-            href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>.
-            My email is <a
-                href="mailto:chad@gratipay.com">chad@gratipay.com</a>, my cell
-                is +1-412-925-4220, and my address is 716 Park Road. I'm <a
-                    href="/interviews">open to interviews</a>. ;-)</p>
+    <p>Greetings! My name is Chad Whitacre, and this is my personal website.</p>
+
+    <h2>Accomplishments</h2>
+
+    <ul>
+
+        <li>Founded <a href="https://gratipay.com/">Gratipay</a>,
+        business-grade crowdfunding for open source</li>
+
+        <li>Made the <a href="http://aspen.io/">Aspen</a> and <a
+            href="http://postgres-py.readthedocs.io/en/latest/">Postgres.py</a>
+        libraries (both in use on Gratipay)</li>
+
+        <li><a
+            href="https://opensource.com/open-organization/resources/meet-ambassadors">Open
+            Organization Ambassador</a> for Red Hat, publishing <a
+            href="https://opensource.com/users/whit537">on OpenSource.com</a></li>
+
+        <li>Published <a
+            href="http://www.logstown.com/the-gospels/"><i>The
+        Gospels</i></a></li>
+
+    </ul>
+
+
+    <h2>Contact</h2>
+
+    <ul>
+        <li><a href="http://inside.gratipay.com/appendices/chat">Slack</a></li>
+        <li><a href="mailto:chad@gratipay.com">chad@gratipay.com</a></li>
+        <li>+1-412-925-4220</li>
+        <li>716 Park Road, <a
+            href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>,
+            PA 15003, USA</li>
+    </ul>
+
+    <p>I'm <a href="/interviews">open to interviews</a>. ;-)</p>
 
 {% endblock %}
