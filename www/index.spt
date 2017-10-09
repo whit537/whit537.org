@@ -64,20 +64,15 @@ for post in posts:
     <h2>Contact</h2>
 
     <ul>
-        <li><a href="http://inside.gratipay.com/appendices/chat">Slack</a></li>
-        <li><a href="mailto:chad@gratipay.com">chad@gratipay.com</a></li>
+        <li><a href="mailto:chad@zetaweb.com">chad@zetaweb.com</a></li>
         <li>+1-412-925-4220</li>
         <li>716 Park Road, <a
             href="https://gratipay.news/meet-ambridge-8b9b2b6f8628">Ambridge</a>,
             PA 15003, USA</li>
         <li>
             <a href="https://www.linkedin.com/in/chad-whitacre/">LinkedIn</a>,
-            <a href="https://github.com/whit537">GitHub</a>,
-            <a href="https://twitter.com/whit537">Twitter</a> (on hiatus;
-                follow <a href="https://twitter.com/Gratipay">Gratipay</a>)
+            <a href="https://github.com/whit537">GitHub</a>
         </li>
     </ul>
-
-    <p>I'm <a href="/interviews">open to interviews</a>. ;-)</p>
 
 {% endblock %}
