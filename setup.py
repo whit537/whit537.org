@@ -1,5 +1,3 @@
 from setuptools import setup
 
-setup( name='blag'
-     , version='2.0'
-      )
+setup(name='whit537_org', version='3.0')
