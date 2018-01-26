@@ -21,9 +21,6 @@ DIV#post {
     background: white;
     border: 1px solid #CCC;
     box-shadow: 0px 5px 5px #999;
-    -webkit-box-shadow: 0px 5px 5px #999;
-    -moz-box-shadow: 0px 5px 5px #999;
-    -o-box-shadow: 0px 5px 5px #999;
     margin: 33vh auto 24pt;
     padding: 0;
     width: 800px;
@@ -68,6 +65,7 @@ A.headshot IMG {
     border: none;
     margin: 0 auto;
     display: block;
+    box-shadow: 0px 5px 5px #999;
 }
 @media screen and (max-width: 800px) {
     DIV#post {
