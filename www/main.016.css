@@ -74,6 +74,7 @@ A.headshot IMG {
     text-align: left;
     vertical-align: top;
     font-weight: bold;
+    white-space: nowrap;
 }
 .accomplishments TH SPAN {
     font-size: smaller;
