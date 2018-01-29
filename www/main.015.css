@@ -3,6 +3,7 @@ BODY {
     padding: 0;
     background: #E6DBB5;
     font: normal 12pt/17pt "Times New Roman", serif;
+    color: #333;
 }
 
 DIV#blue {
@@ -18,6 +19,8 @@ DIV#blue {
 }
 
 DIV#post {
+
+
     background: white;
     border: 1px solid #CCC;
     box-shadow: 0px 5px 5px #999;
@@ -44,10 +47,7 @@ H2 {
 P {
     margin: 0;
     padding: 0;
-    text-indent: 18pt;
-}
-P.no-indent {
-    text-indent: 0;
+    text-align: center;
 }
 .nowrap {
     white-space: nowrap;
@@ -66,6 +66,42 @@ A.headshot IMG {
     margin: 0 auto;
     display: block;
     box-shadow: 0px 5px 5px #999;
+}
+.accomplishments {
+    list-style: none;
+}
+.accomplishments TH {
+    text-align: left;
+    vertical-align: top;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.accomplishments TH SPAN {
+    font-size: smaller;
+    font-weight: normal;
+    display: block;
+}
+.accomplishments TD {
+    padding: 0 0 1em 1em;
+}
+.contact {
+    list-style: none;
+    display: block;
+    width: 144pt;
+    margin: 48pt auto 0;
+    padding: 0;
+}
+.contact LI {
+    width: 48pt;
+    display: block;
+    float: left;
+}
+.contact LI A {
+    display: block;
+    text-align: center;
+}
+.contact IMG {
+    width: 24pt;
 }
 @media screen and (max-width: 800px) {
     DIV#post {
