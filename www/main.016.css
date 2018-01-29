@@ -19,6 +19,8 @@ DIV#blue {
 }
 
 DIV#post {
+
+
     background: white;
     border: 1px solid #CCC;
     box-shadow: 0px 5px 5px #999;
@@ -64,6 +66,22 @@ A.headshot IMG {
     margin: 0 auto;
     display: block;
     box-shadow: 0px 5px 5px #999;
+}
+.accomplishments {
+    list-style: none;
+}
+.accomplishments TH {
+    text-align: left;
+    vertical-align: top;
+    font-weight: bold;
+}
+.accomplishments TH SPAN {
+    font-size: smaller;
+    font-weight: normal;
+    display: block;
+}
+.accomplishments TD {
+    padding: 0 0 1em 1em;
 }
 .contact {
     list-style: none;
